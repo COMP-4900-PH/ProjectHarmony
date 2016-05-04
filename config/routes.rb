@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # Routes for user model
   devise_for :users
   # Routes for sailing model
   resources :sailings
