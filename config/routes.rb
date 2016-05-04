@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
+  # Routes for user model
   devise_for :users
+  # Routes for sailing model
+  resources :sailings
+  # Routes for events model
+  resources :events
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

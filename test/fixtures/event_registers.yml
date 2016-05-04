@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  event_id: 
+  travelling_party_id: 
+
+two:
+  user_id: 
+  event_id: 
+  travelling_party_id: 
