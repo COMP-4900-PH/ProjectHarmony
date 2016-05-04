@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Sailings#index</h1>
 <p>Find me in app/views/sailings/index.html.erb</p>
 <div class="header">
@@ -49,3 +50,30 @@
   </div>
   <div class="clearfix"></div>
 </div>
+=======
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sailings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sailings.each do |sailing| %>
+      <tr>
+        <td><%= link_to 'Show', sailing %></td>
+        <td><%= link_to 'Edit', edit_sailing_path(sailing) %></td>
+        <td><%= link_to 'Destroy', sailing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sailing', new_sailing_path %>
+>>>>>>> 79362cc41fd930f712bd0003372fa17b251f68b8

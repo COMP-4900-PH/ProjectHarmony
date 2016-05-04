@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   get 'sailings/index'
 
   devise_for :users
+  # Routes for sailing model
+  resources :sailings
+  # Routes for events model
+  resources :events
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
