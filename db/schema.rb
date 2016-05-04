@@ -11,7 +11,91 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503024935) do
+ActiveRecord::Schema.define(version: 20160504191544) do
+
+  create_table "detailed_users", force: :cascade do |t|
+    t.string   "FirstName"
+    t.string   "LastName"
+    t.binary   "Picture"
+    t.string   "Gender"
+    t.datetime "BirthDay"
+    t.string   "SexualOrientation"
+    t.text     "Description"
+    t.string   "PrimaryLanguage"
+    t.string   "SecondLanguage"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+  end
+
+  add_index "detailed_users", ["user_id"], name: "index_detailed_users_on_user_id"
+
+  create_table "event_registers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "travelling_party_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "event_registers", ["event_id"], name: "index_event_registers_on_event_id"
+  add_index "event_registers", ["travelling_party_id"], name: "index_event_registers_on_travelling_party_id"
+  add_index "event_registers", ["user_id"], name: "index_event_registers_on_user_id"
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.string   "event_name"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "location"
+    t.text     "description"
+    t.integer  "max_participants"
+    t.integer  "sailing_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "events", ["sailing_id"], name: "index_events_on_sailing_id"
+
+  create_table "non_registered_users", force: :cascade do |t|
+    t.integer  "age"
+    t.string   "gender"
+    t.string   "travellingparty"
+    t.string   "references"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "travellingparty_id"
+  end
+
+  create_table "party_registers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "travelling_party_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "party_registers", ["travelling_party_id"], name: "index_party_registers_on_travelling_party_id"
+  add_index "party_registers", ["user_id"], name: "index_party_registers_on_user_id"
+
+  create_table "sailings", force: :cascade do |t|
+    t.integer  "official_id"
+    t.string   "destination_identifier"
+    t.string   "cruise_ship_name"
+    t.string   "cruise_ship_compay"
+    t.datetime "departure_date"
+    t.datetime "return_date"
+    t.string   "port_of_origin"
+    t.string   "port_of_destination"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "travelling_parties", force: :cascade do |t|
+    t.string   "sailing"
+    t.string   "references"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
