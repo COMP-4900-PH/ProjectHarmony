@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504191544) do
+ActiveRecord::Schema.define(version: 20160505175628) do
 
   create_table "detailed_users", force: :cascade do |t|
     t.string   "FirstName"
@@ -56,6 +56,56 @@ ActiveRecord::Schema.define(version: 20160504191544) do
   end
 
   add_index "events", ["sailing_id"], name: "index_events_on_sailing_id"
+
+  create_table "forem_categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "forem_forums", force: :cascade do |t|
+    t.string "title"
+    t.text   "description"
+  end
+
+  create_table "forem_posts", force: :cascade do |t|
+    t.integer  "topic_id"
+    t.text     "text"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "reply_to_id"
+  end
+
+  add_index "forem_posts", ["reply_to_id"], name: "index_forem_posts_on_reply_to_id"
+  add_index "forem_posts", ["topic_id"], name: "index_forem_posts_on_topic_id"
+  add_index "forem_posts", ["user_id"], name: "index_forem_posts_on_user_id"
+
+  create_table "forem_topics", force: :cascade do |t|
+    t.integer  "forum_id"
+    t.integer  "user_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "locked",     default: false, null: false
+    t.boolean  "pinned",     default: false
+    t.boolean  "hidden",     default: false
+  end
+
+  add_index "forem_topics", ["forum_id"], name: "index_forem_topics_on_forum_id"
+  add_index "forem_topics", ["user_id"], name: "index_forem_topics_on_user_id"
+
+  create_table "forem_views", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "count",      default: 0
+  end
+
+  add_index "forem_views", ["topic_id"], name: "index_forem_views_on_topic_id"
+  add_index "forem_views", ["updated_at"], name: "index_forem_views_on_updated_at"
+  add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id"
 
   create_table "non_registered_users", force: :cascade do |t|
     t.integer  "age"
@@ -110,9 +160,11 @@ ActiveRecord::Schema.define(version: 20160504191544) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
