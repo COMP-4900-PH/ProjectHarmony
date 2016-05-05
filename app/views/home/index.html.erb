@@ -6,11 +6,10 @@
     <div class="menu">
       <a class="toggleMenu" href="#"><%= image_tag "nav.png" %></a>
       <ul class="nav" id="nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="rooms.html">Sailings</a></li>
-        <li><a href="news.html">Events</a></li>
-        <li><a href="gallery.html">Search</a></li>
-        <li><a href="404.html">My Dashboard</a></li>
+        <li class="active"><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Sailings", sailings_path %></li>
+        <li><%= link_to "Events", events_path %></li>
+        <li><%= link_to "My Dashboard", user_dashboard_path %></li>
         <div class="clearfix"></div>
       </ul>
       <!--<script type="text/javascript" src="js/responsive-nav.js"></script>-->
