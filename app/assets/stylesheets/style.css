@@ -385,7 +385,7 @@ a#loginButton img {
     font-weight: 500;
     margin-bottom: 1em;
 }
-.banner input[type="text"] {
+.banner input[type="text"], input[type="email"], input[type="password"] {
     background: rgba(111, 111, 111, 0.17);
     transition: border-color 0.3s;
     -o-transition: border-color 0.3s;
