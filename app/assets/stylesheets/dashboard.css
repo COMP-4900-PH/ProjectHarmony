@@ -1,0 +1,23 @@
+.dashboard {
+    height: 90vh;
+    background-color: #f3f1f2;
+}
+
+.dashboard-info {
+    margin-top: 3em;
+    background-color: #ffffff;
+    height: 90vh;
+}
+
+.avatar {
+    margin-top: 3em;
+}
+
+.btn-primary {
+    background-color: #357ebd;
+}
+
+.tabbable {
+    margin-top: 3em;
+    margin-left: 2em;
+}

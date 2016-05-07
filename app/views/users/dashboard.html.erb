@@ -1,2 +1,47 @@
-<h1>Hello <%= current_user.name %></h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+<!--<h1>Hello <%= current_user.name %></h1>-->
+<script>
+  $('[data-toggle=tab]').click(function(){
+    if ($(this).parent().hasClass('active')){
+      $($(this).attr("href")).toggleClass('active');
+    }
+  })
+</script>
+
+<div class="dashboard">
+  <div class="container">
+    <div class="dashboard-info">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="container-fluid">
+            <div class="tabbable">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">My Sailings</a></li>
+                <li><a href="#tab2" data-toggle="tab">My Events</a></li>
+                <li><a href="#tab3" data-toggle="tab">Hosted Events</a></li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                  <p>I'm in Section 1.</p>
+                </div>
+
+                <div class="tab-pane" id="tab2">
+                  <p>Howdy, I'm in Section 2.</p>
+                </div>
+
+                <div class="tab-pane" id="tab3">
+                  <p>Howdy, I'm in Section 3.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <img class="avatar" src="http://placehold.it/300x300" alt="..."><br>
+          <a href="#"><h2>Name</h2></a>
+          <a href="/mailbox/inbox" class="btn btn-primary">Messages <span class="badge">7</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
