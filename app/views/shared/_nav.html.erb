@@ -6,11 +6,11 @@
     <div class="menu">
       <a class="toggleMenu" href="#"><%= image_tag "nav.png" %></a>
       <ul class="nav" id="nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="/sailings">Sailings</a></li>
-        <li><a href="/events">Events</a></li>
+        <li class="active"><%= link_to "Home", root_path %></a></li>
+        <li><%= link_to "Sailings", sailings_path %></li>
+        <li><%= link_to "Events", events_path %></li>
         <li><a href="/search">Search</a></li>
-        <li><a href="/dashboard">My Dashboard</a></li>
+        <li><%= link_to "My Dashboard", user_dashboard_path %></li>
         <div class="clearfix"></div>
       </ul>
     </div>
