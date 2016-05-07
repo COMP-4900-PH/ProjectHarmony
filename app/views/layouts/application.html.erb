@@ -38,7 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Display login/logout messages to user. (Devise) -->
 <!--<p class="notice"><%= notice %></p>-->
 <!--<p class="alert"><%= alert %></p>-->
-
+<%= render  "shared/nav" %>
 <% flash.each do |key, value| %>
     <div class="text-center <%= flash_class(key) %>">
       <%= value %>

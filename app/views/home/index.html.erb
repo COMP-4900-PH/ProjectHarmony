@@ -1,16 +1,11 @@
 
-<%= render  "shared/nav" %>
 <div class="banner">
   <div class="container_wrap">
     <h1>What are you looking for?</h1>
     <div class="dropdown-buttons">
       <div class="dropdown-button">
-
-        <!--TODO This section needs work. The CSS is not working correctly.-->
         <% sail = Sailing.uniq.pluck(:destination_identifier) %>
-
-        <%= select_tag(:id, options_for_select(sail), {:class => 'flat'}) %>
-
+        <%= select_tag(:id, options_for_select(sail), {class: "dropdown", tabindex: "9", "data-settings" => '{"wrapperClass":"flat"}' })  %>
       </div>
       <div class="dropdown-button">
         <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
@@ -67,7 +62,7 @@
         </select>
       </div>
     </div>
-    <div class="col-md-4 filter_grid">
+    <div class="col-md-4 filter_grid" data-no-turbolink>
       <ul class="filter">
         <li class="fil">Filter :</li>
         <li><a href=""> <i class="icon1"> </i> </a></li>
