@@ -10,8 +10,18 @@
   </thead>
 
   <tbody>
+  <tr>
+    <th>Ship Name</th>
+    <th>Company</th>
+    <th>Departure Date</th>
+    <th>Return Date</th>
+  </tr>
     <% @sailings.each do |sailing| %>
       <tr>
+        <td><%= sailing.cruise_ship_name %></td>
+        <td><%= sailing.cruise_ship_company %></td>
+        <td><%= sailing.departure_date.strftime("%B %d, %Y") %></td>
+        <td><%= sailing.return_date.strftime("%B %d, %Y") %></td>
         <td><%= link_to 'Show', sailing %></td>
         <td><%= link_to 'Edit', edit_sailing_path(sailing) %></td>
         <td><%= link_to 'Destroy', sailing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
