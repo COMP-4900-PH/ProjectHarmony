@@ -18,7 +18,7 @@
   </tr>
     <% @sailings.each do |sailing| %>
       <tr>
-        <td><%= sailing.cruise_ship_name %></td>
+        <td><%= link_to sailing.cruise_ship_name, sailing %></td>
         <td><%= sailing.cruise_ship_company %></td>
         <td><%= sailing.departure_date.strftime("%B %d, %Y") %></td>
         <td><%= sailing.return_date.strftime("%B %d, %Y") %></td>

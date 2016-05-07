@@ -397,6 +397,33 @@
         <!--<div class="clearfix"></div>-->
       <!--</div>-->
     <!--</div>-->
+
+      <!-- Test Data-->
+      <table>
+        <thead>
+        <tr>
+          <th colspan="3"></th>
+        </tr>
+        </thead>
+      <tbody>
+      <tr>
+        <th>Ship Name</th>
+        <th>Company</th>
+        <th>Departure Date</th>
+        <th>Return Date</th>
+      </tr>
+      <% @sailings.each do |sailing| %>
+          <tr>
+            <td><%= link_to sailing.cruise_ship_name, sailing %></td>
+            <td><%= sailing.cruise_ship_company %></td>
+            <td><%= sailing.departure_date.strftime("%B %d, %Y") %></td>
+            <td><%= sailing.return_date.strftime("%B %d, %Y") %></td>
+          </tr>
+      <% end %>
+      </tbody>
+      </table>
+      <!-- End Test Data-->
+
     <div class="offering">
       <h2>What can Hotel Deluxe offer to you ?</h2>
       <h3>Ut wisi enim ad minim veniam, quis</h3>
