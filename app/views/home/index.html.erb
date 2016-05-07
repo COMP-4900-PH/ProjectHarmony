@@ -5,21 +5,19 @@
     <h1>What are you looking for?</h1>
     <div class="dropdown-buttons">
       <div class="dropdown-button">
-        <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-          <option value="0">Alaska</option>
-          <option value="1">Caribbean</option>
-          <option value="2">Europe</option>
-          <option value="3">Antarctica</option>
-          <option value="4">Galapagos</option>
-          <option value="5">South Pacific</option>
-          <option value="6">Norway</option>
-          <option value="7">Hawaiian Islands</option>
-        </select>
+
+        <!--TODO This section needs work. The CSS is not working correctly.-->
+        <% sail = Sailing.uniq.pluck(:destination_identifier) %>
+
+        <%= select_tag(:id, options_for_select(sail), {:class => 'flat'}) %>
+
       </div>
       <div class="dropdown-button">
         <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
-          <option value="0">Locations</option>
-          <option value="5"></option>
+          <option value="0">Events</option>
+          <option value="5">Tennis</option>
+          <option value="5">Boat Golf</option>
+          <option value="5">Ping Pong</option>
         </select>
       </div>
     </div>
