@@ -4,7 +4,7 @@ class CreateSailings < ActiveRecord::Migration
       t.integer :official_id
       t.string :destination_identifier
       t.string :cruise_ship_name
-      t.string :cruise_ship_compay
+      t.string :cruise_ship_company
       t.datetime :departure_date
       t.datetime :return_date
       t.string :port_of_origin
