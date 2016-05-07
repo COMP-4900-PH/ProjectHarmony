@@ -2782,7 +2782,7 @@ p.educate {
         width: 34%;
     }
     .banner input[type="text"] {
-        width:60%;
+        /*width:60%;*/
     }
     .view-first .mask {
         left: 53px;
@@ -2893,7 +2893,7 @@ p.educate {
         width: 100%;
     }
     .banner input[type="text"] {
-        padding: 10px;
+        /*padding: 10px;*/
     }
     .logo {
         width: 43%;
