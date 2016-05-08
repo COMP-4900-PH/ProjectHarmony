@@ -1,16 +1,17 @@
 .dashboard {
-    height: 90vh;
     background-color: #f3f1f2;
+    height: 100%;
 }
 
 .dashboard-info {
     margin-top: 3em;
     background-color: #ffffff;
-    height: 90vh;
+    height: 100%;
 }
 
 .avatar {
     margin-top: 3em;
+    margin-right: 1em;
 }
 
 .btn-primary {
@@ -19,5 +20,18 @@
 
 .tabbable {
     margin-top: 3em;
-    margin-left: 2em;
+    /*margin-left: 2em;*/
+}
+
+.ship-name {
+    font-size: large;
+    color: #31b0d5;
+}
+
+.sailing-info {
+
+}
+
+.profile-info {
+    text-align: center;
 }
