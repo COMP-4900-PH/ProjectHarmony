@@ -1,0 +1,44 @@
+.dashboard {
+    background-color: #f3f1f2;
+    min-height: 100vh;
+}
+
+.dashboard-info {
+    margin-top: 3em;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.avatar {
+    margin-top: 3em;
+    margin-right: 1em;
+}
+
+.btn-primary {
+    background-color: #357ebd;
+}
+
+.tabbable {
+    margin-top: 3em;
+    /*margin-left: 2em;*/
+}
+
+.ship-name {
+    font-size: large;
+    color: #31b0d5;
+}
+
+.sailing-info {
+
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.mailbox-info {
+    padding: 1em;
+    margin-top: 3em;
+    background-color: #ffffff;
+    height: 100%;
+}
