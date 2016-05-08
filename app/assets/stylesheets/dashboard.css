@@ -1,6 +1,6 @@
 .dashboard {
     background-color: #f3f1f2;
-    height: 100%;
+    min-height: 100vh;
 }
 
 .dashboard-info {
@@ -34,4 +34,11 @@
 
 .profile-info {
     text-align: center;
+}
+
+.mailbox-info {
+    padding: 1em;
+    margin-top: 3em;
+    background-color: #ffffff;
+    height: 100%;
 }
