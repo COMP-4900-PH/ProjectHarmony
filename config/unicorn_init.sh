@@ -5,7 +5,7 @@ set -e
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/home/deploy/Projectharmony
 PID=$APP_ROOT/tmp/pids/unicorn.pid
-CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -D"
+CMD="$APP_ROOT/bin; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb"
 AS_USER=deploy
 set -u
 
