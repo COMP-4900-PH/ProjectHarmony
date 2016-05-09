@@ -4,8 +4,7 @@
     <h1>What are you looking for?</h1>
     <div class="dropdown-buttons">
       <div class="dropdown-button">
-        <% sail = Sailing.uniq.pluck(:destination_identifier) %>
-        <%= select_tag(:id, options_for_select(sail), {class: "dropdown", tabindex: "9", "data-settings" => '{"wrapperClass":"flat"}' })  %>
+        <%= select_tag(:id, options_for_select(@uniqueSailings), {class: "dropdown", tabindex: "9", "data-settings" => '{"wrapperClass":"flat"}' })  %>
       </div>
       <div class="dropdown-button">
         <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
