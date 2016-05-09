@@ -42,3 +42,26 @@
     background-color: #ffffff;
     height: 100%;
 }
+
+.event-image {
+    /*margin-left: 2em;*/
+    text-align: center;
+}
+
+.event-description {
+    margin-left: 2em
+}
+
+.event-filter {
+    margin-top: 1em;
+}
+
+.comment {
+    font-size: small;
+    font-style: normal;
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+}
+
+.comment-date-time {
+    font-style: italic;
+}

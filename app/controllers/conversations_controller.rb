@@ -2,6 +2,15 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @users = {}
+    recipient = params[:recipient]
+    recipient.each do |r|
+      user = User.find_by r
+      if user != nil
+        @users[user.id] = user.name
+      end
+    end
+
   end
 
   def create

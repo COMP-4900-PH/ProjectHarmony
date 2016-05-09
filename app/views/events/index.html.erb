@@ -1,25 +1,104 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
+<!--<table>-->
+  <!--<thead>-->
+  <!--<tr>-->
+    <!--<th colspan="3"></th>-->
+  <!--</tr>-->
+  <!--</thead>-->
 
-<h1>Listing Events</h1>
+  <!--<tbody>-->
+  <!--<% @events.each do |event| %>-->
+      <!--<tr>-->
+        <!--<td><%= link_to 'Show', event %></td>-->
+        <!--<td><%= link_to 'Edit', edit_event_path(event) %></td>-->
+        <!--<td><%= link_to 'Destroy', event, method: :delete, data: {confirm: 'Are you sure?'} %></td>-->
+      <!--</tr>-->
+  <!--<% end %>-->
+  <!--</tbody>-->
+<!--</table>-->
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!--<br>-->
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Event', new_event_path %>
+<div class="dashboard">
+  <div class="container">
+    <div class="dashboard-info">
+
+      <div class="row wow fadeInLeft animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+        <div class="col-md-4 content_menu event-filter">
+          <ul>
+            <li class="active"><a href="#">Recommended</a></li>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">Highlights</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 filter_grid event-filter " data-no-turbolink>
+          <ul class="filter">
+            <li class="fil">Filter :</li>
+            <li><a href=""> <i class="icon1"> </i> </a></li>
+            <li><a href=""> <i class="icon2"> </i> </a></li>
+            <li><a href=""> <i class="icon3"> </i> </a></li>
+            <li><a href=""> <i class="icon4"> </i> </a></li>
+            <li><a href=""> <i class="icon5"> </i> </a></li>
+          </ul>
+        </div>
+
+
+        <div class="col-md-2 event-filter">
+          <%= link_to 'New Event', new_event_path , class: "btn btn-success"%>
+        </div>
+      </div>
+
+      <table class="table">
+        <tr>
+          <td class="event-image"><img  src="https://placeimg.com/100/100/tech" alt="..."><br></td>
+          <td class="sailing-info" width="50%">
+             <a href="/events/1" class="ship-name">Event 1</a><br><br>
+            <p>Lorem ipsum dolor sit amet, nec assum fierent disputando id, ut eos mutat mentitum scriptorem.
+              Et nec soleat feugiat vivendo,</p>
+          </td>
+          <td>
+            <div class="event-description">
+              Age group: Age group <br>
+              Host: Name of Host <br>
+              Sailing: Name of Ship <br>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="event-image" ><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
+          <td class="sailing-info" width="50%">
+            <a href="/events/1" class="ship-name">Event 1</a><br><br>
+            <p>Lorem ipsum dolor sit amet, nec assum fierent disputando id, ut eos mutat mentitum scriptorem.
+              Et nec soleat feugiat vivendo,</p>
+          </td>
+          <td>
+            <div class="event-description">
+              Age group: Age group <br>
+              Host: Name of Host <br>
+              Sailing: Name of Ship <br>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="event-image" ><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
+          <td class="sailing-info" width="50%">
+            <a href="/events/1" class="ship-name">Event 1</a><br><br>
+            <p>Lorem ipsum dolor sit amet, nec assum fierent disputando id, ut eos mutat mentitum scriptorem.
+              Et nec soleat feugiat vivendo,</p>
+          </td>
+          <td>
+            <div class="event-description">
+              Age group: Age group <br>
+              Host: Name of Host <br>
+              Sailing: Name of Ship <br>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>

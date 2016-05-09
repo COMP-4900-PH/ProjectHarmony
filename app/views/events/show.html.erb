@@ -1,4 +1,136 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<!--<%= link_to 'Edit', edit_event_path(@event) %> | -->
+<!--<%= link_to 'Back', events_path %>-->
+
+<style>
+  tr.spaceUnder > td
+  {
+    padding-bottom: 1em;
+  }
+</style>
+
+<div class="dashboard">
+  <div class="container">
+    <div class="dashboard-info">
+      <div class="row">
+        <div class="col-md-2">
+          <table style="margin-left: 1em; margin-top: 1em">
+            <tr class="spaceUnder">
+              <td>
+                <a href="/profile/1"><%= image_tag "profile/profile1.jpg", size: "100x100", :class => "img-responsive" %></a></td>
+              </td>
+            </tr>
+            <tr class="spaceUnder">
+              <td>
+                <a href="/profile/1"><%= image_tag "profile/profile2.jpg", size: "100x100", :class => "img-responsive" %></a></td>
+              </td>
+            </tr>
+            <tr class="spaceUnder">
+              <td>
+                <a href="/profile/1"><%= image_tag "profile/profile3.jpg", size: "100x100", :class => "img-responsive" %></a></td>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-7">
+          <div class="row" style="margin-top: 1em">
+            <div class="col-md-6">
+             <h2>Event 1</h2>
+            </div>
+            <div class="col-md-6" style="text-align: center">
+              <a href="" class="btn btn-success">Join and RSVP</a>
+            </div>
+          </div>
+            <hr class="hr-line" style="margin-top: 0">
+            <div class="row">
+              <div class="col-md-1">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-11">
+                <h3>Tuesday, May 10, 2016</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1">
+                <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+              </div>
+              <div class="col-md-11">
+                <h3>Lorem ipsum dolor sit amet</h3>
+                <p>
+                  tation referrentur definitiones vis, pro eu wisi signiferumque,
+                </p>
+              </div>
+              <div class="col-md-1">
+                <a href=""><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+              </div>
+              <div class="col-md-11">
+                <a href="">Roger Smith</a> <span> - organizer </span>
+              </div>
+              <p>
+                Soleat scriptorem usu ne, te per reque iuvaret. Te eum discere dissentiet.
+                His ex integre incorrupte liberavisse, tempor salutandi ei usu,
+                legendos reformidans vim ne. Has dolore apeirian an.
+                Adhuc essent offendit ei cum.
+              </p>
+              <br>
+              <p>
+                Te tota ornatus imperdiet duo, oratio legendos et mei,
+                veri choro veritus no nam. Graeci iuvaret argumentum usu eu,
+                vel te luptatum repudiandae. Qui quas ponderum in, nominavi
+                laboramus scriptorem cu mea, eam at everti liberavisse delicatissimi.
+                Mentitum principes nec ne. Interesset scribentur cum et.
+              </p>
+            </div>
+          <hr class="hr-line">
+              <h2 style="text-align: center"> comments </h2>
+          <hr class="hr-line">
+
+          <table class="table">
+            <tr>
+              <td><img src="https://placeimg.com/50/50/people" alt="..."><br>Craig</td>
+              <td class="sailing-info">
+                <p class="comment">Lorem ipsum dolor sit amet, nec assum fierent disputando id, ut eos mutat mentitum scriptorem.
+                Et nec soleat feugiat vivendo, his ad accusam persecuti. Eos id reque vocent tibique.</p>
+                <p class="comment comment-date-time" align="right">
+                  Wednesday, May 4, 2016 , 5:30 PM
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="https://placeimg.com/50/50/people" alt="..."><br>Roger</td>
+              <td class="sailing-info">
+                <p class="comment">Lorem ipsum dolor sit amet, nec assum fierent disputando id, ut eos mutat mentitum scriptorem.
+                  Et nec soleat feugiat vivendo, his ad accusam persecuti. Eos id reque vocent tibique.</p>
+                <p class="comment comment-date-time" align="right">
+                  Wednesday, May 4, 2016 , 5:30 PM
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td><img src="https://placeimg.com/50/50/people" alt="..."><br>Emy</td>
+              <td class="sailing-info">
+                <p class="comment">Lorem ipsum dolor sit amet, nec assum fierent disputando id, ut eos mutat mentitum scriptorem.
+                  Et nec soleat feugiat vivendo, his ad accusam persecuti. Eos id reque vocent tibique.</p>
+                <p class="comment comment-date-time" align="right">
+                  Wednesday, May 4, 2016 , 5:30 PM
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+        <div class="col-md-3">
+          <img class="avatar" src="https://placeimg.com/240/270/tech" alt="..."><br><br>
+          <a href=""><h3 style="text-align: center">Royal Caribbean
+            Allure of the Seas</h3></a>
+          <br><br>
+          <div style="text-align: center">
+            <a href="" class="btn btn-primary">message vacationers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
