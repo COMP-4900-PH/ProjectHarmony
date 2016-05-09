@@ -89,7 +89,96 @@ users_list = [
 ]
 
 # Events seeding data
+# Mexican Fiesta, caribbean beach party, comedy club, live music, piano bar, karaoke, imax, water park, mini golf
+# Dodgeball, casino, cooking classes, atrium, mixologist competitions, bingo, art exhibitions, trivia,
+# Video arcade, volleyball, dance classes, basketball, ping pong, tennis
 
+events_list = [
+    [1, "Mexican Fiesta", '2016-08-07 18:00:00.000000', '2016-08-07 22:00:00.000000', "Ball room", "Come join the Mexican party!", 50, 1],
+    [2, "Caribbean Beach Party", '2016-08-08 17:00:00.000000', '2016-08-08 21:00:00.000000', "Main deck", "Join us for a caribbean beach party!!", 100, 1],
+    [6, "Karaoke", '2016-08-09 18:00:00.000000', '2016-08-09 24:00:00.000000', "Main Bar", "Come join us for a night of karaoke and fun!", 60, 1],
+
+    [2, "Caribbean Beach Party", '2016-08-12 17:00:00.000000', '2016-08-12 21:00:00.000000', "Main deck", "Join us for a caribbean beach party!!", 100, 2],
+    [3, "Comdey Club Night", '2016-08-13 19:00:00.000000', '2016-08-13 23:00:00.000000', "Event Room 132", "Come and enjoy our comedy night!", 45, 2],
+    [17, "Trivia", '2016-08-14 16:00:00.000000', '2016-08-14 18:00:00.000000', "Even Room 823", "Test your knowledge at our trivia event!", 35, 2],
+
+    [3, "Comdey Club Night", '2016-08-13 19:00:00.000000', '2016-08-13 23:00:00.000000', "Event Room 132", "Come and enjoy our comedy night!", 45, 3],
+    [4, "Live Music", '2016-08-14 16:00:00.000000', '2016-08-14 19:00:00.000000', "Event Room 438", "Our live music night is a favorite amongst our guests!", 25, 3],
+    [19, "Dance Classes", '2016-08-15 16:00:00.000000', '2016-08-15 17:00:00.000000', "Dance Hall 3", "Ball room, tango, and waltz!", 40, 3],
+
+    [4, "Live Music", '2016-08-14 16:00:00.000000', '2016-08-14 19:00:00.000000', "Event Room 438", "Our live music night is a favorite amongst our guests!", 25, 4],
+    [5, "Piano Bar", '2016-08-15 12:00:00.000000', '2016-08-15 15:00:00.000000', "Music Hall", "The piano bar lets guests share their favorite pieces of music with one another!", 20, 4],
+    [8, "Water Park", '2016-08-16 8:00:00.000000', '2016-08-16 17:00:00.000000', "Water Park", "Bring the whole family out to enjoy our world class water park!", 300, 4],
+
+    [5, "Piano Bar", '2016-08-15 12:00:00.000000', '2016-08-15 15:00:00.000000', "Music Hall", "The piano bar lets guests share their favorite pieces of music with one another!", 20, 5],
+    [6, "Karaoke", '2016-08-16 18:00:00.000000', '2016-08-16 24:00:00.000000', "Main Bar", "Come join us for a night of karaoke and fun!", 60, 5],
+    [7, "IMAX", '2016-08-17 10:00:00.000000', '2016-08-17 12:00:00.000000', "IMAX Theatre", "Enjoy our large selection of IMAX movies in our state of the art facility!", 200, 5],
+
+    [6, "Karaoke", '2016-08-16 18:00:00.000000', '2016-08-16 24:00:00.000000', "Main Bar", "Come join us for a night of karaoke and fun!", 60, 6],
+    [7, "IMAX", '2016-08-17 10:00:00.000000', '2016-08-17 12:00:00.000000', "IMAX Theatre", "Enjoy our large selection of IMAX movies in our state of the art facility!", 200, 6],
+    [22, "Tennis", '2016-08-18 15:00:00.000000', '2016-08-18 18:00:00.000000', "Gym Auditorium 2", "Play tennis in our world class facility!", 30, 6],
+
+    [7, "IMAX", '2016-08-19 10:00:00.000000', '2016-08-19 12:00:00.000000', "IMAX Theatre", "Enjoy our large selection of IMAX movies in our state of the art facility!", 200, 7],
+    [8, "Water Park", '2016-08-20 8:00:00.000000', '2016-08-20 17:00:00.000000', "Water Park", "Bring the whole family out to enjoy our world class water park!", 300, 7],
+    [13, "Mixologist Competitions", '2016-08-21 18:00:00.000000', '2016-08-21 20:00:00.000000', "Event Room 842", "Test your drink making skills in a fun environment with our mixologist masters!", 20, 7],
+
+    [8, "Water Park", '2016-08-21 8:00:00.000000', '2016-08-21 17:00:00.000000', "Water Park", "Bring the whole family out to enjoy our world class water park!", 300, 8],
+    [9, "Mini Golf", '2016-08-22 10:00:00.000000', '2016-08-22 15:00:00.000000', "Mini Golf Course", "Enjoy 24 holes of mini golf fun!", 100, 8],
+    [21, "Ping Pong", '2016-08-23 11:00:00.000000', '2016-08-23 14:00:00.000000', "Gym Auditorium 1", "Join us to play ping pong, singles and doubles!", 20, 8],
+
+    [9, "Mini Golf", '2016-08-29 10:00:00.000000', '2016-08-29 15:00:00.000000', "Mini Golf Course", "Enjoy 24 holes of mini golf fun!", 100, 9],
+    [10, "Dodgeball", '2016-08-30 11:00:00.000000', '2016-08-30 15:00:00.000000', "Gym Auditorium 3", "Join our competitive dodgeball teams and don't miss out on the action!", 40, 9],
+    [14, "Bingo", '2016-08-31 17:00:00.000000', '2016-08-31 19:00:00.000000', "Event Room 346", "Our guests love our bingo nights, come and join the fun!", 75, 9],
+
+    [10, "Dodgeball", '2016-08-04 11:00:00.000000', '2016-08-04 15:00:00.000000', "Gym Auditorium 3", "Join our competitive dodgeball teams and don't miss out on the action!", 40, 10],
+    [11, "Casino", '2016-08-05 10:00:00.000000', '2016-08-05 24:00:00.000000', "Casino Hall", "Enjoy our large selection of casino games, we have everything to suit your needs!", 250, 10],
+    [20, "Basketball", '2016-08-06 12:00:00.000000', '2016-08-06 15:00:00.000000', "Gym Auditorium 2", "Pickup basketball, all ages wecome!", 30, 10],
+
+    [11, "Casino", '2016-08-27 10:00:00.000000', '2016-08-27 24:00:00.000000', "Casino Hall", "Enjoy our large selection of casino games, we have everything to suit your needs!", 250, 11],
+    [12, "Cooking Classes", '2016-08-28 16:00:00.000000', '2016-08-28 19:00:00.000000', "Event Room 278", "Join our world class chefs in creating a wide arange of international cuisine!", 15, 11],
+    [16, "Video Arcade", '2016-08-29 12:00:00.000000', '2016-08-29 20:00:00.000000', "Arcade Room 100", "Play the classics as well as the newest releases in our state of the art arcade room!", 50, 11],
+
+    [12, "Cooking Classes", '2016-09-03 16:00:00.000000', '2016-09-03 19:00:00.000000', "Event Room 278", "Join our world class chefs in creating a wide arange of international cuisine!", 15, 12],
+    [13, "Mixologist Competitions", '2016-09-04 18:00:00.000000', '2016-09-04 20:00:00.000000', "Event Room 842", "Test your drink making skills in a fun environment with our mixologist masters!", 20, 12],
+    [15, "Art Exhibitions", '2016-09-05 9:00:00.000000', '2016-09-05 14:00:00.000000', "Art Romm 124", "Come visit our world class art exhibition!", 110, 12],
+
+    [13, "Mixologist Competitions", '2016-09-10 18:00:00.000000', '2016-09-10 20:00:00.000000', "Event Room 842", "Test your drink making skills in a fun environment with our mixologist masters!", 20, 13],
+    [14, "Bingo", '2016-09-11 17:00:00.000000', '2016-09-11 19:00:00.000000', "Event Room 346", "Our guests love our bingo nights, come and join the fun!", 75, 13],
+    [18, "Volleyball", '2016-09-12 12:00:00.000000', '2016-09-12 15:00:00.000000', "Main Promenade", "Enjoy the sun and a friendly game of volleyball out on the main promenade!", 30, 13],
+
+    [14, "Bingo", '2016-09-18 17:00:00.000000', '2016-09-18 19:00:00.000000', "Event Room 346", "Our guests love our bingo nights, come and join the fun!", 75, 14],
+    [15, "Art Exhibitions", '2016-09-19 9:00:00.000000', '2016-09-19 14:00:00.000000', "Art Romm 124", "Come visit our world class art exhibition!", 110, 14],
+    [17, "Trivia", '2016-09-20 16:00:00.000000', '2016-09-20 18:00:00.000000', "Even Room 823", "Test your knowledge at our trivia event!", 35, 15],
+
+    [15, "Art Exhibitions", '2016-09-23 9:00:00.000000', '2016-09-23 14:00:00.000000', "Art Romm 124", "Come visit our world class art exhibition!", 110, 15],
+    [16, "Video Arcade", '2016-09-24 12:00:00.000000', '2016-09-24 20:00:00.000000', "Arcade Room 100", "Play the classics as well as the newest releases in our state of the art arcade room!", 50, 15],
+    [8, "Water Park", '2016-09-25 8:00:00.000000', '2016-09-25 17:00:00.000000', "Water Park", "Bring the whole family out to enjoy our world class water park!", 300, 15],
+
+    [16, "Video Arcade", '2016-09-24 12:00:00.000000', '2016-09-24 20:00:00.000000', "Arcade Room 100", "Play the classics as well as the newest releases in our state of the art arcade room!", 50, 16],
+    [17, "Trivia", '2016-09-25 16:00:00.000000', '2016-09-25 18:00:00.000000', "Even Room 823", "Test your knowledge at our trivia event!", 35, 16],
+    [3, "Comdey Club Night", '2016-09-26 19:00:00.000000', '2016-09-26 23:00:00.000000', "Event Room 132", "Come and enjoy our comedy night!", 45, 16],
+
+    [17, "Trivia", '2016-10-04 16:00:00.000000', '2016-10-04 18:00:00.000000', "Even Room 823", "Test your knowledge at our trivia event!", 35, 17],
+    [18, "Volleyball", '2016-10-05 12:00:00.000000', '2016-10-05 15:00:00.000000', "Main Promenade", "Enjoy the sun and a friendly game of volleyball out on the main promenade!", 30, 17],
+    [11, "Casino", '2016-10-06 10:00:00.000000', '2016-10-06 24:00:00.000000', "Casino Hall", "Enjoy our large selection of casino games, we have everything to suit your needs!", 250, 17],
+
+    [18, "Volleyball", '2016-10-01 12:00:00.000000', '2016-10-01 15:00:00.000000', "Main Promenade", "Enjoy the sun and a friendly game of volleyball out on the main promenade!", 30, 18],
+    [19, "Dance Classes", '2016-10-02 16:00:00.000000', '2016-10-02 17:00:00.000000', "Dance Hall 3", "Ball room, tango, and waltz!", 40, 18],
+    [9, "Mini Golf", '2016-10-03 10:00:00.000000', '2016-10-03 15:00:00.000000', "Mini Golf Course", "Enjoy 24 holes of mini golf fun!", 100, 18],
+
+    [19, "Dance Classes", '2016-09-03 16:00:00.000000', '2016-09-03 17:00:00.000000', "Dance Hall 3", "Ball room, tango, and waltz!", 40, 19],
+    [20, "Basketball", '2016-10-03 12:00:00.000000', '2016-10-03 15:00:00.000000', "Gym Auditorium 2", "Pickup basketball, all ages wecome!", 30, 19],
+    [8, "Water Park", '2016-10-04 8:00:00.000000', '2016-10-04 17:00:00.000000', "Water Park", "Bring the whole family out to enjoy our world class water park!", 300, 19],
+
+    [20, "Basketball", '2016-10-03 12:00:00.000000', '2016-10-03 15:00:00.000000', "Gym Auditorium 2", "Pickup basketball, all ages wecome!", 30, 20],
+    [21, "Ping Pong", '2016-10-04 11:00:00.000000', '2016-10-04 14:00:00.000000', "Gym Auditorium 1", "Join us to play ping pong, singles and doubles!", 20, 20],
+    [2, "Caribbean Beach Party", '2016-10-05 17:00:00.000000', '2016-10-05 21:00:00.000000', "Main deck", "Join us for a caribbean beach party!!", 100, 20],
+
+    [21, "Ping Pong", '2016-10-05 11:00:00.000000', '2016-10-05 14:00:00.000000', "Gym Auditorium 1", "Join us to play ping pong, singles and doubles!", 20, 21],
+    [22, "Tennis", '2016-10-06 15:00:00.000000', '2016-10-06 18:00:00.000000', "Gym Auditorium 2", "Play tennis in our world class facility!", 30, 21],
+    [1, "Mexican Fiesta", '2016-10-07 18:00:00.000000', '2016-10-07 22:00:00.000000', "Ball room", "Come join the Mexican party!", 50, 21],
+
+]
 
 # Event register seeding data
 
@@ -119,6 +208,16 @@ sailings_list.each do |official_id, destination_identifier, cruise_ship_name,
                   departure_date: departure_date, return_date: return_date,
                   port_of_origin: port_of_origin, port_of_destination: port_of_destination,
                   created_at: created_at, updated_at: updated_at)
+end
+
+
+# Populating events
+events_list.each do |creator_id, event_name, start_date, end_date, location,
+    description, max_participants, sailing_id |
+  Event.create( creator_id: creator_id, event_name: event_name,
+                start_date: start_date, end_date: end_date, location: location,
+                description: description, max_participants: max_participants,
+                sailing_id: sailing_id)
 end
 
 
