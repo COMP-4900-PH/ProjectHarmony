@@ -1,3 +1,4 @@
+
 <% days = (@sailing.departure_date.to_time.to_i - Date.today.to_time.to_i) / 60 / 60 / 24 %>
 <script>
   $('[data-toggle=tab]').click(function(){
@@ -553,4 +554,52 @@
 
 <!--List all demographic details from database when ready!-->
 <!--<br />-->
+
+<p id="notice"><%= notice %></p>
+
+<br />
+<h1><%= @sailing.cruise_ship_name %> sets sail in <%= @sailing.daysToSailing %> days and counting!</h1>
+<br />
+<h1>Details for <%= @sailing.cruise_ship_name %></h1>
+<br />
+<table>
+  <thead>
+  <tr>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <th>Ship Name</th>
+    <th>Company</th>
+    <th>Port of Origin</th>
+    <th>Port of Departure</th>
+    <th>Departure Date</th>
+    <th>Return Date</th>
+    <th>Offical ID</th>
+  </tr>
+      <tr>
+        <td><%= @sailing.cruise_ship_name %></td>
+        <td><%= @sailing.cruise_ship_company %></td>
+        <td><%= @sailing.port_of_origin %></td>
+        <td><%= @sailing.port_of_destination %></td>
+        <td><%= @sailing.departure_date.strftime("%B %d, %Y") %></td>
+        <td><%= @sailing.return_date.strftime("%B %d, %Y") %></td>
+        <td><%= @sailing.official_id %></td>
+      </tr>
+  </tbody>
+</table>
+<br />
+
+<h1>Events on <%= @sailing.cruise_ship_name %></h1>
+
+List all events from database when ready!
+<br />
+
+<h1>Demographic details for <%= @sailing.cruise_ship_name %></h1>
+
+List all demographic details from database when ready!
+<br />
+
 <%= link_to 'Back', sailings_path %>
