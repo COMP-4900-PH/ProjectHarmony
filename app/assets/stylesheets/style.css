@@ -372,6 +372,16 @@ a#loginButton img {
     text-align:center;
     padding-top:3em;
 }
+.banner2{
+    background: url("MultiCruise.jpg") no-repeat center top;
+    background-size:cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    min-height:410px;
+    text-align:center;
+    padding-top:3em;
+}
 .container_wrap{
     margin:0 auto;
     width:70%;
@@ -1244,7 +1254,8 @@ ul.vision li{
     text-transform: uppercase;
 }
 ul.vision li.desc{
-    font-size:0.8125em;
+    font-size:0.8500em;
+    color: #E89007;
 }
 ul.vision li.desc img, ul.star1 li img{
     vertical-align:sub;
@@ -1274,7 +1285,11 @@ ul.item_module li.module_left{
     padding: 15px 0 0 0;
 }
 ul.item_module li.module_right{
-    overflow:hidden;
+    overflow: hidden;
+    float: right;
+    display: inline;
+
+
 }
 ul.item_module li.module_left img{
     border-radius:100px;
