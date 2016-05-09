@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+########## Creating Test Data ##########
 
 # Sailings seeding data
 sailings_list = [
@@ -61,22 +56,61 @@ sailings_list = [
 ]
 
 # Users seeding data
-# users_list = [
-#     ["luke_skywalker@gmail.com", "password", "t", '2016-11-20', '2016-11-20', 5, '2016-11-20', '2016-11-20', "123", "123456", '2016-11-20', '2016-11-20', "Lukey"]
-# ]
-#
-# users_list.each do |email, encrypted_password, reset_password_token,
-#     reset_password_sent_at, remember_created_at, sign_in_count,
-#     current_sign_in_at, last_sign_in_at, current_sign_in_ip,
-#     last_sign_in_ip, created_at, updated_at, username|
-#   User.create( email: email, encrypted_password: encrypted_password, reset_password_token: reset_password_token,
-#                reset_password_sent_at: reset_password_sent_at, remember_created_at: remember_created_at,
-#                sign_in_count: sign_in_count, current_sign_in_at: current_sign_in_at,
-#                last_sign_in_at: last_sign_in_at, current_sign_in_ip:current_sign_in_ip,
-#                last_sign_in_ip: last_sign_in_ip, created_at: created_at,
-#                updated_at: updated_at, username: username)
-# end
+users_list = [
+    ["Luke Skywalker", "lukeskywalker@gmail.com", "password", "Luke"],
+    ["Leia Organa", "leiaorgana@gmail.com", "password", "Leia"],
+    ["Darth Vader", "darthvader@gamil.com", "password", "Darth"],
+    ["Luke Skywalker", "lukeskywalker@gmail.com", "password", "Luke"],
+    ["Han Solo", "hansolo@gmail.com", "password", "Han"],
+    ["yoda", "yoda@gmail.com", "password", "Yoda"],
+    ["Darth Maul", "darthmaul@gmail.com", "password", "Maul"],
+    ["Boba Fett", "bobafett@gmail.com", "password", "BobaFett"],
+    ["Obi-Wan Kenobi", "obiwankenobi@gmail.com", "password", "OldBen"],
+    ["Chewbacca", "chewbacca@gmail.com", "password", "Chewie"],
+    ["Padme Amidala", "padmeamidala@gmail.com", "password", "Padme"],
+    ["Jabba the Hutt", "jabba@gmail.com", "password", "Jabba"],
+    ["Mace Windu", "macewindu@gmail.com", "password", "Windu"],
+    ["Lando Calrissian", "landocalrissian@gmail.com", "password", "Lando"],
+    ["Wedge Antilles", "wedgeantilles@gmail.com", "password", "Wedge"],
+    ["Jar Jar Binks", "jarjar@gmail.com", "password", "JarJar"],
+    ["R2D2", "r2d2@gmail.com", "password", "R2D2"],
+    ["C-3PO", "c-3pO@gmail.com", "password", "C-3PO"],
+    ["Kylo Ren", "kyloren@gmail.com", "password", "KyloRen"],
+    ["Emperor Palpatine", "palpatine@gmail.com", "password", "EmperorPalpatine"],
+    ["Rey", "rey@gmail.com", "password", "Rey"],
+    ["Finn", "Finn@gmail.com", "password", "Finn"],
+    ["Supreme Leader Snoke", "snoke@gmail.com", "password", "Snoke"],
+    ["Maz Kanata", "mazkanata@gmail.com", "password", "Maz"],
+    ["Count Dooku", "countdooku@gmail.com", "password", "CountDooku"],
+    ["Poe Dameron", "poedameron@gmail.com", "password", "Poe"],
+    ["Admiral Ackbar", "admiralackbar@gmail.com", "password", "AdmiralAckbar"],
+    ["Grand Moff Tarkin", "grandmofftarkin@gmail.com", "password", "GrandMoffTarkin"],
+    ["Owen Lars", "owenlars@gmail.com", "password", "OwenLars"],
+]
 
+# Events seeding data
+
+
+# Event register seeding data
+
+
+# Party register sedding data
+
+
+# Non registered users seeding data
+
+
+# Detailed user seeding data
+
+
+########## Populating Database ##########
+
+# Populating users
+users_list.each do |name, email, password, username|
+  User.create( name: name, email: email, password: password, username: username)
+end
+
+# Populating sailings
 sailings_list.each do |official_id, destination_identifier, cruise_ship_name,
     cruise_ship_company, departure_date, return_date, port_of_origin,
     port_of_destination, created_at, updated_at|
@@ -87,3 +121,14 @@ sailings_list.each do |official_id, destination_identifier, cruise_ship_name,
                   created_at: created_at, updated_at: updated_at)
 end
 
+
+# Populating event register
+
+
+# Populating party register
+
+
+# Populating non registered users
+
+
+# Populating detailed user
