@@ -1,0 +1,27 @@
+.sailing {
+    background-color: #f3f1f2;
+    min-height: 100vh;
+}
+
+.sailing-one {
+    margin-top: 3em;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.nav-tabs {
+    padding-left: 15px;
+    margin-bottom: 0;
+    border: none;
+}
+.tab-content {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.ship {
+    padding: 5px;
+    margin-top: 3em;
+    margin-right: 1em;
+}
