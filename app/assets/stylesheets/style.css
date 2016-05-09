@@ -1198,7 +1198,7 @@ p.m_5{
 }
 .inner_wrap, .inner_wrap2{
     background:#fff;
-    padding:2em 1em 1em;
+    padding:1em 1em 1em;
     text-align:center;
     border-bottom-left-radius: 3px;
     -webkit-border-bottom-left-radius: 3px;
@@ -1214,7 +1214,7 @@ p.m_5{
     font-size: 0.85em;
     font-weight: 100;
     line-height: 1.3em;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
 }
 ul.star1{
     padding:0;
@@ -1283,7 +1283,7 @@ ul.vision li.desc a{
 }
 .inner_wrap1 {
     background: #fff;
-    padding:2em 1em 1em;
+    padding:1em 1em 1em;
     border-bottom-left-radius: 3px;
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-bottom-left-radius: 3px;
