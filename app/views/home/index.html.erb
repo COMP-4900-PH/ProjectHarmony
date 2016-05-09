@@ -4,8 +4,7 @@
     <h1>What are you looking for?</h1>
     <div class="dropdown-buttons">
       <div class="dropdown-button">
-        <% sail = Sailing.uniq.pluck(:destination_identifier) %>
-        <%= select_tag(:id, options_for_select(sail), {class: "dropdown", tabindex: "9", "data-settings" => '{"wrapperClass":"flat"}' })  %>
+        <%= select_tag(:id, options_for_select(@uniqueSailings), {class: "dropdown", tabindex: "9", "data-settings" => '{"wrapperClass":"flat"}' })  %>
       </div>
       <div class="dropdown-button">
         <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
@@ -74,7 +73,7 @@
     </div>
   </div>
 </div>
-<div class="content_middle">
+<!--<div class="content_middle">
   <div class="container">
     <div class="content_middle_box">
       <div class="top_grid">
@@ -84,7 +83,7 @@
             <div class="view view-first">
               <div class="index_img"><%= image_tag "pic1.jpg", :class => "img-responsive" %></div>
               <i class="home"></i>
-              <!--<div class="sale">$2.980</div>-->
+              <!--<div class="sale">$2.980</div>
               <div class="mask">
                 <div class="info"><i class="search"> </i><%= link_to "Cruise Details", sailing, :style => "color:white" %></div>
                 <div class="info_for_mask">
@@ -94,7 +93,7 @@
                   <p><%= sailing.return_date.strftime("%B %d, %Y") %></p></div>
                 <ul class="mask_img">
                   <!--<li class="star"><%= image_tag "star.png" %></li>
-                  <li class="set"><%= image_tag "set.png" %></li>-->
+                  <li class="set"><%= image_tag "set.png" %></li>
                   <div class="clearfix"> </div>
                 </ul>
               </div>
@@ -103,7 +102,7 @@
               <h3><%= sailing.cruise_ship_company %></h3>
               <ul class="star1">
                 <h4 class="green"><%= sailing.cruise_ship_name %></h4>
-                <!--<li><a href="#"> <%= image_tag "star1.png" %>(236)</a></li>-->
+                <!--<li><a href="#"> <%= image_tag "star1.png" %>(236)</a></li>
                 <li><a href="#">Passengers (236)</a></li>
               </ul>
             </div>
@@ -111,6 +110,69 @@
         </div>
         <% end %>
         <div class="clearfix"> </div>
+      </div>-->
+      <div class="container">
+        <div class="middle_grid wow fadeInUp" data-wow-delay="0.4s">
+          <% @sailings.where('id < 11').find_each() do |sailing| %>
+                  <!-- LEFT SECTION OF PANEL -->
+                  <div class="col-md-6 index-grids">
+                    <div class="grid1">
+                      <div class="view view-first">
+                        <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+                        <div class="mask">
+                          <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
+                          <div class="inner_wrap1">
+                            <h4>Registered Events</h4>
+                            <table class="table">
+                              <thead>
+                              <tr>
+                                <th>Host</th>
+                                <th>Age Limit</th>
+                                <th>Event</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <td>Matt Wiseman</td>
+                                <td>19+ only</td>
+                                <td>Poker</td>
+                              </tr>
+                              <tr>
+                                <td>Sam Salvail</td>
+                                <td>All ages</td>
+                                <td>Making Balloon Animals</td>
+                              </tr>
+                              <tr>
+                                <td>Mike Lewis</td>
+                                <td>16 and up</td>
+                                <td>Rock Climbing</td>
+                              </tr>
+                              </tbody>
+                            </table>
+                            <label class="btn1 btn-3 btn-2g">
+                              <%= link_to 'Full Details', sailing %>
+                            </label>
+                          </div>
+                            <div class="clearfix"> </div>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="inner_wrap">
+                        <ul class="star1">
+                          <li class="module_left">
+                            <h3><%= sailing.cruise_ship_company %></h3>
+                            <h2><%= sailing.cruise_ship_name %></h2>
+                            <h4>No. of Cruisers: 1,899</h4>
+                            <h4>Demographics: Average age of 42</h4>
+                            <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %></h4>
+                            <h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+          <% end %>
+        </div>
       </div>
         <!--<div class="col-md-3 index-grids">
           <div class="grid1">

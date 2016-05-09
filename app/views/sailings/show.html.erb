@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<% days = (@sailing.departure_date.to_time.to_i - Date.today.to_time.to_i) / 60 / 60 / 24 %>
 <br />
-<h1><%= @sailing.cruise_ship_name %> sets sail in <%= days %> days and counting!</h1>
+<h1><%= @sailing.cruise_ship_name %> sets sail in <%= @sailing.daysToSailing %> days and counting!</h1>
 <br />
 <h1>Details for <%= @sailing.cruise_ship_name %></h1>
 <br />

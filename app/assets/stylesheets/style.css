@@ -666,6 +666,21 @@ a#loginButton img {
     -moz-text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
     -o-text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
 }
+.btn-3{
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -o-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    transform: translateY(100px);
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
 .btn-2g:hover {
     top: 2px;
 }
@@ -921,6 +936,8 @@ ul.filter li a i.icon5{
     -webkit-box-shadow: 0 1px 0px #E6E5E5;
     -moz-box-shadow: 0 1px 0px #E6E5E5;
     -o-box-shadow: 0 1px 0px #E6E5E5;
+    border:1px solid black;
+    border-radius: 3px;
 }
 .sale {
     font-size: 14px;
@@ -1160,6 +1177,7 @@ p.m_5{
     opacity: 1;
 }
 .view-first:hover h2,
+.view-first:hover label,
 .view-first:hover ul.mask_img,
 .view-first:hover a.info {
     -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -1180,7 +1198,7 @@ p.m_5{
 }
 .inner_wrap, .inner_wrap2{
     background:#fff;
-    padding:2em 1em 1em;
+    padding:1em 1em 1em;
     text-align:center;
     border-bottom-left-radius: 3px;
     -webkit-border-bottom-left-radius: 3px;
@@ -1196,7 +1214,7 @@ p.m_5{
     font-size: 0.85em;
     font-weight: 100;
     line-height: 1.3em;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
 }
 ul.star1{
     padding:0;
@@ -1265,7 +1283,7 @@ ul.vision li.desc a{
 }
 .inner_wrap1 {
     background: #fff;
-    padding:2em 1em 1em;
+    padding:1em 1em 1em;
     border-bottom-left-radius: 3px;
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-bottom-left-radius: 3px;
