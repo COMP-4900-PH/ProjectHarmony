@@ -388,6 +388,10 @@ a#loginButton img {
     background-color:rgba(255, 255, 255, 0.8);
     border-radius: 30px;
 }
+.container_wrap2{
+    margin:0 auto;
+    width:70%;
+}
 .dropdown-buttons{
     margin-bottom: 1em;
 }
