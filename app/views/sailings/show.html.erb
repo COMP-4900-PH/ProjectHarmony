@@ -170,13 +170,13 @@
 
             <div class="col-md-8">
               <div class="tabbable">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs" id="sailTabs">
                   <li class="active"><a href="#tab1" data-toggle="tab">Sailing Details</a></li>
                   <li><a href="#tab2" data-toggle="tab">Vacationer Info</a></li>
                   <li><a href="#tab3" data-toggle="tab">Sailing Events</a></li>
                 </ul>
 
-                <div class="tab-content">
+                <div class="tab-content my-tab">
 
                   <div class="tab-pane active" id="tab1">
                     </br>
@@ -189,49 +189,59 @@
                     <h4><%= @sailing.cruise_ship_name %> sets sail in <%= days %> days and counting!</h4>
                     </br>
                     <h3>Sail Synopsis</h3>
-                    <p>Lorem ipsum dolor sit amet, nec assum fierent disputando id, ut eos mutat mentitum scriptorem.
-                      Et nec soleat feugiat vivendo</p>
+                    <p>If you’re looking to make an exotic destination your next vacation, let’s talk about the ‘how’ and ‘why’ of Hawaii.
+                      The answers are as follows: visit Hawaii on a Carnival cruise (of course), and… visit Hawaii because
+                      this place is simply spectacular! Take a Hawaii cruise and explore exotic locations spread across
+                      four islands — the Hawaiian island chain is home to names you know, like Maui, Kona and Honolulu.
+                      These spots feature postcard-worthy waterfalls, volcanoes and some of the world’s most stunning, sunning beaches.
+                      You’ll find these spread across an island chain so otherworldly that you may forget you’re in the states!
+                      Best of all, that postcard you’re sure to send home will require only domestic postage.
+                    </p>
                     </br>
                     <h3>Brief Itinerary</h3>
                       <ul>
-                        <li>First Stop: Place 1</li>
-                        <li>Second Stop: Place 2</li>
-                        <li>Third Stop: Place 3</li>
+                        <li>Depart: Vancouver</li>
+                        <li>Port 2: Hilo</li>
+                        <li>Port 3: Kona</li>
+                        <li>Port 4: Kauai</li>
+                        <li>Port 5: Maui</li>
+                        <li>Destination: Honolulu</li>
                       </ul>
                   </div>
 
                   <div class="tab-pane" id="tab2">
-                    <table class="table">
-                      <thead>
-                      <tr>
-                        <th>Number of Cruisers</th>
-                        <th>Average Age of Cruiser</th>
-                        <th>Registered Events</th>
-                        <th>Info...</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr>
-                        <td>1,8999</td>
-                        <td>38</td>
-                        <td>4</td>
-                        <td>Stuff in latin..</td>
-                      </tr>
-                      </tbody>
-                    </table>
+                    <!--<table class="table">-->
+                      <!--<thead>-->
+                      <!--<tr>-->
+                        <!--<th>Number of Cruisers</th>-->
+                        <!--<th>Average Age of Cruiser</th>-->
+                        <!--<th>Registered Events</th>-->
+                        <!--<th>Info...</th>-->
+                      <!--</tr>-->
+                      <!--</thead>-->
+                      <!--<tbody>-->
+                      <!--<tr>-->
+                        <!--<td>1,8999</td>-->
+                        <!--<td>38</td>-->
+                        <!--<td>4</td>-->
+                        <!--<td>Stuff in latin..</td>-->
+                      <!--</tr>-->
+                      <!--</tbody>-->
+                    <!--</table>-->
                     </br>
                     <div class="container-fluid">
                       <div class="row" id="mini-charts">
-                        <div class="col-md-6 col-sm-4"><h2>Dashboard Example</h2></div>
+                        <div class="col-md-6 col-sm-4"><h2>Who's on the boat?</h2></div>
                         <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-0 hidden-xs panel sparklines">
-                          <div class="row collapse in" id="bars">
-                            <div class="col-xs-1 col-xs-offset-3">Hourly<br><span class="fa fa-user fa-2x"></span></div>
-                            <div class="col-xs-2 border-right"><div id="bar1" class="bar-chart"></div></div>
-                            <div class="col-xs-1">Daily<br><span class="fa fa-bolt fa-2x"></span></div>
-                            <div class="col-xs-2 border-right"><div id="bar2" class="bar-chart"></div></div>
-                            <div class="col-xs-1">Earnings<br><span class="fa fa-usd fa-2x"></span></div>
-                            <div class="col-xs-2"><div id="bar3" class="bar-chart"></div></div>
-                          </div>
+                          <!--<div class="row">-->
+                            <!--<div class="col-xs-1">Total Guests<br>-->
+                              <!--<span class="fa fa-user fa-2x"></span></div>-->
+                            <!--<div class="col-xs-2 border-right"></div>-->
+                            <!--<div class="col-xs-1">Daily<br><span class="fa fa-bolt fa-2x"></span></div>-->
+                            <!--<div class="col-xs-2 border-right"><div id="bar2" class="bar-chart"></div></div>-->
+                            <!--<div class="col-xs-1">Earnings<br><span class="fa fa-usd fa-2x"></span></div>-->
+                            <!--<div class="col-xs-2"><div id="bar3" class="bar-chart"></div></div>-->
+                          <!--</div>-->
                           <div class="row collapse" id="pies">
                             <div class="col-xs-1 col-xs-offset-3">Ratio</div>
                             <div class="col-xs-2 border-right"><div id="p1" class="pie-chart"></div></div>
@@ -242,17 +252,17 @@
                           </div>
                         </div>
                       </div>
-                      <div class="btn-group pull-right hidden-xs">
-                        <button class="btn btn-default btn-xs" data-toggle="collapse" data-target="#pies" data-parent="#mini-charts">Pie charts</button>
-                        <button class="btn btn-default btn-xs" data-toggle="collapse" data-target="#bars" data-parent="#mini-charts">Bar charts</button>
-                      </div>
+                      <!--<div class="btn-group pull-right hidden-xs">-->
+                      <!--<button class="btn btn-default btn-xs" data-toggle="collapse" data-target="#pies" data-parent="#mini-charts">Pie charts</button>-->
+                      <!--<button class="btn btn-default btn-xs" data-toggle="collapse" data-target="#bars" data-parent="#mini-charts">Bar charts</button>-->
+                    <!--</div>-->
                       <ul class="nav nav-tabs" id="adminTab">
-                        <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
-                        <li><a data-toggle="tab" href="#revenue">Revenue</a></li>
-                        <li><a data-toggle="tab" href="#network">Network</a></li>
+                        <li class="active"><a data-toggle="tab" href="#network">Demographics</a></li>
+                        <!--<li><a data-toggle="tab" href="#revenue">Revenue</a></li>-->
+                        <!--<li><a data-toggle="tab" href="#summary">Summary</a></li>-->
                       </ul>
                       <div class="tab-content">
-                        <div class="tab-pane active" id="summary">
+                        <div class="tab-pane" id="summary">
                           <div class="row">
                             <div class="col-sm-4">
                               <h4>Active users</h4>
@@ -273,44 +283,44 @@
                               </div>
                             </div><!--/col-4-->
                             <div class="col-sm-8">
-                              <h4 class="text-center">
-                                <div class="btn-group btn-toggle realtime">
-                                  <button class="btn btn-xs btn-default">off</button>
-                                  <button class="btn btn-xs btn-success active">live</button>
-                                </div>
-                              </h4>
-                              <div id="chart1" class="big-chart"></div>
+                              <!--<h4 class="text-center">-->
+                                <!--<div class="btn-group btn-toggle realtime">-->
+                                  <!--<button class="btn btn-xs btn-default">off</button>-->
+                                  <!--<button class="btn btn-xs btn-success active">live</button>-->
+                                <!--</div>-->
+                              <!--</h4>-->
+                              <!--<div id="chart1" class="big-chart"></div>-->
                             </div><!--/col-8-->
                           </div><!--/row-->
 
                           <hr>
 
-                          <div class="row">
-                            <div class="col-sm-12">
-                              <div class="row">
-                                <div class="col-md-3">
-                                  <div class="well">
-                                    <h4 class="text-danger"><span class="label label-danger pull-right">- 9%</span> New Users </h4>
-                                  </div>
-                                </div>
-                                <div class="col-md-3">
-                                  <div class="well">
-                                    <h4 class="text-success"><span class="label label-success pull-right">+ 3%</span> Returning </h4>
-                                  </div>
-                                </div>
-                                <div class="col-md-3">
-                                  <div class="well">
-                                    <h4 class="text-primary"><span class="label label-primary pull-right">201</span> Sales </h4>
-                                  </div>
-                                </div>
-                                <div class="col-md-3">
-                                  <div class="well">
-                                    <h4 class="text-success"><span class="label label-success pull-right">+ 24%</span> Pageviews </h4>
-                                  </div>
-                                </div>
-                              </div><!--/row-->
-                            </div><!--/col-12-->
-                          </div><!--/row-->
+                          <!--<div class="row">-->
+                            <!--<div class="col-sm-12">-->
+                              <!--<div class="row">-->
+                                <!--<div class="col-md-3">-->
+                                  <!--<div class="well">-->
+                                    <!--<h4 class="text-danger"><span class="label label-danger pull-right">- 9%</span> New Users </h4>-->
+                                  <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-3">-->
+                                  <!--<div class="well">-->
+                                    <!--<h4 class="text-success"><span class="label label-success pull-right">+ 3%</span> Returning </h4>-->
+                                  <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-3">-->
+                                  <!--<div class="well">-->
+                                    <!--<h4 class="text-primary"><span class="label label-primary pull-right">201</span> Sales </h4>-->
+                                  <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-3">-->
+                                  <!--<div class="well">-->
+                                    <!--<h4 class="text-success"><span class="label label-success pull-right">+ 24%</span> Pageviews </h4>-->
+                                  <!--</div>-->
+                                <!--</div>-->
+                              <!--</div>&lt;!&ndash;/row&ndash;&gt;-->
+                            <!--</div>&lt;!&ndash;/col-12&ndash;&gt;-->
+                          <!--</div>&lt;!&ndash;/row&ndash;&gt;-->
 
                         </div><!--/pane stats-->
 
@@ -368,107 +378,107 @@
                         </div><!--/pane rev-->
 
                         <!--/pane network-->
-                        <div class="tab-pane" id="network">
+                        <div class="tab-pane active" id="network">
                           <div class="container-fluid">
-                            <h4 class="text-center">Network Statistics</h4>
+                            <h4 class="text-center">Age Groups</h4>
                             <div class="row">
                               <div class="col-sm-3 col-xs-6">
                                 <div id="donut1" class="donut"></div>
-                                <div class="donut-label">24</div>
-                                <h4 class="text-center">blocks</h4>
+                                <div class="donut-label">790</div>
+                                <h4 class="text-center">18-25</h4>
                               </div>
                               <div class="col-sm-3 col-xs-6">
                                 <div id="donut2" class="donut"></div>
-                                <div class="donut-label">189</div>
-                                <h4 class="text-center">requests</h4>
+                                <div class="donut-label">345</div>
+                                <h4 class="text-center">26-35</h4>
                               </div>
                               <div class="col-sm-3 col-xs-6">
                                 <div id="donut3" class="donut"></div>
-                                <div class="donut-label">4</div>
-                                <h4 class="text-center">errors</h4>
+                                <div class="donut-label">180</div>
+                                <h4 class="text-center">36-54</h4>
                               </div>
                               <div class="col-sm-3 col-xs-6">
                                 <div id="donut4" class="donut"></div>
-                                <div class="donut-label">29</div>
-                                <h4 class="text-center">bursts</h4>
+                                <div class="donut-label">345</div>
+                                <h4 class="text-center">55+</h4>
                               </div>
                             </div><!--/row-->
 
                             <hr>
 
-                            <h4>Storage Space</h4>
+                            <h4>Total Guests</h4>
                             <div class="progress progress-sm">
                               <div class="progress-bar progress-bar-info" style="width:30%;"></div>
                             </div>
-                            <h6>2.85 GB of <strong>15 GB</strong></h6>
+                            <h6> 1560 of <strong>4000</strong></h6>
 
                             <hr>
 
-                            <h4>Bandwidth</h4>
-                            <div class="progress progress-sm">
-                              <div class="progress-bar progress-bar-info" style="width:73%;"></div>
-                            </div>
-                            <h6>39.4 GB of <strong>50 GB</strong></h6>
+                            <!--<h4>Bandwidth</h4>-->
+                            <!--<div class="progress progress-sm">-->
+                              <!--<div class="progress-bar progress-bar-info" style="width:73%;"></div>-->
+                            <!--</div>-->
+                            <!--<h6>39.4 GB of <strong>50 GB</strong></h6>-->
 
                           </div><!--/container-->
                         </div><!--/pane network-->
                       </div>
                     </div>
 
-                    <div class="container-fluid">
-                      <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                          <a href="javascript:;" class="dashboard-block">
-                            <div class="rotate">
-                              <i class="fa fa-money"></i>
-                            </div>
-                            <div class="details">
-                              <span class="title">Total Revenue</span>
-                              <span class="sub">$103K</span>
-                            </div><!--/details-->
-                            <i class="fa fa-chevron-right fa-2x more"></i>
-                          </a><!--/dashboard-block1-->
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                          <a href="javascript:;" class="dashboard-block">
-                            <div class="rotate">
-                              <i class="fa fa-tachometer"></i>
-                            </div>
-                            <div class="details">
-                              <span class="title">Burst Speed</span>
-                              <span class="sub">4K MBPS</span>
-                            </div><!--/details-->
-                            <i class="fa fa-chevron-right fa-2x more"></i>
-                          </a><!--/dashboard-block2-->
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                          <a href="javascript:;" class="dashboard-block">
-                            <div class="rotate">
-                              <i class="fa fa-users"></i>
-                            </div>
-                            <div class="details">
-                              <span class="title">Total Visitors</span>
-                              <span class="sub">28K</span>
-                            </div><!--/details-->
-                            <i class="fa fa-chevron-right fa-2x more"></i>
-                          </a><!--/dashboard-block3-->
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                          <a href="javascript:;" class="dashboard-block">
-                            <div class="rotate">
-                              <i class="fa fa-user"></i>
-                            </div>
-                            <div class="details">
-                              <span class="title">New Signups</span>
-                              <span class="sub">83</span>
-                            </div><!--/details-->
-                            <i class="fa fa-chevron-right fa-2x more"></i>
-                          </a><!--/dashboard-block4-->
-                        </div>
-                      </div><!--/row-->
-                    </div>
+                    <!--<div class="container-fluid">-->
+                      <!--<div class="row">-->
+                        <!--<div class="col-md-3 col-sm-6">-->
+                          <!--<a href="javascript:;" class="dashboard-block">-->
+                            <!--<div class="rotate">-->
+                              <!--<i class="fa fa-money"></i>-->
+                            <!--</div>-->
+                            <!--<div class="details">-->
+                              <!--<span class="title">Total Revenue</span>-->
+                              <!--<span class="sub">$103K</span>-->
+                            <!--</div>&lt;!&ndash;/details&ndash;&gt;-->
+                            <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
+                          <!--</a>&lt;!&ndash;/dashboard-block1&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3 col-sm-6">-->
+                          <!--<a href="javascript:;" class="dashboard-block">-->
+                            <!--<div class="rotate">-->
+                              <!--<i class="fa fa-tachometer"></i>-->
+                            <!--</div>-->
+                            <!--<div class="details">-->
+                              <!--<span class="title">Burst Speed</span>-->
+                              <!--<span class="sub">4K MBPS</span>-->
+                            <!--</div>&lt;!&ndash;/details&ndash;&gt;-->
+                            <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
+                          <!--</a>&lt;!&ndash;/dashboard-block2&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3 col-sm-6">-->
+                          <!--<a href="javascript:;" class="dashboard-block">-->
+                            <!--<div class="rotate">-->
+                              <!--<i class="fa fa-users"></i>-->
+                            <!--</div>-->
+                            <!--<div class="details">-->
+                              <!--<span class="title">Total Visitors</span>-->
+                              <!--<span class="sub">28K</span>-->
+                            <!--</div>&lt;!&ndash;/details&ndash;&gt;-->
+                            <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
+                          <!--</a>&lt;!&ndash;/dashboard-block3&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="col-md-3 col-sm-6">-->
+                          <!--<a href="javascript:;" class="dashboard-block">-->
+                            <!--<div class="rotate">-->
+                              <!--<i class="fa fa-user"></i>-->
+                            <!--</div>-->
+                            <!--<div class="details">-->
+                              <!--<span class="title">New Signups</span>-->
+                              <!--<span class="sub">83</span>-->
+                            <!--</div>&lt;!&ndash;/details&ndash;&gt;-->
+                            <!--<i class="fa fa-chevron-right fa-2x more"></i>-->
+                          <!--</a>&lt;!&ndash;/dashboard-block4&ndash;&gt;-->
+                        <!--</div>-->
+                      <!--</div>&lt;!&ndash;/row&ndash;&gt;-->
+                    <!--</div>-->
 
-                    <hr>
+                    <!--<hr>-->
 
 
                   </div>
@@ -479,8 +489,8 @@
                       <tr>
                         <th>Event Name</th>
                         <th>Age Limit</th>
-                        <th>Host</th>
-                        <th>Requirements</th>
+                        <th>Host Name</th>
+                        <th>Description</th>
                       </tr>
                       </thead>
                       <tbody>
@@ -489,6 +499,24 @@
                         <td>19+</td>
                         <td>Matt Wiseman</td>
                         <td>Know how to play Texas Hold'm</td>
+                      </tr>
+                      <tr>
+                        <td>Pool</td>
+                        <td>30+</td>
+                        <td>Sam Salvail</td>
+                        <td>Snooker play style</td>
+                      </tr>
+                      <tr>
+                        <td>Comedy Show</td>
+                        <td>19+</td>
+                        <td>Mike Lewis</td>
+                        <td>Open mic comedy</td>
+                      </tr>
+                      <tr>
+                        <td>Water Sports</td>
+                        <td>All ages</td>
+                        <td>Jox Toyod</td>
+                        <td>Playing all kinds of different water sports</td>
                       </tr>
                       </tbody>
                     </table>
@@ -554,52 +582,5 @@
 
 <!--List all demographic details from database when ready!-->
 <!--<br />-->
-
-<p id="notice"><%= notice %></p>
-
-<br />
-<h1><%= @sailing.cruise_ship_name %> sets sail in <%= @sailing.daysToSailing %> days and counting!</h1>
-<br />
-<h1>Details for <%= @sailing.cruise_ship_name %></h1>
-<br />
-<table>
-  <thead>
-  <tr>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
-
-  <tbody>
-  <tr>
-    <th>Ship Name</th>
-    <th>Company</th>
-    <th>Port of Origin</th>
-    <th>Port of Departure</th>
-    <th>Departure Date</th>
-    <th>Return Date</th>
-    <th>Offical ID</th>
-  </tr>
-      <tr>
-        <td><%= @sailing.cruise_ship_name %></td>
-        <td><%= @sailing.cruise_ship_company %></td>
-        <td><%= @sailing.port_of_origin %></td>
-        <td><%= @sailing.port_of_destination %></td>
-        <td><%= @sailing.departure_date.strftime("%B %d, %Y") %></td>
-        <td><%= @sailing.return_date.strftime("%B %d, %Y") %></td>
-        <td><%= @sailing.official_id %></td>
-      </tr>
-  </tbody>
-</table>
-<br />
-
-<h1>Events on <%= @sailing.cruise_ship_name %></h1>
-
-List all events from database when ready!
-<br />
-
-<h1>Demographic details for <%= @sailing.cruise_ship_name %></h1>
-
-List all demographic details from database when ready!
-<br />
 
 <%= link_to 'Back', sailings_path %>

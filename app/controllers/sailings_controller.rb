@@ -10,6 +10,7 @@ class SailingsController < ApplicationController
   # GET /sailings/1
   # GET /sailings/1.json
   def show
+    @events = Event.all
   end
 
   # GET /sailings/new

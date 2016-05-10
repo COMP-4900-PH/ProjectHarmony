@@ -7,6 +7,7 @@
     margin-top: 3em;
     background-color: #ffffff;
     height: 100%;
+    border:1px solid #7B3000;
 }
 
 .nav-tabs {
@@ -15,7 +16,7 @@
     border: none;
 }
 .tab-content {
-    border: 1px solid #ddd;
+    border: 1px solid #E89007;
     border-radius: 4px;
     padding: 10px;
 }
@@ -24,4 +25,10 @@
     padding: 5px;
     margin-top: 3em;
     margin-right: 1em;
+}
+
+.tabbable li a{
+    border-bottom-color: transparent;
+    background-color: #ffc04d;
+    border:1px solid #E89007;
 }
