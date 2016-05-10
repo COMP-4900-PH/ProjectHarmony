@@ -65,3 +65,7 @@
 .comment-date-time {
     font-style: italic;
 }
+
+.events-tag :hover{
+    color: #31b0d5;
+}
