@@ -1,0 +1,10 @@
+----Killing unicorn socket
+
+sudo netstat -ap #find pid
+kill  <pid>
+
+----setting nginx.config
+
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -nfs "/home/deploy/apps/appname/current/config/nginx.conf" "/etc/nginx/sites-enabled/appname"
+sudo service nginx restart
