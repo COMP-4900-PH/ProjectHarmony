@@ -120,7 +120,17 @@ body a{
         text-align:center;
         top:15px;
     }
-    .nav li ul{
+    .n
+
+
+
+
+
+
+
+
+
+    av li ul{
         width:100%;
     }
     .menu ul{
@@ -371,6 +381,7 @@ a#loginButton img {
     min-height:410px;
     text-align:center;
     padding-top:3em;
+    padding-bottom: 3em;
 }
 .banner2{
     background: url("MultiCruise.jpg") no-repeat center top;
@@ -387,6 +398,8 @@ a#loginButton img {
     width:40%;
     background-color:rgba(255, 255, 255, 0.8);
     border-radius: 30px;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 .container_wrap2{
     margin:0 auto;
@@ -3314,4 +3327,8 @@ p.educate {
     .sb-search-input {
         height: 57px;
     }
+}
+.non-white:focus, .non-white:hover {
+    color: orange;
+    text-decoration: underline;
 }
