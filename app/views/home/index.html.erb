@@ -3,10 +3,13 @@
   <div class="container_wrap">
     <h1>What are you looking for?</h1>
     <div class="dropdown-buttons">
+
       <div class="dropdown-button">
         <%= select_tag(:id, options_for_select(@uniqueSailings), {class: "dropdown", tabindex: "9", "data-settings" => '{"wrapperClass":"flat"}' })  %>
       </div>
+
       <div class="dropdown-button">
+        <!--<%= select_tag(:id, options_for_select(@uniqueEvents), {class: "dropdown", tabindex: "25", "data-settings" => '{"wrapperClass":"flat"}' }) %>-->
         <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}'>
           <option value="0">Events</option>
           <option value="5">Tennis</option>
