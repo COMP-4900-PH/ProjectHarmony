@@ -15,11 +15,11 @@
     </div>
     <div class="search-box">
       <div id="sb-search" class="sb-search">
-        <form action="/forum/" accept-charset="UTF-8" method="get">
-          <input class="sb-search-input" placeholder="Enter your search term..." type="search" name="q" id="q" required="required">
-          <input class="sb-search-submit" type="submit" value="">
-          <span class="sb-icon-search"> </span>
-        </form>
+        <!--<form action="/forum/" accept-charset="UTF-8" method="get">-->
+          <!--<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="q" id="q" required="required">-->
+          <!--<input class="sb-search-submit" type="submit" value="">-->
+          <!--<span class="sb-icon-search"> </span>-->
+        <!--</form>-->
       </div>
     </div>
     <script>
@@ -31,6 +31,7 @@
     <div id="loginContainer">
       <% if !user_signed_in? %>
           <%= image_tag "login.png" %><%= link_to "Login", new_user_session_path %>
+          <%= link_to "Sign up", new_user_registration_path %>
       <% end %>
       <% if user_signed_in? %>
           Hello <%= current_user.name %>, <%= link_to "Logout", destroy_user_session_path, method: :delete %>
