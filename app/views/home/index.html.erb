@@ -116,14 +116,14 @@
       </div>-->
       <div class="container">
         <div class="middle_grid wow fadeInUp" data-wow-delay="0.4s">
-          <% @sailings.find_each(start:39) do |sailing| %>
+          <% @sailings.where('id < 11').find_each() do |sailing| %>
                   <!-- LEFT SECTION OF PANEL -->
                   <div class="col-md-6 index-grids">
                     <div class="grid1">
                       <div class="view view-first">
                         <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
                         <div class="mask">
-                          <h2 style="text-align: center">Cruise Info</h2>
+                          <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
                           <div class="inner_wrap1">
                             <h4>Registered Events</h4>
                             <table class="table">
@@ -164,11 +164,11 @@
                         <ul class="star1">
                           <li class="module_left">
                             <h3><%= sailing.cruise_ship_company %></h3>
-                            <h4><%= sailing.cruise_ship_name %></h4>
-                            <h4>Departure:</h4>
-                            <p><%= sailing.departure_date.strftime("%B %d, %Y") %></p><br/>
-                            <h4>Return:</h4>
-                            <p><%= sailing.return_date.strftime("%B %d, %Y") %></p>
+                            <h2><%= sailing.cruise_ship_name %></h2>
+                            <h4>No. of Cruisers: 1,899</h4>
+                            <h4>Demographics: Average age of 42</h4>
+                            <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %></h4>
+                            <h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>
                           </li>
                         </ul>
                       </div>
