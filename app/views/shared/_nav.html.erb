@@ -30,7 +30,7 @@
   <div class="col-sm-4 header_right">
     <div id="loginContainer">
       <% if !user_signed_in? %>
-          <%= image_tag "login.png" %><%= link_to "Login", new_user_session_path %>
+          <%= image_tag "login.png" %><%= link_to "Log in", new_user_session_path %>
           <%= link_to "Sign up", new_user_registration_path %>
       <% end %>
       <% if user_signed_in? %>
