@@ -385,6 +385,8 @@ a#loginButton img {
 .container_wrap{
     margin:0 auto;
     width:70%;
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
 }
 .dropdown-buttons{
     margin-bottom: 1em;
