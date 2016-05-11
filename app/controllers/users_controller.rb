@@ -2,9 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   def dashboard
     @user = User.find(current_user.id)
-    @events = Event.joins(:sailing).where(creator_id: current_user.id)
-    @test = Event.all
-    @sailingthings = Sailing.column_names
+    @events = Event.where(creator_id: current_user.id)
   end
 
   def profile

@@ -129,27 +129,21 @@
                             <table class="table">
                               <thead>
                               <tr>
-                                <th>Host</th>
-                                <th>Age Limit</th>
                                 <th>Event</th>
+                                <th>Description</th>
+                                <th>Participants</th>
                               </tr>
                               </thead>
                               <tbody>
-                              <tr>
-                                <td>Matt Wiseman</td>
-                                <td>19+ only</td>
-                                <td>Poker</td>
-                              </tr>
-                              <tr>
-                                <td>Sam Salvail</td>
-                                <td>All ages</td>
-                                <td>Making Balloon Animals</td>
-                              </tr>
-                              <tr>
-                                <td>Mike Lewis</td>
-                                <td>16 and up</td>
-                                <td>Rock Climbing</td>
-                              </tr>
+
+                              <% sailing.event.each do |event| %>
+                                  <tr>
+                                    <td><%= event.event_name %></td>
+                                    <td><%= event.description %></td>
+                                    <td><%= event.max_participants %></td>
+                                  </tr>
+                              <% end %>
+
                               </tbody>
                             </table>
                             <label class="btn1 btn-3 btn-2g">
