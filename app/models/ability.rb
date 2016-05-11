@@ -5,11 +5,11 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    can :read, :hidden => false
+    # can :read, :hidden => false
 
-    if User.exists?(user)
-      can :read
-    end
+    # if User.exists?(user)
+    #   can :read
+    # end
 
     if user.admin?
 
@@ -18,8 +18,8 @@ class Ability
 
     elsif user.detailedUsers?
 
-
       ########## Events #########
+
       # Detailed users can update events if they are the owner
       can :update, Event do |event|
         # this could cause problems as we are using foreign keys
@@ -40,12 +40,16 @@ class Ability
       # Detailed users can join events
       can :new, Event
 
+      # Detailed users can view the event page
+      can :index, Event
+
+      # Detailed users can view the show events page
+      can :show, Event
+
       ########## Sailings #########
+
       # Detailed users can join sailings
       can :new, Sailing
-
-      can :index, Event
-      can :show, Event
 
     else
 

@@ -80,6 +80,8 @@
 
                 </div>
                 <div class="tab-pane" id="tab2">
+
+                  <!----------- TAB 2 MY EVENTS ------------->
                   <table class="table">
                     <tr>
                       <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
@@ -133,7 +135,48 @@
                 </div>
 
                 <div class="tab-pane" id="tab3">
-                 <!-- HOSTED EVENTS -->
+
+                  <!----------- TAB 3 HOSTED EVENTS ------------->
+
+                  <table>
+                    <thead>
+                    <tr>
+                      <th colspan="3"></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                      <th>Event name</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Location</th>
+                      <th>Description</th>
+                      <th>Max Participants</th>
+                      <th>Ship Name</th>
+                    </tr>
+                    <!-- debug Event.select("*").joins(:users) -->
+
+                    <% @events.each do |event| %>
+                        <tr>
+
+                          <td><%= event.event_name %></td>
+                          <td><%= event.try(:start_date).try(:strftime, "%F %I:%M%p") %></td>
+                          <td><%= event.try(:end_date).try(:strftime, "%F %I:%M%p") %></td>
+                          <td><%= event.location %></td>
+                          <td><%= event.description %></td>
+                          <td><%= event.max_participants %></td>
+                          <td><%= event.sailing.cruise_ship_name %></td>
+                          <% if false %>
+                              <td><%= link_to 'Show', sailing %></td>
+                              <td><%= link_to 'Edit', edit_sailing_path(sailing) %></td>
+                              <td><%= link_to 'Destroy', sailing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                          <% end %>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                  </table>
+
                 </div>
               </div>
             </div>
