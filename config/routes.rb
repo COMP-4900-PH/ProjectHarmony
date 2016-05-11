@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # Route for user dashboard
   get 'dashboard' => 'users#dashboard', as: "user_dashboard"
   get 'profile/:id' => 'users#profile'
-  get 'profileForm/:id' => 'users#profileForm'
-  post 'profileForm' => 'users#editForm'
+   get 'editprofile/:id' => 'detailed_users#new'
+   post 'editprofile' => 'detailed_users#create'
 
   # Routes for user model
   devise_for :users
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :sailings
   # Routes for events model
   resources :events
+
+  resources :detailed_users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
