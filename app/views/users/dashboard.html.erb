@@ -184,8 +184,8 @@
         </div>
         <div class="col-lg-pull-8 col-lg-4  profile-info">
           <img class="avatar" src="https://placeimg.com/240/270/people" alt="..."><br>
-          <a href="/profile/<%=@user.id%>"><h2><%= current_user.name %></h2></a>
-          <a href="/profileForm/1"><h3>Edit Profile</h3></a>
+          <a  href="/profile/<%=@user.id%>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
+          <a  href="/editprofile/1"><span class="ship-name"><h3>Edit Profile</h3></span></a>
           <a href="/mailbox/inbox" class="btn btn-primary">Messages <span class="badge">7</span></a>
         </div>
       </div>

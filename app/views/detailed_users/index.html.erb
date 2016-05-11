@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Detailed Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detailed_users.each do |detailed_user| %>
+      <tr>
+        <td><%= link_to 'Show', detailed_user %></td>
+        <td><%= link_to 'Edit', edit_detailed_user_path(detailed_user) %></td>
+        <td><%= link_to 'Destroy', detailed_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detailed user', new_detailed_user_path %>
