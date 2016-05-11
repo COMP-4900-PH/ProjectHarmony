@@ -487,36 +487,22 @@
                       <thead>
                       <tr>
                         <th>Event Name</th>
-                        <th>Age Limit</th>
-                        <th>Host Name</th>
                         <th>Description</th>
+                        <th>Location</th>
+                        <th>Max Participants</th>
                       </tr>
                       </thead>
                       <tbody>
+
+                      <% @sailing.event.each do |event| %>
                       <tr>
-                        <td>Poker</td>
-                        <td>19+</td>
-                        <td>Matt Wiseman</td>
-                        <td>Know how to play Texas Hold'm</td>
+                        <td><%= event.event_name %></td>
+                        <td><%= event.description %></td>
+                        <td><%= event.location %></td>
+                        <td><%= event.max_participants %></td>
                       </tr>
-                      <tr>
-                        <td>Pool</td>
-                        <td>30+</td>
-                        <td>Sam Salvail</td>
-                        <td>Snooker play style</td>
-                      </tr>
-                      <tr>
-                        <td>Comedy Show</td>
-                        <td>19+</td>
-                        <td>Mike Lewis</td>
-                        <td>Open mic comedy</td>
-                      </tr>
-                      <tr>
-                        <td>Water Sports</td>
-                        <td>All ages</td>
-                        <td>Jox Toyod</td>
-                        <td>Playing all kinds of different water sports</td>
-                      </tr>
+                      <% end %>
+
                       </tbody>
                     </table>
                   </div>
