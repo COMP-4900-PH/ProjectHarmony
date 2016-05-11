@@ -29,6 +29,9 @@ class DetailedUsersController < ApplicationController
     #abort @detailed_user.inspect
     respond_to do |format|
       if @detailed_user.save
+        user = User.find_by_id(@detailed_user.user_id)
+        user.detailedUsers = 't'
+        user.save
         format.html { redirect_to @detailed_user, notice: 'Detailed user was successfully created.' }
         format.json { render :show, status: :created, location: @detailed_user }
       else
