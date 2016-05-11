@@ -1,3 +1,11 @@
+<script>
+  $(function() {
+    $( "#datepickerStart" ).datepicker();
+    $( "#datepickerEnd" ).datepicker();
+    $('#timepicker').timepicker();
+  });
+</script>
+
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -12,6 +20,104 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <div class="container-fluid event-form">
+      <input type="hidden" name="event[creator_id]" value="1">
+      <!-- NAME -->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="fname">Firstname:</label>
+            <input type="text" name="event[fname]" required="true" class="form-control" id="fname">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="lname">Lastname:</label>
+            <input type="text" name="event[lname]" required="true" class="form-control" id="lname">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="form-group">
+            <label for="eventname">Event Name</label>
+            <input type="text" name="event[event_name]" required="true" class="form-control" id="eventname">
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="eventimage">Event Image</label>
+            <input type="file" name="event[event_image]" class="form-control" id="eventimage" accept="image/*">
+          </div>
+        </div>
+      </div>
+      <!-- START DATE -->
+      <div class="row">
+        <div class="col-md-5">
+          <div class="form-group">
+            <label for="startDate ">Start Date</label><br>
+            <input type="text" id="datepickerStart" required="true" name="event[start_date]" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="form-group">
+            <label for="endDate ">End Date</label><br>
+            <input type="text" id="datepickerEnd" required="true" name="event[end_date]" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="time ">Time</label><br>
+            <input type="text" id="timepicker" required="true" name="event[time]" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <!-- LOCATION -->
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="location">Location</label><br>
+            <input type="text" id="location" required="true" name="event[location]" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="ageGroup">Age Group</label><br>
+            <input type="text" id="ageGroup" name="event[ageGroup]" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="form-group">
+            <label for="max">Max Participants</label><br>
+            <input type="text" id="max" name="event[max_participants]" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="sailing">Sailing</label><br>
+            <%= select_tag "event[sailing_id]", options_from_collection_for_select(@sailings, "id", "cruise"),  {:include_blank => "select",:class => "form-control", :required => "true"}  %>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESCRIPTION -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" required="true" name="event[description]" rows="5" id="description"></textarea>
+          </div>
+        </div>
+      </div>
+      <input class="btn btn-success form-control" type="submit" name="commit" value="Create Event">
+    </div>
+    </div>
+     <!-- <%= f.submit %> -->
   </div>
 <% end %>

@@ -18,6 +18,7 @@ class EventsController < ApplicationController
   def new
     #authorize! :new, @event
     @event = Event.new
+    @sailings = Sailing.select('id, (cruise_ship_name || "-" || official_id) AS cruise').order('cruise_ship_name ASC').uniq
   end
 
   # GET /events/1/edit
@@ -29,7 +30,6 @@ class EventsController < ApplicationController
   def create
     #authorize! :create, @event
     @event = Event.new(event_params)
-
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -73,6 +73,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.fetch(:event, {})
+      params.fetch(:event, {}).permit(:creator_id,:sailing_id, :event_name, :start_date , :end_date, :location, :max_participants, :sailing_id, :description)
     end
 end
