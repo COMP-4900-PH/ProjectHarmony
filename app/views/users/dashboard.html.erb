@@ -82,55 +82,32 @@
                 <div class="tab-pane" id="tab2">
 
                   <!----------- TAB 2 MY EVENTS ------------->
-                  <table class="table">
+
+                  <table>
+                    <thead>
                     <tr>
-                      <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-                      <td class="sailing-info">
-                        <span class="ship-name">Comedy Club Night</span><br><br>
-
-                        <p>Come out and enjoy our lively comedy night!</p>
-                        <br>
-                        Age group: Adults <br>
-                        Host: Luke Skywalker <br>
-                        Sailing: Celebrity Infinity <br>
-
-                      </td>
-                      <td>
-                        <button type="button" class="btn btn-danger">Leave</button>
-                      </td>
+                      <th colspan="3"></th>
                     </tr>
-                    <tr>
-                      <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-                      <td class="sailing-info">
-                        <span class="ship-name">IMAX Movie Night</span><br><br>
+                    </thead>
+                    <tbody>
+                    <% @event_register.each do |eventregister| %>
+                        <tr>
+                          <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
+                          <td class="sailing-info">
+                            <span class="ship-name"><%= eventregister.event.event_name %></span><br><br>
+                            <p><%= eventregister.event.start_date.strftime("%F %I:%M%p") %></p>
+                            <p><%= eventregister.event.end_date.strftime("%F %I:%M%p") %></p>
+                            <p><%= eventregister.event.description %></p>
+                            <br>
+                            <p><%= eventregister.event.location %></p>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-danger">Leave</button>
+                          </td>
 
-                        <p>Enjoy our large selection of IMAX movies in our state of the art facility!</p>
-                        <br>
-                        Age group: All ages <br>
-                        Host: Leia Organa <br>
-                        Sailing: Celebrity Infinity <br>
 
-                      </td>
-                      <td>
-                        <button type="button" class="btn btn-danger">Leave</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-                      <td class="sailing-info">
-                        <span class="ship-name">Mixologist Competitions</span><br><br>
-
-                        <p>Test your drink making skills in a fun environment with our mixologist masters!</p>
-                        <br>
-                        Age group: 18+ <br>
-                        Host: Darth Vader <br>
-                        Sailing: Celebrity Infinity <br>
-
-                      </td>
-                      <td>
-                        <button type="button" class="btn btn-danger">Leave</button>
-                      </td>
-                    </tr>
+                    <% end %>
+                    </tbody>
                   </table>
                 </div>
 
@@ -144,7 +121,6 @@
                       <th colspan="3"></th>
                     </tr>
                     </thead>
-
                     <tbody>
                     <tr>
                       <th>Event name</th>
@@ -155,11 +131,8 @@
                       <th>Max Participants</th>
                       <th>Ship Name</th>
                     </tr>
-                    <!-- debug Event.select("*").joins(:users) -->
-
                     <% @events.each do |event| %>
                         <tr>
-
                           <td><%= event.event_name %></td>
                           <td><%= event.try(:start_date).try(:strftime, "%F %I:%M%p") %></td>
                           <td><%= event.try(:end_date).try(:strftime, "%F %I:%M%p") %></td>
@@ -176,7 +149,6 @@
                     <% end %>
                     </tbody>
                   </table>
-
                 </div>
               </div>
             </div>

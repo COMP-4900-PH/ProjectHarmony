@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def dashboard
     @user = User.find(current_user.id)
     @events = Event.where(creator_id: current_user.id)
+    @event_register = EventRegister.where(user_id: current_user.id)
   end
 
   def profile

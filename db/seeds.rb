@@ -177,7 +177,68 @@ events_list = [
 ]
 
 # Event register seeding data
-
+event_register_list = [
+    # 5 different users registered for 3 different events on the same boat
+    [1, 1, nil], [1, 2, nil], [1, 3, nil],
+    [2, 1, nil], [2, 2, nil], [2, 3, nil],
+    [3, 1, nil], [3, 2, nil], [3, 3, nil],
+    [4, 1, nil], [4, 2, nil], [4, 3, nil],
+    [5, 1, nil], [5, 2, nil], [6, 3, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [6, 4, nil], [6, 5, nil], [6, 6, nil],
+    [7, 4, nil], [7, 5, nil], [7, 6, nil],
+    [8, 4, nil], [8, 5, nil], [8, 6, nil],
+    [9, 4, nil], [9, 5, nil], [9, 6, nil],
+    [10, 4, nil], [10, 5, nil], [10, 6, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [11, 7, nil], [11, 8, nil], [11, 9, nil],
+    [12, 7, nil], [12, 8, nil], [12, 9, nil],
+    [13, 7, nil], [13, 8, nil], [13, 9, nil],
+    [14, 7, nil], [14, 8, nil], [14, 9, nil],
+    [15, 7, nil], [15, 8, nil], [15, 9, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [16, 10, nil], [16, 11, nil], [16, 12, nil],
+    [17, 10, nil], [17, 11, nil], [17, 12, nil],
+    [18, 10, nil], [18, 11, nil], [18, 12, nil],
+    [19, 10, nil], [19, 11, nil], [19, 12, nil],
+    [20, 10, nil], [20, 11, nil], [20, 12, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [21, 13, nil], [21, 14, nil], [21, 15, nil],
+    [22, 13, nil], [22, 14, nil], [22, 15, nil],
+    [23, 13, nil], [23, 14, nil], [23, 15, nil],
+    [24, 13, nil], [24, 14, nil], [24, 15, nil],
+    [25, 13, nil], [25, 14, nil], [25, 15, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [26, 16, nil], [26, 17, nil], [26, 18, nil],
+    [27, 16, nil], [27, 17, nil], [27, 18, nil],
+    [28, 16, nil], [28, 17, nil], [28, 18, nil],
+    [1, 16, nil], [1, 17, nil], [1, 18, nil],
+    [2, 16, nil], [2, 17, nil], [2, 18, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [3, 19, nil], [3, 20, nil], [3, 21, nil],
+    [4, 19, nil], [4, 20, nil], [4, 21, nil],
+    [5, 19, nil], [5, 20, nil], [5, 21, nil],
+    [6, 19, nil], [6, 20, nil], [6, 21, nil],
+    [7, 19, nil], [7, 20, nil], [7, 21, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [8, 22, nil], [8, 23, nil], [8, 24, nil],
+    [9, 22, nil], [9, 23, nil], [9, 24, nil],
+    [10, 22, nil], [10, 23, nil], [10, 24, nil],
+    [11, 22, nil], [11, 23, nil], [11, 24, nil],
+    [12, 22, nil], [12, 23, nil], [12, 24, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [13, 25, nil], [13, 26, nil], [13, 27, nil],
+    [14, 25, nil], [14, 26, nil], [14, 27, nil],
+    [15, 25, nil], [15, 26, nil], [15, 27, nil],
+    [16, 25, nil], [16, 26, nil], [16, 27, nil],
+    [17, 25, nil], [17, 26, nil], [17, 27, nil],
+    # 5 different users registered for 3 different events on the same boat
+    [18, 28, nil], [18, 29, nil], [18, 30, nil],
+    [19, 28, nil], [19, 29, nil], [19, 30, nil],
+    [20, 28, nil], [20, 29, nil], [20, 30, nil],
+    [21, 28, nil], [21, 29, nil], [21, 30, nil],
+    [22, 28, nil], [22, 29, nil], [22, 30, nil],
+]
 
 # Party register sedding data
 
@@ -220,7 +281,9 @@ end
 
 
 # Populating event register
-
+event_register_list.each do |user_id, event_id, travelling_party_id|
+  EventRegister.create( user_id: user_id, event_id: event_id, travelling_party_id: travelling_party_id)
+end
 
 # Populating party register
 
