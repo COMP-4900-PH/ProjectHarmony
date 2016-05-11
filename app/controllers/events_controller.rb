@@ -1,22 +1,20 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /events
   # GET /events.json
   def index
-    #authorize! :show, @event
     @events = Event.all
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-    #authorize! :show, @event
   end
 
   # GET /events/new
   def new
-    #authorize! :new, @event
     @event = Event.new
   end
 
@@ -27,7 +25,6 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    #authorize! :create, @event
     @event = Event.new(event_params)
 
     respond_to do |format|
