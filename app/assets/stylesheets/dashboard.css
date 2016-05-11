@@ -69,3 +69,9 @@
 .events-tag :hover{
     color: #31b0d5;
 }
+
+.event-form {
+    margin-left: 3em;
+    margin-right: 3em;
+    padding-bottom: 2em;
+}
