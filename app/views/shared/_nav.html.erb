@@ -30,7 +30,7 @@
   <div class="col-sm-4 header_right">
     <% if !user_signed_in? %>
     <div id="loginContainer" style="float:left;width:50%;height:100%;border:1px solid black">
-      <!--<%= image_tag "login.png" %>--><%= link_to "Login", new_user_session_path %>
+      <%= link_to "Log in", new_user_session_path %>
     </div>
     <div id="loginContainer" style="float:left;width:50%;height:100%;border:1px solid black">
       <% if !user_signed_in? %>

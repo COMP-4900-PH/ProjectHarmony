@@ -48,6 +48,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.5)
+    cancancan (1.13.1)
     carrierwave (0.11.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -188,6 +189,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug
+  cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
   devise (= 3.4.1)
   jbuilder (~> 2.0)
@@ -205,4 +207,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.1
+   1.12.2

@@ -4,16 +4,19 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    #authorize! :show, @event
     @events = Event.all
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    #authorize! :show, @event
   end
 
   # GET /events/new
   def new
+    authorize! :update, @event
     @event = Event.new
   end
 
