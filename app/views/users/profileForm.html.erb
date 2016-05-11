@@ -1,0 +1,106 @@
+<div class="dashboard">
+  <div class="container">
+    <div class="dashboard-info">
+      <h1 class="proHeader">User Profile Information</h1>
+      </br>
+      <form><!-- BEGIN FORM -->
+        <fieldset class="form-group form-inline input-group-lg"><!-- USER NAME -->
+          <div class="formBoxes">
+            <label class="label2" for="firstName">First Name</label>
+            <input type="text" class="form-control" id="fName" placeholder="Enter your first name...">
+          </div>
+          <div class="formBoxes">
+            <label class="label2" for="LastName">Last Name</label>
+            <input type="text" class="form-control" id="lName" placeholder="Enter your Last name...">
+          </div>
+        </fieldset> <!-- USER NAME END -->
+        <fieldset class="form-group form-inline input-group-lg">
+          <div class="formBoxes">
+            <label class="label3">Birth Date</label>
+            <input class="form-control" type="date" name="bDay">
+          </div>
+        </fieldset>
+        <fieldset class="form-group row radLabel">
+          <label class="col-sm-2">Select Gender</label>
+          <div class="col-sm-10">
+            <div class="radio">
+              <label>
+                <input type="radio" name="gender" id="rad1" value="MaleOpt" checked>
+                Male
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="gender" id="rad2" value="FemaleOpt">
+                Female
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="gender" id="rad3" value="OtherOpt">
+                Other
+              </label>
+            </div>
+          </div>
+          <label class="col-sm-2">Sexual Orientation</label>
+          <div class="col-sm-10">
+            <div class="radio">
+              <label>
+                <input type="radio" name="orientation" id="rad1" value="MaleOpt" checked>
+                Straight or Heterosexual
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="orientation" id="rad2" value="FemaleOpt">
+                Lesbian,Gay, Homosexual
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="orientation" id="rad3" value="OtherOpt">
+                Bisexual
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="orientation" id="rad3" value="OtherOpt">
+                Don't Know
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="orientation" id="rad3" value="OtherOpt">
+                Something Else
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="form-group form-inline input-group-lg"><!-- Language Select -->
+          <div class="formBoxes2">
+            <label class="label2" for="firstName">Primary Language</label>
+            <input type="text" class="form-control" id="primLang" placeholder="Preferred Language">
+          </div>
+          <div class="formBoxes2">
+            <label class="label2" for="LastName">Secondary Language</label>
+            <input type="text" class="form-control" id="secLang" placeholder="Second Language">
+          </div>
+        </fieldset> <!-- Language Select -->
+        <div class="form-group input-group-lg">
+          <div class="formBoxes">
+            <label class="label2">About</label>
+            <textarea class="form-control mytextarea" rows="6" placeholder="Tell us about yourself?"></textarea>
+          </div>
+        </div>
+        <fieldset class="form-group">
+          <div class="filebox">
+            <label for="InputFile">Select a Profile Picture</label>
+            <input type="file" class="form-control-file" id="InputFile">
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary btnPos">Submit</button>
+      </form><!-- END FORM -->
+
+    </div>
+  </div>
+</div>

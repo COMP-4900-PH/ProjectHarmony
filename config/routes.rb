@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # Route for user dashboard
   get 'dashboard' => 'users#dashboard', as: "user_dashboard"
   get 'profile/:id' => 'users#profile'
+  get 'profileForm/:id' => 'users#profileForm'
+  post 'profileForm' => 'users#editForm'
 
   # Routes for user model
   devise_for :users
