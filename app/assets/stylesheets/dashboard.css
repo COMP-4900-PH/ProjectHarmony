@@ -70,8 +70,53 @@
     color: #31b0d5;
 }
 
+
 .event-form {
     margin-left: 3em;
     margin-right: 3em;
     padding-bottom: 2em;
+}
+
+.proHeader {
+    padding: 10px 10px 30px 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.formBoxes {
+    padding: 0 30px 0 50px;
+    margin-right: 30px;
+    display: inline-block;
+}
+
+.formBoxes2 {
+    padding: 0 10px 0 50px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+
+.label2 {
+    margin-right: 10px;
+}
+
+.label3 {
+    margin-right: 17px;
+
+}
+.radLabel {
+    padding-left: 50px;
+}
+.mytextarea {
+    width: 58em;
+    height:20em;
+}
+.filebox{
+    padding-left: 50px;
+}
+
+.btnPos {
+    position: relative;
+    left: 50px;
+
 }

@@ -89,9 +89,6 @@ users_list = [
 ]
 
 # Events seeding data
-# Mexican Fiesta, caribbean beach party, comedy club, live music, piano bar, karaoke, imax, water park, mini golf
-# Dodgeball, casino, cooking classes, atrium, mixologist competitions, bingo, art exhibitions, trivia,
-# Video arcade, volleyball, dance classes, basketball, ping pong, tennis
 
 events_list = [
     [1, "Mexican Fiesta", '2016-08-07 18:00:00.000000', '2016-08-07 22:00:00.000000', "Ball room", "Come join the Mexican party!", 50, 1],
@@ -190,7 +187,9 @@ events_list = [
 
 
 # Detailed user seeding data
-
+detailed_users_list = [
+    ["Boba", "Fett", "m", '1950-06-06', "straight", "I love hunting people", "Mandalorian", "Ewok", 7],
+]
 
 ########## Populating Database ##########
 
@@ -231,3 +230,10 @@ end
 
 
 # Populating detailed user
+detailed_users_list.each do |first_name, last_name, gender, birth_day,
+    sexual_orientation, description, primary_language, secondary_language, user_id|
+  DetailedUser.create( first_name: first_name, last_name: last_name, gender: gender, birth_day: birth_day,
+                       sexual_orientation: sexual_orientation, description: description,
+                       primary_language: primary_language, secondary_language: secondary_language,
+                       user_id: user_id)
+end

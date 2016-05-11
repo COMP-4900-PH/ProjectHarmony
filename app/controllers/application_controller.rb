@@ -30,4 +30,9 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  rescue_from CanCan::AccessDenied do |exception|
+    # Not root url, but user_dashboard
+    redirect_to new_user_session_path, :alert => exception.message
+  end
 end
