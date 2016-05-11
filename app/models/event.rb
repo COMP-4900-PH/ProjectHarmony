@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
   belongs_to :sailing
-  has_one :event_register
+  has_many :event_registers
+  has_many :users, through: :event_registers
 end
