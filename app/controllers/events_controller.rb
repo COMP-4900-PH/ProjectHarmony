@@ -16,7 +16,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    authorize! :update, @event
+    #authorize! :new, @event
     @event = Event.new
   end
 
@@ -27,6 +27,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    #authorize! :create, @event
     @event = Event.new(event_params)
 
     respond_to do |format|
