@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # devise authentication
 gem 'devise', '3.4.1'
+# cancancan authentication
+gem 'cancancan', '~> 1.10'
 
 #mailboxer
 gem 'bootstrap-sass'
