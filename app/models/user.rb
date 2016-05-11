@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :party_registers
   has_many :event_registers
   has_many :events, through: :event_registers
+  has_many :travelling_parties, through: :party_registers
   has_one :detailed_user
 
   acts_as_messageable
