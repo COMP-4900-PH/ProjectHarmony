@@ -60,7 +60,6 @@ users_list = [
     ["Luke Skywalker", "lukeskywalker@gmail.com", "password", "Luke"],
     ["Leia Organa", "leiaorgana@gmail.com", "password", "Leia"],
     ["Darth Vader", "darthvader@gamil.com", "password", "Darth"],
-    ["Luke Skywalker", "lukeskywalker@gmail.com", "password", "Luke"],
     ["Han Solo", "hansolo@gmail.com", "password", "Han"],
     ["yoda", "yoda@gmail.com", "password", "Yoda"],
     ["Darth Maul", "darthmaul@gmail.com", "password", "Maul"],
