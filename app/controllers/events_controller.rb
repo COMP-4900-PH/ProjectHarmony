@@ -11,6 +11,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find_by_id(params[:id])
+    #abort @event.inspect
   end
 
   # GET /events/new
@@ -70,6 +72,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.fetch(:event, {}).permit(:creator_id,:sailing_id, :event_name, :start_date , :end_date, :location, :max_participants, :sailing_id, :description)
+      params.fetch(:event, {}).permit(:creator_id,:sailing_id, :event_name, :start_date , :end_date, :location, :max_participants, :sailing_id, :description, :image)
     end
 end

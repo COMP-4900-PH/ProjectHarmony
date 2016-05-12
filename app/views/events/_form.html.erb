@@ -1,5 +1,5 @@
 
-<%= form_for(@event) do |f| %>
+<%= form_for @event, url: events_path, html: {multipart:true} do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -14,7 +14,7 @@
 
   <div class="actions">
     <div class="container-fluid event-form">
-      <input type="hidden" name="event[creator_id]" value="1">
+      <input type="hidden" name="event[creator_id]" value="<%= current_user.id %>">
       <!-- NAME -->
       <div class="row">
         <div class="col-md-6">
@@ -42,30 +42,38 @@
         <div class="col-md-3">
           <div class="form-group">
             <label for="eventimage">Event Image</label>
-            <input type="file" name="event[event_image]" class="form-control" id="eventimage" accept="image/*">
+            <!--<input type="file" name="event[event_image]" class="form-control" id="eventimage" accept="image/*">-->
+            <%= f.file_field :image, class: 'form-control' %>
           </div>
         </div>
       </div>
       <!-- START DATE -->
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-4">
           <div class="form-group">
-            <label for="startDate ">Start Date</label><br>
-            <input type="date" id="datepickerStart" required="true" name="event[start_date]" class="form-control">
+            <label for="startDate ">Start Date/Time</label><br>
+            <input type="datetime-local" id="datepickerStart" required="true" name="event[start_date]" class="form-control">
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
           <div class="form-group">
-            <label for="endDate ">End Date</label><br>
-            <input type="date" id="datepickerEnd" required="true" name="event[end_date]" class="form-control">
+            <label for="endDate ">End Date/Time</label><br>
+            <input type="datetime-local" id="datepickerEnd" required="true" name="event[end_date]" class="form-control">
           </div>
         </div>
-        <div class="col-md-2">
-          <div class="form-group">
-            <label for="time ">Time</label><br>
-            <input type="time" id="timepicker" required="true" name="event[time]" class="form-control">
-          </div>
-        </div>
+        <!--<div class="col-md-2">-->
+          <!--<div class="form-group">-->
+            <!--<label for="time ">Start Time</label><br>-->
+            <!--<input type="time" id="timepicker1" required="true" name="event[start_time]" class="form-control">-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-2">-->
+          <!--<div class="form-group">-->
+            <!--<label for="time ">End Time</label><br>-->
+            <!--<input type="time" id="timepicker2" required="true" name="event[end_time]" class="form-control">-->
+          <!--</div>-->
+        <!--</div>-->
       </div>
 
       <!-- LOCATION -->
