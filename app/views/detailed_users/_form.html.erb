@@ -1,4 +1,4 @@
-<%= form_for(@detailed_user) do |f| %>
+<%= form_for @detailed_user, html: { multipart: true } do |f| %>
     <% if @detailed_user.errors.any? %>
         <div id="error_explanation">
           <h3><%= pluralize(@detailed_user.errors.count, "error") %> Invalid Data Entry</h3>
@@ -115,7 +115,8 @@
       <fieldset class="form-group">
         <div class="filebox">
           <label for="InputFile">Select a Profile Picture</label>
-          <input type="file" class="form-control-file" id="InputFile">
+          <!--<input type="file" class="form-control-file" id="InputFile">-->
+          <%= f.file_field :avatar %>
         </div>
       </fieldset>
       <%= f.submit %>
