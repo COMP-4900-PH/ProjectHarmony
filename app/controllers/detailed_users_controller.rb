@@ -14,7 +14,6 @@ class DetailedUsersController < ApplicationController
 
   # GET /detailed_users/new
   def new
-
     @user_id = params[:id]
     @detailed_user = DetailedUser.find_by_user_id(@user_id)
     if @detailed_user == nil
@@ -30,7 +29,6 @@ class DetailedUsersController < ApplicationController
   # POST /detailed_users.json
   def create
     @detailed_user = DetailedUser.new(detailed_user_params)
-    abort @detailed_user.inspect
    if DetailedUser.find_by_user_id(@detailed_user.user_id)
      respond_to do |format|
        if @detailed_user.update(detailed_user_params)

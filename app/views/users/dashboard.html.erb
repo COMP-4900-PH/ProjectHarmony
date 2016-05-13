@@ -26,7 +26,7 @@
                     <tr>
                       <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
                       <td class="sailing-info">
-                        <a href="sailings/1"><span class="ship-name">Celebrity Infinity</span></a><br><br>
+                        <a href="/sailings/1"><span class="ship-name">Celebrity Infinity</span></a><br><br>
                         <h3>Sailing in 30 days!</h3> <br>
                         Come back new from a cruise vacation on the Celebrity Infinity,
                         one of the stars of the destination that bears her name.
@@ -45,7 +45,7 @@
                     <tr>
                       <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
                       <td class="sailing-info">
-                        <a href="sailings/2"><span class="ship-name">Celebrity Solstice</span></a><br><br>
+                        <a href="/sailings/2"><span class="ship-name">Celebrity Solstice</span></a><br><br>
                         <h3>Sailing in 91 days!</h3>
                         Featuring our latest innovations, Celebrity Solstice is one of the largest cruise ships,
                         with room for 3,080 guests. From her nearly 900 balconies, you can enjoy sweeping views of
@@ -62,7 +62,7 @@
                     <tr>
                       <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
                       <td class="sailing-info">
-                        <a href="sailings/3"><span class="ship-name">Star Princess</span></a><br><br>
+                        <a href="/sailings/3"><span class="ship-name">Star Princess</span></a><br><br>
                         <h3>Sailing in 156 days!</h3>
                         Star Princess is one of just two cruise ships in the Princess fleet specially built to sail
                         through the Panama Canal!  Ninety percent of her staterooms offer ocean views, with 700
@@ -94,7 +94,7 @@
                         <tr>
                           <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
                           <td class="sailing-info">
-                            <span class="ship-name"><%= eventregister.event.event_name %></span><br><br>
+                            <a href="/events/<%= eventregister.event_id %>"><span class="ship-name"><%= eventregister.event.event_name %></span></a><br><br>
                             <p><%= eventregister.event.start_date.strftime("%F %I:%M%p") %></p>
                             <p><%= eventregister.event.end_date.strftime("%F %I:%M%p") %></p>
                             <p><%= eventregister.event.description %></p>

@@ -1,11 +1,3 @@
-<!--<p id="notice"><%= notice %></p>-->
-<!--<table>-->
-  <!--<thead>-->
-  <!--<tr>-->
-    <!--<th colspan="3"></th>-->
-  <!--</tr>-->
-  <!--</thead>-->
-
   <!--<tbody>-->
   <!--<% @events.each do |event| %>-->
       <!--<tr>-->
@@ -53,48 +45,21 @@
       </div>
 
       <table class="table">
-        <tr>
-          <td class="event-image"><img  src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-          <td class="sailing-info" width="50%">
-             <a href="/events/1"><span class="ship-name">Mexican Fiesta</span> </a><br><br>
-            <p>Ola amigos, Come meet with at us Royal Carribean Cruises and experience an authentic mexican party!</p>
-          </td>
-          <td>
-            <div class="event-description">
-              Age group: Open to anyone <br>
-              Host: <a href="profile/1"><span class="ship-name">Salvador Gonzalez</span></a> <br>
-              Sailing: <a href="sailings/1"><span class="ship-name">Royal Carriben Cruises</span></a> <br>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="event-image" ><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-          <td class="sailing-info" width="50%">
-            <a href="/events/1"><span class="ship-name">Skyride Escapade</span> </a><br><br>
-            <p>Attention all youth! We're having a nightout party at Skyride</p>
-          </td>
-          <td>
-            <div class="event-description">
-              Age group: 18 - 30 <br>
-              Host: <a href="profile/1"><span class="ship-name">Maggie Frank</span></a> <br>
-              Sailing: <a href="sailings/1"><span class="ship-name">Carnival Cruises</span></a> <br>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="event-image" ><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-          <td class="sailing-info" width="50%">
-            <a href="/events/1" class="ship-name">Ballroom Dancing</a><br><br>
-            <p>Join us at ballroom hall for a wonderfull evening of ballroom</p>
-          </td>
-          <td>
-            <div class="event-description">
-              Age group: 50+ <br>
-              Host: <a href=""><span class="ship-name">Annie Matthews</span></a> <br>
-              ailing: <a href="sailings/1"><span class="ship-name">Carnival Cruises</span></a> <br>
-            </div>
-          </td>
-        </tr>
+        <% @events.each do |event| %>
+            <tr>
+              <td class="event-image"> <%= image_tag event.image.url(:small) %><br></td>
+              <td class="sailing-info" width="50%">
+                <a href="/events/<%= event.id %>"><span class="ship-name"><%= event.event_name %></span> </a><br><br>
+                <p><%= event.description %></p>
+              </td>
+              <td>
+                <div class="event-description">
+                  Host: <a href="profile/<%= event.creator_id %>"><span class="ship-name"><%= User.find_by_id(event.creator_id).name %></span></a> <br>
+                  Sailing: <a href="sailings/<%= event.sailing_id %>"><span class="ship-name"> <%= Sailing.find_by_id(event.sailing_id).cruise_ship_name %></span></a><br>
+                </div>
+              </td>
+            </tr>
+        <% end %>
       </table>
     </div>
   </div>
