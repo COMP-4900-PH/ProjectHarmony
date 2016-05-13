@@ -5,12 +5,6 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    # can :read, :hidden => false
-
-    # if User.exists?(user)
-    #   can :read
-    # end
-
     if user.admin?
 
       # Admins have access to all CRUD operations
@@ -24,14 +18,14 @@ class Ability
       can :update, Event do |event|
         # this could cause problems as we are using foreign keys
         # should this be event.user_id == user.id
-        event.user == user
+        event.creator_id == current_user.id
       end
 
       # Detailed users can destroy events if they are the owner
       can :destroy, Event do |event|
         # this could cause problems as we are using foreign keys
         # should this be event.user_id == user.id
-        event.user == user
+        event.creator_id == current_user.id
       end
 
       # Detailed users can create events
