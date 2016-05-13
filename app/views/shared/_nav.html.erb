@@ -27,18 +27,19 @@
     </script>
     <div class="clearfix"></div>
   </div>
+  <!-- ADD STYLES TO LOGINCONTAINER DIVS HERE IF NEEDED -->
   <div class="col-sm-4 header_right">
     <% if !user_signed_in? %>
-    <div id="loginContainer" style="float:left;width:50%;height:100%;border:1px solid black">
+    <div id="loginContainer" style="float:left;width:50%;height:100%;">
       <%= link_to "Log in", new_user_session_path %>
     </div>
-    <div id="loginContainer" style="float:left;width:50%;height:100%;border:1px solid black">
+    <div id="loginContainer" style="float:left;width:50%;height:100%;">
       <% if !user_signed_in? %>
           <%= link_to "Sign up", new_user_registration_path %>
       <% end %>
     </div><% end %>
     <% if user_signed_in? %>
-        <div id="loginContainer" style="border:1px solid black">
+        <div id="loginContainer">
         Hello <%= current_user.name %>, <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         </div>
     <% end %>
