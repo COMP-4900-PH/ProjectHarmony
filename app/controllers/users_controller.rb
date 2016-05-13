@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find_by_id(params[:id])
-
+    @detailed_user = DetailedUser.find_by_user_id(params[:id])
   end
 
 end
