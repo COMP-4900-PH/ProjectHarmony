@@ -241,17 +241,92 @@ event_register_list = [
 ]
 
 # Travelling Party seeding data
-
+travelling_party_list = [
+    # Four travelling parties per boat, boats 1 - 10
+    [1],[1],[1],[1],
+    [2],[2],[2],[2],
+    [3],[3],[3],[3],
+    [4],[4],[4],[4],
+    [5],[5],[5],[5],
+    [6],[6],[6],[6],
+    [7],[7],[7],[7],
+    [8],[8],[8],[8],
+    [9],[9],[9],[9],
+    [10],[10],[10],[10],
+]
 
 # Party register seeding data
-
+party_register_list = [
+    # Boat 1-3
+    [1, 1],[1, 2],[1, 3],
+    [2, 4],[2, 5],[2, 6],
+    [3, 7],[3, 8],[3, 9],
+    [4, 10],[4, 11],[4, 12],
+    # Boat 4-6
+    [5, 13],[5, 14],[5, 15],
+    [6, 16],[6, 17],[6, 18],
+    [7, 19],[7, 20],[7, 21],
+    [8, 22],[8, 23],[8, 24],
+    # Boat 7-9
+    [9, 25],[9, 26],[9, 27],
+    [10, 28],[10, 29],[10, 30],
+    [11, 31],[11, 32],[11, 33],
+    [12, 34],[12, 35],[12, 36],
+    # Multiple Signed up users in same travelling party
+    [13, 1],[14, 2],[15, 3],
+    [14, 4],[15, 5],[16, 6],
+    [17, 7],[18, 8],[19, 9],
+]
 
 # Non registered users seeding data
-
+non_registered_users_list = [
+    [10, "m", 1],[8, "f", 1],
+    [18, "m", 2],[42, "f", 2],
+    [67, "m", 4],[52, "f", 4],
+    [5, "m", 5],[3, "f", 5],
+    [2, "m", 6],[1, "f", 6],
+    [12, "m", 8],[14, "f", 8],
+    [45, "m", 9],[48, "f", 10],
+    [16, "m", 11],[17, "f", 12],
+    [13, "m", 13],[10, "f", 14],
+    [5, "m", 15],[7, "f", 16],
+    [22, "m", 17],[24, "f", 18],
+    [28, "m", 19],[32, "f", 20],
+    [25, "m", 21],[38, "f", 22],
+    [47, "m", 24],[46, "f", 25],
+    [6, "m", 26],[8, "f", 27],
+    [2, "m", 28],[4, "f", 30],
+    [65, "m", 32],[68, "f", 34],
+    [58, "m", 36],[59, "f", 37],
+    [63, "m", 39],[55, "f", 40],
+]
 
 # Detailed user seeding data
 detailed_users_list = [
-    ["Boba", "Fett", "m", '1950-06-06', "straight", "I love hunting people", "Mandalorian", "Ewok", 7],
+    ["Luke", "Skywalker", "m", '1950-06-06', "straight", "I am a jedi, like my father before me", "Spanish", "Mandarin", 1],
+    ["Leia", "Organa", "f", '1982-06-06', "straight", "Help me Obi-Wan Kenobi, you're my only hope", "English", nil, 2],
+    ["Darth", "Vader", "m", '1947-06-06', "straight", "I've been waiting for your Obi-Wan. We meet again, at last. The circle is now complete.", "French", "English", 3],
+    ["Han", "Solo", "m", '1968-06-06', "straight", "Don't get cocky kid", "English", "Arabic", 4],
+    ["Yoda", "Admin", "m", '1930-06-06', "straight", "Do. Or do not. There is no try.", "Russian", "Spanish", 5],
+
+    ["Darth", "Maul", "m", '1954-06-06', "straight", "Die, jedi, die!", "Hindi", "German", 6],
+    ["Boba", "Fett", "m", '1950-06-06', "straight", "What if he doesn't survive? He's worth a lot to me.", "French", "Mandarin", 7],
+    ["Obi-Wan", "Kenobi", "m", '1942-06-06', "straight", "These aren't the droids you're looking for.", "German", "Italian", 8],
+    ["Chewbacca", "C", "m", '1975-06-06', "straight", "GWWRAAAGRGGRHHH", "English", "Arabic", 9],
+    ["Padme", "Amidala", "f", '1988-06-06', "straight", "Obi-Wan.. there is good in him. I know there is.. still..", "Russian", "Spanish", 10],
+
+    ["Jabba", "the Hutt", "m", '1967-06-06', "straight", "Your mind tricks won't work on me boy", "English", "French", 11],
+    ["Mace", "Windu", "m", '1977-06-06', "straight", "May the force be with us all", "German", "Mandarin", 12],
+    ["Lando", "Calrissian", "m", '1981-06-06', "straight", "Why you slimy, double-crossing, no good swindler. You've got a lot of guts coming here, after what you pulled.", "German", "Italian", 13],
+    ["Wedge", "Antilles", "m", '1989-06-06', "straight", "Look at the size of that thing!", "Mandarin", "Spanish", 14],
+    ["JarJar", "Binks", "m", '1985-06-06', "straight", "Mesa Jar-Jar Binks", "Russian", "English", 15],
+
+    ["R2D2", "Droid", "m", '1995-06-06', "straight", "Beep-boop", "Hindi", "French", 16],
+    ["C-3PO", "Droid", "m", '1992-06-06', "straight", "Sir, the possibility of successfully navigating an asteroid field is approximately 3,720 to 1", "Mandarin", "German", 17],
+    ["Kylo", "Ren", "m", '1996-06-06', "straight", "It's too late..", "English", "Russian", 18],
+    ["Emperor", "Palpatine", "m", '1963-06-06', "straight", "There is a great disturbance in the force", "French", "Hindi", 19],
+    ["Rey", "S", "m", '1996-06-06', "straight", "And you will drop your weapon", "English", "Arabic", 20],
+
 ]
 
 ########## Populating Database ##########
@@ -261,6 +336,7 @@ users_list.each do |name, email, password, username, admin, detailedUsers|
   User.create( name: name, email: email, password: password, username: username,
                admin: admin, detailedUsers: detailedUsers)
 end
+
 
 # Populating sailings
 sailings_list.each do |official_id, destination_identifier, cruise_ship_name,
@@ -289,13 +365,23 @@ event_register_list.each do |user_id, event_id, travelling_party_id|
   EventRegister.create( user_id: user_id, event_id: event_id, travelling_party_id: travelling_party_id)
 end
 
+
 # Populating travelling party
+travelling_party_list.each do |sailing_id|
+  TravellingParty.create( sailing_id: sailing_id)
+end
 
 
 # Populating party register
+party_register_list.each do |user_id, travelling_party_id|
+  PartyRegister.create( user_id:user_id, travelling_party_id: travelling_party_id)
+end
 
 
 # Populating non registered users
+non_registered_users_list.each do |age, gender, traveling_party_id|
+  NonRegisteredUser.create( age: age, gender: gender, traveling_party_id: traveling_party_id)
+end
 
 
 # Populating detailed user
