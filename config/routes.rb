@@ -7,7 +7,8 @@ Rails.application.routes.draw do
    post 'editprofile' => 'detailed_users#create'
 
   # Routes for user model
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+  #devise_for :users
   # Routes for sailing model
   resources :sailings
   # Routes for events model

@@ -3,6 +3,6 @@ class Event < ActiveRecord::Base
   has_many :event_registers
   has_many :users, through: :event_registers
   has_many :travelling_parties, through: :event_registers
-  has_attached_file :image, styles: { small: "100x100#" }, default_url: "/images/:style/missing.png"
+  has_attached_file :image, styles: { small: "100x100#", thumb: "240x270#" }, default_url: "/images/event/:style/missing.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 end

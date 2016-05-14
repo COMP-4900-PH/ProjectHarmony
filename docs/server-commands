@@ -3,6 +3,10 @@
 sudo netstat -ap #find pid
 kill  <pid>
 
+
+-- EXECUTE unicorn ---
+
+bundle exec unicorn -c config/unicorn.rb -D
 ----setting nginx.config
 
 sudo rm /etc/nginx/sites-enabled/default
