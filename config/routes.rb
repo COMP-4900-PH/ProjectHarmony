@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
 
   # conversations
+  post "conversations/new" => "conversations#new"
   resources :conversations do
     member do
       post :reply

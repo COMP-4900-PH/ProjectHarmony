@@ -138,7 +138,7 @@
           <% if @user.detailedUsers == false && @user.admin == false %>
               <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Create Detailed Profile</h3></span></a>
           <% end %>
-          <a href="/mailbox/inbox" class="btn btn-primary">Messages <span class="badge">7</span></a>
+          <a href="/mailbox/inbox" class="btn btn-primary">Messages <span class="badge"><%= unread_messages_count%></span></a>
         </div>
       </div>
     </div>

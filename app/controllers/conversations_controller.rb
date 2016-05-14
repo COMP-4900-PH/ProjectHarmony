@@ -5,7 +5,7 @@ class ConversationsController < ApplicationController
     @users = {}
     recipient = params[:recipient]
     recipient.each do |r|
-      user = User.find_by r
+      user = User.find_by_id(r)
       if user != nil
         @users[user.id] = user.name
       end
