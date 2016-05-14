@@ -30,6 +30,9 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <% if @sailings.empty? %>
+                      <p>You have not registered for any sailings yet! You must create a detailed profile to do this.</p>
+                    <% end %>
                     <% @sailings.each do |sail| %>
                         <tr>
                           <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
@@ -59,6 +62,9 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <% if @sailings.empty? %>
+                        <p>You have not registered for any events yet! You must create a detailed profile, then join a sailing to do this.</p>
+                    <% end %>
                     <% @event_register.each do |eventregister| %>
                         <tr>
                           <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
@@ -115,6 +121,9 @@
                     <% end %>
                     </tbody>
                   </table>
+                  <% if @sailings.empty? %>
+                      <p>You do not have any hosted events yet! You must create a detailed profile, then join a sailing to do this.</p>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -123,7 +132,12 @@
         <div class="col-lg-pull-8 col-lg-4  profile-info">
           <%= image_tag @detailed_user.avatar.url(:thumb) , class: 'avatar'%>
           <a  href="/profile/<%=@user.id%>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
-          <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Edit Profile</h3></span></a>
+          <% if @user.detailedUsers || @user.admin %>
+            <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Edit Profile</h3></span></a>
+          <% end %>
+          <% if @user.detailedUsers == false && @user.admin == false %>
+              <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Create Detailed Profile</h3></span></a>
+          <% end %>
           <a href="/mailbox/inbox" class="btn btn-primary">Messages <span class="badge">7</span></a>
         </div>
       </div>
