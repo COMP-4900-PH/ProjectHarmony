@@ -22,61 +22,88 @@
                 <div class="tab-pane active" id="tab1">
 
                   <!----------- TAB 1 SAILINGS ------------->
-                  <table class="table">
+
+                  <table>
+                    <thead>
                     <tr>
-                      <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-                      <td class="sailing-info">
-                        <a href="sailings/1"><span class="ship-name">Celebrity Infinity</span></a><br><br>
-                        <h3>Sailing in 30 days!</h3> <br>
-                        Come back new from a cruise vacation on the Celebrity Infinity,
-                        one of the stars of the destination that bears her name.
-                        At her launch in 2004, this incredible cruise ship introduced Movies Under the Stars - a giant
-                        poolside movie theater featuring first run movies, concerts and sporting events.
-                        Here you can relax in a cushioned lounger with freshly-popped,
-                        complimentary popcorn under the night sky. Onboard, guests can also enjoy a variety of
-                        street performing acts in the Italian-inspired Piazza, indulge in a soothing massage
-                        from an outdoor cabana at The Sanctuary, or savor a premium steak cooked to
-                        order in the Crown Grill.
-                      </td>
-                      <td>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                      </td>
+                      <th colspan="3"></th>
                     </tr>
-                    <tr>
-                      <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-                      <td class="sailing-info">
-                        <a href="sailings/2"><span class="ship-name">Celebrity Solstice</span></a><br><br>
-                        <h3>Sailing in 91 days!</h3>
-                        Featuring our latest innovations, Celebrity Solstice is one of the largest cruise ships,
-                        with room for 3,080 guests. From her nearly 900 balconies, you can enjoy sweeping views of
-                        romantic landscapes across the world.  After experiencing the relaxed comfort of our intimate
-                        onboard venues, however, you may not want to explore the beauty ashore! The serenity of The
-                        Sanctuary and the casual street café atmosphere of the Piazza may just reel you in for the
-                        day, while your nights might be filled with the great tasting food offered in the Crown Grill
-                        followed by a first-run film at Movies Under the Stars
-                      </td>
-                      <td>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-                      <td class="sailing-info">
-                        <a href="sailings/3"><span class="ship-name">Star Princess</span></a><br><br>
-                        <h3>Sailing in 156 days!</h3>
-                        Star Princess is one of just two cruise ships in the Princess fleet specially built to sail
-                        through the Panama Canal!  Ninety percent of her staterooms offer ocean views, with 700
-                        balconies available, perfect for witnessing the engineering marvel of the Canal.  Spend the
-                        night watching a movie, concert or sporting event outdoors in a plush lounge chair at Movies
-                        Under the Stars and come back new after a visit to The Sanctuary, our tranquil haven just
-                        for adults. Unique to Star Princess and her sister cruise ship, the Bayou Café and
-                        Steakhouses features live jazz music and flavorful New Orleans-inspired cuisine.
-                      </td>
-                      <td>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                      </td>
-                    </tr>
+                    </thead>
+                    <tbody>
+                    <% @sailings.each do |sail| %>
+                        <tr>
+                          <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
+                          <td class="sailing-info">
+                            <span class="ship-name"><%= sail.cruise_ship_name %></span><br><br>
+                            <p><%= sail.destination_identifier %></p>
+                            <p><%= sail.departure_date.strftime("%F %I:%M%p")  %></p>
+                            <p><%= sail.return_date.strftime("%F %I:%M%p")  %></p>
+                            <br>
+                            <p><%= %></p>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-danger">Leave</button>
+                          </td>
+                    <% end %>
+
+                    </tbody>
                   </table>
+
+                  <!--<table class="table">-->
+                    <!--<tr>-->
+                      <!--<td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>-->
+                      <!--<td class="sailing-info">-->
+                        <!--<a href="sailings/1"><span class="ship-name">Celebrity Infinity</span></a><br><br>-->
+                        <!--<h3>Sailing in 30 days!</h3> <br>-->
+                        <!--Come back new from a cruise vacation on the Celebrity Infinity,-->
+                        <!--one of the stars of the destination that bears her name.-->
+                        <!--At her launch in 2004, this incredible cruise ship introduced Movies Under the Stars - a giant-->
+                        <!--poolside movie theater featuring first run movies, concerts and sporting events.-->
+                        <!--Here you can relax in a cushioned lounger with freshly-popped,-->
+                        <!--complimentary popcorn under the night sky. Onboard, guests can also enjoy a variety of-->
+                        <!--street performing acts in the Italian-inspired Piazza, indulge in a soothing massage-->
+                        <!--from an outdoor cabana at The Sanctuary, or savor a premium steak cooked to-->
+                        <!--order in the Crown Grill.-->
+                      <!--</td>-->
+                      <!--<td>-->
+                        <!--<button type="button" class="btn btn-danger">Delete</button>-->
+                      <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>-->
+                      <!--<td class="sailing-info">-->
+                        <!--<a href="sailings/2"><span class="ship-name">Celebrity Solstice</span></a><br><br>-->
+                        <!--<h3>Sailing in 91 days!</h3>-->
+                        <!--Featuring our latest innovations, Celebrity Solstice is one of the largest cruise ships,-->
+                        <!--with room for 3,080 guests. From her nearly 900 balconies, you can enjoy sweeping views of-->
+                        <!--romantic landscapes across the world.  After experiencing the relaxed comfort of our intimate-->
+                        <!--onboard venues, however, you may not want to explore the beauty ashore! The serenity of The-->
+                        <!--Sanctuary and the casual street café atmosphere of the Piazza may just reel you in for the-->
+                        <!--day, while your nights might be filled with the great tasting food offered in the Crown Grill-->
+                        <!--followed by a first-run film at Movies Under the Stars-->
+                      <!--</td>-->
+                      <!--<td>-->
+                        <!--<button type="button" class="btn btn-danger">Delete</button>-->
+                      <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                      <!--<td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>-->
+                      <!--<td class="sailing-info">-->
+                        <!--<a href="sailings/3"><span class="ship-name">Star Princess</span></a><br><br>-->
+                        <!--<h3>Sailing in 156 days!</h3>-->
+                        <!--Star Princess is one of just two cruise ships in the Princess fleet specially built to sail-->
+                        <!--through the Panama Canal!  Ninety percent of her staterooms offer ocean views, with 700-->
+                        <!--balconies available, perfect for witnessing the engineering marvel of the Canal.  Spend the-->
+                        <!--night watching a movie, concert or sporting event outdoors in a plush lounge chair at Movies-->
+                        <!--Under the Stars and come back new after a visit to The Sanctuary, our tranquil haven just-->
+                        <!--for adults. Unique to Star Princess and her sister cruise ship, the Bayou Café and-->
+                        <!--Steakhouses features live jazz music and flavorful New Orleans-inspired cuisine.-->
+                      <!--</td>-->
+                      <!--<td>-->
+                        <!--<button type="button" class="btn btn-danger">Delete</button>-->
+                      <!--</td>-->
+                    <!--</tr>-->
+                  <!--</table>-->
 
                 </div>
                 <div class="tab-pane" id="tab2">

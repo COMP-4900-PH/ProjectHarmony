@@ -1,6 +1,6 @@
 class Sailing < ActiveRecord::Base
-  has_many :travelling_party
-  has_many :event
+  has_many :travelling_parties
+  has_many :events
 
   # Calculate the amount of days until the ship leaves
   def daysToSailing
