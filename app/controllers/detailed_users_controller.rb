@@ -32,6 +32,10 @@ class DetailedUsersController < ApplicationController
    if DetailedUser.find_by_user_id(@detailed_user.user_id)
      respond_to do |format|
        if @detailed_user.update(detailed_user_params)
+         # Unsure if these lines are needed here - (mike may 13)
+         # user = User.find_by_id(@detailed_user.user_id)
+         # user.detailedUsers = true
+         # user.save
          format.html { redirect_to @detailed_user, notice: 'Detailed user was successfully updated.' }
          format.json { render :show, status: :ok, location: @detailed_user }
        else
@@ -42,9 +46,10 @@ class DetailedUsersController < ApplicationController
    else
     respond_to do |format|
       if @detailed_user.save
-        user = User.find_by_id(@detailed_user.user_id)
-        user.detailUsers = 't'
-        user.save
+        # Unsure if these lines are needed here - (mike may 13)
+        # user = User.find_by_id(@detailed_user.user_id)
+        # user.detailedUsers = true
+        # user.save
         format.html { redirect_to @detailed_user, notice: 'Detailed user was successfully created.' }
         format.json { render :show, status: :ok, location: @detailed_user }
       else
@@ -62,6 +67,9 @@ class DetailedUsersController < ApplicationController
   def update
     respond_to do |format|
       if @detailed_user.update(detailed_user_params)
+        user = User.find_by_id(@detailed_user.user_id)
+        user.detailedUsers = true
+        user.save
         format.html { redirect_to @detailed_user, notice: 'Detailed user was successfully updated.' }
         format.json { render :show, status: :ok, location: @detailed_user }
       else
