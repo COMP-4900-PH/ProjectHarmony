@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512215557) do
+ActiveRecord::Schema.define(version: 20160513183812) do
 
   create_table "detailed_users", force: :cascade do |t|
     t.string   "first_name"
@@ -121,12 +121,13 @@ ActiveRecord::Schema.define(version: 20160512215557) do
   create_table "non_registered_users", force: :cascade do |t|
     t.integer  "age"
     t.string   "gender"
-    t.string   "travellingparty"
-    t.string   "references"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "travellingparty_id"
+    t.integer  "traveling_party_id"
   end
+
+  add_index "non_registered_users", ["traveling_party_id"], name: "index_non_registered_users_on_traveling_party_id"
 
   create_table "party_registers", force: :cascade do |t|
     t.integer  "user_id"
@@ -152,11 +153,12 @@ ActiveRecord::Schema.define(version: 20160512215557) do
   end
 
   create_table "travelling_parties", force: :cascade do |t|
-    t.string   "sailing"
-    t.string   "references"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "sailing_id"
   end
+
+  add_index "travelling_parties", ["sailing_id"], name: "index_travelling_parties_on_sailing_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
