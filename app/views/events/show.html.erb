@@ -1,7 +1,3 @@
-<!--<p id="notice"><%= notice %></p>-->
-
-<!--<%= link_to 'Edit', edit_event_path(@event) %> | -->
-<!--<%= link_to 'Back', events_path %>-->
 
 <style>
   tr.spaceUnder > td
@@ -9,7 +5,22 @@
     padding-bottom: 1em;
   }
 </style>
+<script>
+  $(document).ready(function(){
+//    $('.pop').webuiPopover({title:'Title',content:'Content',trigger:'hover'});
 
+    $('.pop').webuiPopover({title:'Title',
+      type:'async',
+      url:'https://api.github.com/',
+      content:function(data){
+        var html = '<ul>';
+        for(var key in data){html+='<li>'+data[key]+'</li>';}
+        html+='</ul>';
+        return html;
+      }, trigger:'hover'
+    });
+  });
+</script>
 <div class="dashboard">
   <div class="container">
     <div class="dashboard-info">
@@ -19,17 +30,14 @@
           <table style="margin-left: 1em; margin-top: 1em">
             <tr class="spaceUnder">
               <td>
-                <a href="/profile/1"><%= image_tag "profile/profile1.jpg", size: "100x100", :class => "img-responsive" %></a></td>
+                <a href="/profile/1">
+                  <%= image_tag "profile/profile2.jpg", size: "100x100", :class => "img-responsive pop", 'data-title' => 'title' , 'data-placement'=>"horizontal" %></a></td>
               </td>
             </tr>
             <tr class="spaceUnder">
               <td>
-                <a href="/profile/1"><%= image_tag "profile/profile2.jpg", size: "100x100", :class => "img-responsive" %></a></td>
-              </td>
-            </tr>
-            <tr class="spaceUnder">
-              <td>
-                <a href="/profile/1"><%= image_tag "profile/profile3.jpg", size: "100x100", :class => "img-responsive" %></a></td>
+                <a href="/profile/1"  class="pop"  data-title="Title" data-content="Contents..." data-placement="auto-right">
+                  <%= image_tag "profile/profile3.jpg", size: "100x100", :class => "img-responsive" %></a></td>
               </td>
             </tr>
           </table>
@@ -131,3 +139,6 @@
   </div>
 </div>
 
+
+<script src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>

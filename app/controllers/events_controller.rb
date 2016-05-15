@@ -22,6 +22,13 @@ class EventsController < ApplicationController
     end
   end
 
+  def popover
+    respond_to do |format|
+      format.html { redirect_to @event, notice: 'Event was successfully created.' }
+      format.json { render :show, status: :created, location: @event }
+    end
+  end
+
 
   # GET /events/1
   # GET /events/1.json
