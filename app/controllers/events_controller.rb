@@ -22,19 +22,12 @@ class EventsController < ApplicationController
     end
   end
 
-  def popover
-    respond_to do |format|
-      format.html { redirect_to @event, notice: 'Event was successfully created.' }
-      format.json { render :show, status: :created, location: @event }
-    end
-  end
-
 
   # GET /events/1
   # GET /events/1.json
   def show
     @event = Event.find_by_id(params[:id])
-    #abort @event.inspect
+    @users = DetailedUser.joins('JOIN event_registers ON event_registers.user_id = detailed_users.user_id WHERE event_id = ' + params[:id])
   end
 
   # GET /events/new

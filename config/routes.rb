@@ -6,7 +6,7 @@ Rails.application.routes.draw do
    get 'editprofile/:id' => 'detailed_users#new'
    post 'editprofile' => 'detailed_users#create'
 
-  get 'events/popover' => 'events#popover'
+  get 'popover/:id' => 'users#popover'
 
   # Routes for user model
   devise_for :users, :controllers => {:registrations => "registrations"}

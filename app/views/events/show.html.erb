@@ -5,22 +5,22 @@
     padding-bottom: 1em;
   }
 </style>
-<script>
-  $(document).ready(function(){
-//    $('.pop').webuiPopover({title:'Title',content:'Content',trigger:'hover'});
 
-    $('.pop').webuiPopover({title:'Title',
-      type:'async',
-      url:'https://api.github.com/',
-      content:function(data){
-        var html = '<ul>';
-        for(var key in data){html+='<li>'+data[key]+'</li>';}
-        html+='</ul>';
-        return html;
-      }, trigger:'hover'
-    });
-  });
+<script >
+    function pop(id){
+      $('.pop').webuiPopover({
+        type:'async',
+        url:'/popover/' + id,
+        content:function(data){
+          var html = '<h5 style="text-align: center">Recent Sailings and Events Joined</h5><table class="table"><tr><th>Event</th><th>Cruise</th></tr>';
+          for(var key in data){html+='<tr><td>'+ data[key].event_name+'</td>' + '<td>' + data[key].cruise_ship_name +'</td></tr>';}
+          html+='</table>';
+          return html;
+        }, trigger:'hover'
+      });
+    }
 </script>
+
 <div class="dashboard">
   <div class="container">
     <div class="dashboard-info">
@@ -28,18 +28,14 @@
         <div class="col-md-2">
           <!-- ATTENDEES -->
           <table style="margin-left: 1em; margin-top: 1em">
-            <tr class="spaceUnder">
-              <td>
-                <a href="/profile/1">
-                  <%= image_tag "profile/profile2.jpg", size: "100x100", :class => "img-responsive pop", 'data-title' => 'title' , 'data-placement'=>"horizontal" %></a></td>
-              </td>
-            </tr>
-            <tr class="spaceUnder">
-              <td>
-                <a href="/profile/1"  class="pop"  data-title="Title" data-content="Contents..." data-placement="auto-right">
-                  <%= image_tag "profile/profile3.jpg", size: "100x100", :class => "img-responsive" %></a></td>
-              </td>
-            </tr>
+            <% @users.each do |u|%>
+                <tr class="spaceUnder">
+                  <td>
+                    <a href="/profile/1">
+                      <%= image_tag u.avatar.url(:small), :class => "img-responsive pop", 'onmouseover'=> "pop(#{u.id})" ,'data-title' => "#{u.first_name} #{u.last_name}"  , 'data-placement'=> 'horizontal' %></a></td>
+                  </td>
+                </tr>
+            <% end %>
           </table>
         </div>
 

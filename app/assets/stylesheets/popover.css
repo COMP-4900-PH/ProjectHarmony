@@ -125,7 +125,8 @@
 .webui-popover-title {
     padding: 8px 14px;
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
     font-weight: bold;
     line-height: 18px;
     background-color: #ffffff;
