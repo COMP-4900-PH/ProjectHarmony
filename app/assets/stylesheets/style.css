@@ -392,6 +392,7 @@ a#loginButton img {
      min-height:410px;
      text-align:center;
      padding-top:3em;
+     padding-bottom:3em;
  }
 
 .banner3{
@@ -403,6 +404,7 @@ a#loginButton img {
     min-height:410px;
     text-align:center;
     padding-top:3em;
+    padding-bottom: 3em;
 }
 
 .carousel-inner > .item > img,
@@ -438,7 +440,7 @@ a#loginButton img {
     color: #000;
     font-size: 2em;
     font-weight: 500;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
 }
 .banner input[type="text"], input[type="email"], input[type="password"] {
     background: rgba(111, 111, 111, 0.17);
@@ -2461,6 +2463,12 @@ p.educate {
     .banner h1 {
         font-size: 1.5em;
     }
+    .banner2 h1 {
+        font-size: 1.5em;
+    }
+    .banner3 h1 {
+        font-size: 1.5em;
+    }
     .flat .selected, .flat li {
         font-size: 0.85em;
     }
@@ -2478,6 +2486,12 @@ p.educate {
         font-size: 0.95em;
     }
     .banner {
+        min-height: 350px;
+    }
+    .banner2 {
+        min-height: 350px;
+    }
+    .banner3 {
         min-height: 350px;
     }
     .flat:hover .selected::after, .flat.focus .selected::after {
@@ -2678,6 +2692,14 @@ p.educate {
         right: 248px;
     }
     .banner {
+        min-height:320px;
+        padding-top:2em;
+    }
+    .banner2 {
+        min-height:320px;
+        padding-top:2em;
+    }
+    .banner3 {
         min-height:320px;
         padding-top:2em;
     }
@@ -3053,6 +3075,12 @@ p.educate {
     .banner h1 {
         font-size: 1.2em;
     }
+    .banner2 h1 {
+        font-size: 1.2em;
+    }
+    .banner3 h1 {
+        font-size: 1.2em;
+    }
     .dropdown-button {
         margin-left: 5px;
         width: 45%;
@@ -3095,6 +3123,14 @@ p.educate {
         font-size: 1em;
     }
     .banner {
+        min-height:220px;
+        padding-top: 1em;
+    }
+    .banner2 {
+        min-height:220px;
+        padding-top: 1em;
+    }
+    .banner3 {
         min-height:220px;
         padding-top: 1em;
     }

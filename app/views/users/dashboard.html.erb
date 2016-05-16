@@ -37,7 +37,7 @@
                         <tr>
                           <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
                           <td class="sailing-info">
-                            <span class="ship-name"><%= sail.cruise_ship_name %></span><br><br>
+                            <a href="/sailings/<%= sail.id %>"><span class="ship-name"><%= sail.cruise_ship_name %></span></a><br><br>
                             <p><%= sail.destination_identifier %></p>
                             <p><%= sail.departure_date.strftime("%F %I:%M%p")  %></p>
                             <p><%= sail.return_date.strftime("%F %I:%M%p")  %></p>
