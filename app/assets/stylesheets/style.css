@@ -3364,3 +3364,10 @@ p.educate {
     background: none;
     text-transform: uppercase;
 }
+
+.badge-notify{
+    background: red;
+    position: relative;
+    top: -65px;
+    left: 35px;
+}

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
    get 'editprofile/:id' => 'detailed_users#new'
    post 'editprofile' => 'detailed_users#create'
 
+  get 'popover/:id' => 'users#popover'
+
   # Routes for user model
   devise_for :users, :controllers => {:registrations => "registrations"}
   #devise_for :users
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
   get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
 
   # conversations
+  post "conversations/new" => "conversations#new"
   resources :conversations do
     member do
       post :reply

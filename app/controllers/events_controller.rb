@@ -6,15 +6,28 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
-    @events = Event.all.order('created_at desc')
+    # @events = Event.all
+
+    if params[:id]
+      # get all records with id less than 'our last id'
+      # and limit the results to 5
+      @events = Event.where('id < ?', params[:id]).limit(5)
+    else
+      @events = Event.limit(5)
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+
 
   # GET /events/1
   # GET /events/1.json
   def show
     @event = Event.find_by_id(params[:id])
-    #abort @event.inspect
+    @users = DetailedUser.joins('JOIN event_registers ON event_registers.user_id = detailed_users.user_id WHERE event_id = ' + params[:id])
   end
 
   # GET /events/new

@@ -1,0 +1,13 @@
+<tr class="record" data-id="<%= event.id %>">
+  <td class="event-image"> <%= image_tag event.image.url(:small) %><br></td>
+  <td class="sailing-info" width="50%">
+    <a href="/events/<%= event.id %>"><span class="ship-name"><%= event.event_name %></span> </a><br><br>
+    <p><%= event.description %></p>
+  </td>
+  <td>
+    <div class="event-description">
+      Host: <a href="profile/<%= event.creator_id %>"><span class="ship-name"><%= User.find_by_id(event.creator_id).name %></span></a> <br>
+      Sailing: <a href="sailings/<%= event.sailing_id %>"><span class="ship-name"> <%= Sailing.find_by_id(event.sailing_id).cruise_ship_name %></span></a><br>
+    </div>
+  </td>
+</tr>
