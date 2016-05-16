@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'travelling_party/create'
+  post 'travelling_party/create/:id' => 'travelling_party#create'
+
   # Route for user dashboard
   get 'dashboard' => 'users#dashboard', as: "user_dashboard"
   get 'profile/:id' => 'users#profile'
-   get 'editprofile/:id' => 'detailed_users#new'
-   post 'editprofile' => 'detailed_users#create'
+  get 'editprofile/:id' => 'detailed_users#new'
+  post 'editprofile' => 'detailed_users#create'
 
   get 'popover/:id' => 'users#popover'
 

@@ -45,6 +45,10 @@ class Ability
       # Detailed users can join sailings
       can :new, Sailing
 
+      ########## Travelling Party #########
+
+      can :create, TravellingParty
+
     else
 
       # can :read, :all

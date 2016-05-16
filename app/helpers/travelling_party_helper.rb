@@ -1,0 +1,2 @@
+module TravellingPartyHelper
+end
