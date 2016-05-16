@@ -9,6 +9,7 @@ class RegistrationsController < Devise::RegistrationsController
     resource_saved = resource.save
     yield resource if block_given?
     if resource_saved
+      #create entry in detail_users table after successfully created an account
       user = User.find_by_email(sign_up_params[:email])
       DetailedUser.create(:user_id => user.id)
       if resource.active_for_authentication?
