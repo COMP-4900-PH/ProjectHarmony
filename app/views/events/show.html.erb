@@ -46,7 +46,8 @@
              <h2><%= @event.event_name %></h2>
             </div>
             <div class="col-md-6" style="text-align: center">
-              <a href="" class="btn btn-success">Join and RSVP</a>
+              <%= button_to 'Join This Event', "/event_register/create/#{@event.id}", :method=>:post %>
+              <!--<a href="" class="btn btn-success">Join and RSVP</a>-->
             </div>
           </div>
 

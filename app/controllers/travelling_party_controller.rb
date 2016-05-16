@@ -13,6 +13,7 @@ class TravellingPartyController < ApplicationController
     party_register.travelling_party_id = travelling_party.id
     party_register.user_id = current_user.id
 
+    flash[:notice] = "You have joined the sailing!"
     party_register.save
 
   end
