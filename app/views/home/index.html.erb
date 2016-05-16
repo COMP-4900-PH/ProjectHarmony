@@ -1,69 +1,44 @@
-<script type="text/javascript">
-//  $(document).ready(function () {
-//    $('.carousel').carousel({
-//      interval: 3000
-//    });
-//
-//    $('.carousel').carousel('cycle');
-//  });
-  $('#myCarousel').carousel({
-    interval: 5000
-    , pause: 'hover'
-    , wrap: true
-  });
 
-  $('.carousel .item').each(function(){
-    var next = $(this);
-    var last;
-    for (var i=0;i<5;i++) {
-      next=next.next();
-      if (!next.length) {
-        next = $(this).siblings(':first');
-      }
-
-      last=next.children(':first-child').clone().appendTo($(this));
-    }
-    last.addClass('rightest');
-
-  });
-</script>
-
-<div class="carousel slide" id="myCarousel" data-ride="carousel" data-wrap="false">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-
-    <div class="item active">
-      <div class="banner">
-        <h1>Connect before your cruise.</h1>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="banner2">
-        <h1>Set Sail!</h1>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="banner3">
-        <h1>Have Fun!</h1>
-      </div>
-    </div>
-  </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
         <!--<div class="dropdown-buttons">
+=======
+<div class="banner">
+  <div class="container_wrap3">
+    <h1>Connect before your cruise.</h1>
+    <div class="offering">
+      <h2>What can Project Harmony offer you?</h2>
+      <h3>Find your cruise and connect with people going!</h3>
+      <!--<ul class="icons wow fadeInUp" data-wow-delay="0.4s">-->
+      <!--<li><i class="icon1"> </i><span class="one"> </span></li>-->
+      <!--<li><i class="icon2"> </i><span class="two"> </span></li>-->
+      <!--<li><i class="icon3"> </i><span class="three"> </span></li>-->
+      <!--<li><i class="icon4"> </i><span class="four"> </span></li>-->
+      <!--<li><i class="icon5"> </i></li>-->
+      <!--</ul>-->
+      <div class="real">
+      <h4>Connection</h4>
+      <div class="col-sm-6">
+      <ul class="service_grid">
+      <i class="s1"> </i>
+      <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+      <p><b>Events: </b>Find events happening on your cruise, join, and communicate with passengers that have similar interests. Or create your own event that others can join. Want to start a poker tournament? No problem!</p>
+      </li>
+      <div class="clearfix"> </div>
+      </ul>
+      </div>
+      <div class="col-sm-6">
+      <ul class="service_grid">
+      <i class="s2"> </i>
+      <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+      <p><b>Search: </b>Look for the perfect cruise for you by using the search bar below. Enter a name, place, or event, and then a date range to find a cruise that matches your needs. It's that easy!</p>
+      </li>
+      <div class="clearfix"> </div>
+      </ul>
+      </div>
+      <div class="clearfix"> </div>
+      </div>
+    </div>
+    <!--<div class="dropdown-buttons">
+>>>>>>> 7951a95d942f5ee0a46cf94a983183b28441c65f
 
       <div class="dropdown-button">
         <%= select_tag(:id, options_for_select(@uniqueSailings), {class: "dropdown", tabindex: "9", "data-settings" => '{"wrapperClass":"flat"}'}) %>

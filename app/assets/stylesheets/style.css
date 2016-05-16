@@ -423,6 +423,14 @@ a#loginButton img {
     margin:0 auto;
     width:70%;
 }
+.container_wrap3{
+    margin:0 auto;
+    width:70%;
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 .dropdown-buttons{
     margin-bottom: 1em;
 }
@@ -1395,10 +1403,10 @@ ul.item_module li.module_right p{
 }
 .offering{
     text-align:center;
-    padding:5em 0;
+    padding:1em 0;
 }
 .offering h2{
-    color: #566375;
+    color: black;
     font-size: 1.5em;
     font-weight: 100;
 }
@@ -1533,13 +1541,13 @@ ul.service_grid li.desc1 {
     text-align:left;
 }
 ul.service_grid li.desc1 p{
-    color: #96a6a7;
+    color: black;
     font-size: 0.85em;
     font-weight: 100;
     line-height: 1.8em;
 }
 .offering h3 {
-    color: #96a6a7;
+    color: black;
     font-size: 1em;
     font-weight:100;
 }
