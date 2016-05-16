@@ -384,7 +384,18 @@ a#loginButton img {
     padding-bottom: 3em;
 }
 .banner2{
-    background: url("MultiCruise.jpg") no-repeat center top;
+     background: url("MultiCruise.jpg") no-repeat center top;
+     background-size:cover;
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     min-height:410px;
+     text-align:center;
+     padding-top:3em;
+ }
+
+.banner3{
+    background: url("socializing.jpg") no-repeat center top;
     background-size:cover;
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -393,6 +404,13 @@ a#loginButton img {
     text-align:center;
     padding-top:3em;
 }
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
 .container_wrap{
     margin:0 auto;
     width:40%;
@@ -3370,4 +3388,9 @@ p.educate {
     position: relative;
     top: -65px;
     left: 35px;
+}
+
+.scrolling {
+    height: 150px;
+    overflow: scroll;
 }
