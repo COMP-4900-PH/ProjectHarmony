@@ -384,7 +384,19 @@ a#loginButton img {
     padding-bottom: 3em;
 }
 .banner2{
-    background: url("MultiCruise.jpg") no-repeat center top;
+     background: url("MultiCruise.jpg") no-repeat center top;
+     background-size:cover;
+     -webkit-background-size:cover;
+     -moz-background-size:cover;
+     -o-background-size:cover;
+     min-height:410px;
+     text-align:center;
+     padding-top:3em;
+     padding-bottom:3em;
+ }
+
+.banner3{
+    background: url("socializing.jpg") no-repeat center top;
     background-size:cover;
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -392,7 +404,15 @@ a#loginButton img {
     min-height:410px;
     text-align:center;
     padding-top:3em;
+    padding-bottom: 3em;
 }
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
 .container_wrap{
     margin:0 auto;
     width:40%;
@@ -405,6 +425,14 @@ a#loginButton img {
     margin:0 auto;
     width:70%;
 }
+.container_wrap3{
+    margin:0 auto;
+    width:70%;
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 .dropdown-buttons{
     margin-bottom: 1em;
 }
@@ -412,7 +440,7 @@ a#loginButton img {
     color: #000;
     font-size: 2em;
     font-weight: 500;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
 }
 .banner input[type="text"], input[type="email"], input[type="password"] {
     background: rgba(111, 111, 111, 0.17);
@@ -714,7 +742,7 @@ a#loginButton img {
 /*--content--*/
 .content_top{
     background:#fff;
-    padding:13px 0 5px;
+    padding: 20px 0 5px 0;
     border-bottom: 1px solid #E6E5E5;
 }
 .content_menu ul{
@@ -1377,10 +1405,10 @@ ul.item_module li.module_right p{
 }
 .offering{
     text-align:center;
-    padding:5em 0;
+    padding:1em 0;
 }
 .offering h2{
-    color: #566375;
+    color: black;
     font-size: 1.5em;
     font-weight: 100;
 }
@@ -1515,13 +1543,13 @@ ul.service_grid li.desc1 {
     text-align:left;
 }
 ul.service_grid li.desc1 p{
-    color: #96a6a7;
+    color: black;
     font-size: 0.85em;
     font-weight: 100;
     line-height: 1.8em;
 }
 .offering h3 {
-    color: #96a6a7;
+    color: black;
     font-size: 1em;
     font-weight:100;
 }
@@ -2435,6 +2463,12 @@ p.educate {
     .banner h1 {
         font-size: 1.5em;
     }
+    .banner2 h1 {
+        font-size: 1.5em;
+    }
+    .banner3 h1 {
+        font-size: 1.5em;
+    }
     .flat .selected, .flat li {
         font-size: 0.85em;
     }
@@ -2452,6 +2486,12 @@ p.educate {
         font-size: 0.95em;
     }
     .banner {
+        min-height: 350px;
+    }
+    .banner2 {
+        min-height: 350px;
+    }
+    .banner3 {
         min-height: 350px;
     }
     .flat:hover .selected::after, .flat.focus .selected::after {
@@ -2652,6 +2692,14 @@ p.educate {
         right: 248px;
     }
     .banner {
+        min-height:320px;
+        padding-top:2em;
+    }
+    .banner2 {
+        min-height:320px;
+        padding-top:2em;
+    }
+    .banner3 {
         min-height:320px;
         padding-top:2em;
     }
@@ -3027,6 +3075,12 @@ p.educate {
     .banner h1 {
         font-size: 1.2em;
     }
+    .banner2 h1 {
+        font-size: 1.2em;
+    }
+    .banner3 h1 {
+        font-size: 1.2em;
+    }
     .dropdown-button {
         margin-left: 5px;
         width: 45%;
@@ -3069,6 +3123,14 @@ p.educate {
         font-size: 1em;
     }
     .banner {
+        min-height:220px;
+        padding-top: 1em;
+    }
+    .banner2 {
+        min-height:220px;
+        padding-top: 1em;
+    }
+    .banner3 {
         min-height:220px;
         padding-top: 1em;
     }
@@ -3370,4 +3432,9 @@ p.educate {
     position: relative;
     top: -65px;
     left: 35px;
+}
+
+.scrolling {
+    height: 150px;
+    overflow: scroll;
 }

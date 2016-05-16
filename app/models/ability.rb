@@ -50,9 +50,14 @@ class Ability
 
       ########## Travelling Party #########
 
+      # Detailed users can join sailings, via travelling party controller
       can :create, TravellingParty
 
 
+      ########## Event Register  #########
+
+      # Detailed users can join events
+      can :create, EventRegister
 
     else
 

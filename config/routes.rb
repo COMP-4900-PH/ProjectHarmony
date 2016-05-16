@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'travelling_party/create'
+  get 'event_register/create'
+
+  # Route for joining a sailing, via creating a travelling party
   post 'travelling_party/create/:id' => 'travelling_party#create'
+  # Route for joining an event
+  post 'event_register/create/:id' => 'event_register#create'
 
   # Route for user dashboard
   get 'dashboard' => 'users#dashboard', as: "user_dashboard"
@@ -22,7 +26,7 @@ Rails.application.routes.draw do
   # Routes for events model
   resources :events
 
-
+  # Routes for detailed users model
   resources :detailed_users
 
   # The priority is based upon order of creation: first created -> highest priority.
