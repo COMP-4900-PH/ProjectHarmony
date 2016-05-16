@@ -16,8 +16,12 @@ Rails.application.routes.draw do
   #devise_for :users
   # Routes for sailing model
   resources :sailings
+
+  #comments
+  post '/comment' => 'events#comment'
   # Routes for events model
   resources :events
+
 
   resources :detailed_users
 

@@ -81,6 +81,8 @@
               <br>
 
             </div>
+
+          <!-- COMMENT -->
           <hr class="hr-line">
               <h2 style="text-align: center"> comments </h2>
           <hr class="hr-line">
@@ -116,12 +118,17 @@
               </td>
             </tr>
           </table>
-          <form role="form">
+
+          <%= form_tag("/comment") do %>
+              <input type="hidden" name="user" value="<%= current_user.id %>">
+              <input type="hidden" name="event" value="<%= @event.id %>">
             <div class="form-group">
               <textarea placeholder="Add Comments" rows="4" class="form-control" name="comment"></textarea>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+            <div style="text-align: center">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          <% end %>
         </div>
         <div class="col-md-3">
           <%= image_tag @event.image.url(:thumb) , class: 'avatar'%><br><br><br>

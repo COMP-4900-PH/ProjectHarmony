@@ -55,6 +55,13 @@ class EventsController < ApplicationController
     end
   end
 
+  #POST /comment
+  def comment
+      #abort params[:user].inspect
+     Comment.create(:event_id => params[:event], :user_id => params[:user], :text => params[:comment])
+    redirect_to "/events/#{params[:event]}"
+  end
+
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update

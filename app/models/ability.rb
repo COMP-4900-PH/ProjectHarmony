@@ -40,6 +40,9 @@ class Ability
       # Detailed users can view the show events page
       can :show, Event
 
+      #add comment to an event
+      can :comment, Event
+
       ########## Sailings #########
 
       # Detailed users can join sailings
@@ -48,6 +51,8 @@ class Ability
       ########## Travelling Party #########
 
       can :create, TravellingParty
+
+
 
     else
 
