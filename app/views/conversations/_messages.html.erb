@@ -3,13 +3,13 @@
     <div class="media">
       <div class="media-left">
         <!-- user avators can go here -->
-        <a href="#">
-          <img class="media-object" src="https://placeimg.com/64/64/people" alt="...">
+        <a href="/profile/<%= message.sender.id %>">
+          <%= image_tag DetailedUser.find_by_user_id(message.sender.id).avatar.url(:small) , size: "50x50" %>
         </a>
+         <a href="/profile/<%= message.sender.id %>"><span class="ship-name"><%= message.sender.name %></span></a>
       </div>
       <div class="media-body">
         <h4 class="media-heading">
-          <%= message.sender.name %> <br>
           <small><b>Subject: </b><%= message.subject %></small><br>
           <small><b>Date: </b><%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
         </h4>

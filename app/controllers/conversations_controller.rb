@@ -2,15 +2,7 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @users = {}
-    recipient = params[:recipient]
-    recipient.each do |r|
-      user = User.find_by_id(r)
-      if user != nil
-        @users[user.id] = user.name
-      end
-    end
-
+    @users = User.where(id: params[:recipients])
   end
 
   def create

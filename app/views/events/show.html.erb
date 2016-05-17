@@ -46,8 +46,7 @@
              <h2><%= @event.event_name %></h2>
             </div>
             <div class="col-md-6" style="text-align: center">
-              <%= button_to 'Join This Event', "/event_register/create/#{@event.id}", :method=>:post %>
-              <!--<a href="" class="btn btn-success">Join and RSVP</a>-->
+              <%= button_to 'Join This Event', "/event_register/create/#{@event.id}", :method=>:post , class: "btn btn-success"%>
             </div>
           </div>
 
@@ -82,42 +81,37 @@
               <br>
 
             </div>
+
+          <!-- COMMENT -->
           <hr class="hr-line">
               <h2 style="text-align: center"> comments </h2>
           <hr class="hr-line">
 
           <table class="table">
+            <% @comments.each do |c|%>
             <tr>
-              <td><img src="https://placeimg.com/50/50/people" alt="..."><br>Craig</td>
+              <td width="12%"> <%= image_tag DetailedUser.find_by_user_id(c.user_id).avatar.url(:small) , size: "50x50" %><br><%= DetailedUser.find_by_user_id(c.user_id).first_name %></td>
               <td class="sailing-info">
-                <p class="comment">Hello! I will be on this cruise from May 2-10 and I very excited to attend. I've been in
-                  a mexican fiesta before and It was fantastic. Looking Forward to this event</p>
+                <p class="comment"><%= c.text%></p>
                 <p class="comment comment-date-time" align="right">
-                  Sunday, May 1, 2016 , 5:30 PM
+                  <%= c.created_at.strftime("%A, %b %d, %Y at %I:%M%p")%>
                 </p>
               </td>
             </tr>
-            <tr>
-              <td><img src="https://placeimg.com/50/50/people" alt="..."><br>Salvador</td>
-              <td class="sailing-info">
-                <p class="comment">Hi Craig, Good to hear. See you at the cruise!</p>
-                <p class="comment comment-date-time" align="right">
-                  Sunday, May 4, 2016 , 5:30 PM
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td><img src="https://placeimg.com/50/50/people" alt="..."><br>Emy</td>
-              <td class="sailing-info">
-                <p class="comment">I will be in this cruise by May 13, Is it possible to extend the date? Really want
-                  to join this event.</p>
-                <p class="comment comment-date-time" align="right">
-                  Sunday, May 4, 2016 , 5:30 PM
-                </p>
-              </td>
-            </tr>
+
+             <% end %>
           </table>
 
+          <%= form_tag("/comment") do %>
+              <%= hidden_field(:comment, :user_id, :value => current_user.id) %>
+              <%= hidden_field(:comment, :event_id, :value => @event.id) %>
+            <div class="form-group">
+              <%= text_area(:comment, :text, rows: 4 , class: "form-control", required: "required") %>
+            </div>
+            <div style="text-align: center">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          <% end %>
         </div>
         <div class="col-md-3">
           <%= image_tag @event.image.url(:thumb) , class: 'avatar'%><br><br><br>
@@ -130,7 +124,7 @@
           <div style="text-align: center">
             <%= form_tag(new_conversation_path) do %>
                 <% @users.each do |u|%>
-                  <input name="recipient[]" type="hidden" value="<%= u.user_id %>"/>
+                  <input name="recipients[]" type="hidden" value="<%= u.user_id %>"/>
                 <% end %>
                 <%= submit_tag("Message Vacationers", class: "btn btn-primary") %>
             <% end %>

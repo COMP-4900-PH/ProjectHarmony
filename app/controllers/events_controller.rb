@@ -28,6 +28,10 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by_id(params[:id])
     @users = DetailedUser.joins('JOIN event_registers ON event_registers.user_id = detailed_users.user_id WHERE event_id = ' + params[:id])
+    #sql = "select * from detailed_users JOIN comments ON comments.user_id = detailed_users.user_id where comments.event_id = #{params[:id]}"
+    @comments = Comment.where(event_id: params[:id])
+    #@comments = DetailedUser.find_by_sql(sql)
+    #abort @comments.inspect
   end
 
   # GET /events/new
@@ -50,6 +54,20 @@ class EventsController < ApplicationController
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  #POST /comment
+  def comment
+    @comment = Comment.new(comment_params)
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to "/events/#{comment_params['event_id']}" }
+        format.json { render :show, status: :created, location: "/events/#{params[:event]}" }
+      else
+        format.html { render :show }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
@@ -88,5 +106,9 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.fetch(:event, {}).permit(:creator_id,:sailing_id, :event_name, :start_date , :end_date, :location, :max_participants, :sailing_id, :description, :image)
+    end
+
+    def comment_params
+      params.fetch(:comment, {}).permit(:user_id, :event_id, :text)
     end
 end

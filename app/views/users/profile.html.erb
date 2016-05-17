@@ -3,7 +3,7 @@
     <div class="dashboard-info">
       <div class="row">
         <div class="col-lg-push-4 col-lg-8 ">
-          <h2 id="name-h2"><%= current_user.name %></h2>
+          <h2 id="name-h2"><%= @user.name %></h2>
           <hr class="hr-line">
           Location: Vancouver, Canada
           <br><br>
@@ -76,7 +76,7 @@
           <div class="col-lg-pull-8 col-lg-4  profile-info">
             <%= image_tag @detailed_user.avatar.url(:thumb) , class: 'avatar'%><br><br><br>
             <%= form_tag(new_conversation_path) do %>
-                <input name="recipient[]" type="hidden" value="<%= @user.id %>"/>
+                <input name="recipients[]" type="hidden" value="<%= @detailed_user.user_id %>"/>
                 <%= submit_tag("Send a message", class: "btn btn-primary") %>
             <% end %>
             <hr class="hr-line-2">
