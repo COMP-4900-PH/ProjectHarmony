@@ -247,8 +247,7 @@ body a{
 }
 #loginContainer a span{
     padding:0px 0px 0 5px;
-    color: #fff;
-    text-transform: uppercase;
+    color: black;
     font-size: 0.85em;
 }
 /* Login Button */
