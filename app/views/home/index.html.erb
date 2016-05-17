@@ -1,11 +1,5 @@
 <script type="text/javascript">
-  //  $(document).ready(function () {
-  //    $('.carousel').carousel({
-  //      interval: 3000
-  //    });
-  //
-  //    $('.carousel').carousel('cycle');
-  //  });
+
   $('#myCarousel').carousel({
     interval: 5000
     , pause: 'hover'
@@ -16,7 +10,7 @@
   $('.carousel .item').each(function () {
     var next = $(this);
     var last;
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 2; i++) {
       next = next.next();
       if (!next.length) {
         next = $(this).siblings(':first');
@@ -28,138 +22,184 @@
 
   });
 </script>
-  <div class="carousel slide" id="myCarousel" data-ride="carousel" data-wrap="false">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
+<!-- CAROUSEL SECTION -->
+<div class="carousel slide" id="myCarousel" data-ride="carousel" data-wrap="false">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
 
-      <div class="item active">
-        <div class="banner">
-          <div class="container_wrap3">
-            <h1>Connect before your cruise.</h1>
-            <div class="offering">
-              <h2>What can Project Harmony offer you?</h2>
-              <h3>Find your cruise and connect with people going!</h3>
-              <div class="real">
-                <h4>Connection</h4>
-                <div class="col-sm-6">
-                  <ul class="service_grid">
-                    <i class="s1"> </i>
-                    <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
-                      <p><b>Events: </b>Find events happening on your cruise, join, and communicate with passengers that
-                        have similar interests. Or create your own event that others can join. Want to start a poker
-                        tournament? No problem!</p>
-                    </li>
-                    <div class="clearfix"></div>
-                  </ul>
-                </div>
-                <div class="col-sm-6">
-                  <ul class="service_grid">
-                    <i class="s2"> </i>
-                    <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
-                      <p><b>Search: </b>Look for the perfect cruise for you by using the search bar below. Enter a name,
-                        place, or event, and then a date range to find a cruise that matches your needs. It's that easy!
-                      </p>
-                    </li>
-                    <div class="clearfix"></div>
-                  </ul>
-                </div>
-                <div class="clearfix"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="item active">
+      <div class="banner">
+        <div class="container_wrap3">
+          <h1>Connect before your cruise.</h1>
+          <div class="offering">
+            <h2>What can Project Harmony offer you?</h2>
+            <h3>Find your cruise and connect with people going!</h3>
+            <div class="real">
+              <h4>Connection</h4>
+              <div class="col-sm-6">
+                <ul class="service_grid">
+                  <i class="s1"> </i>
+                  <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+                    <p><b>Events: </b>Find events happening on your cruise, join, and communicate with passengers that
+                      have similar interests. Or create your own event that others can join. Want to start a poker
+                      tournament? No problem!</p>
+                  </li>
+                  <div class="clearfix"></div>
+                </ul>
+              </div><!-- COL-SM-6 -->
+              <div class="col-sm-6">
+                <ul class="service_grid">
+                  <i class="s2"> </i>
+                  <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+                    <p><b>Search: </b>Look for the perfect cruise for you by using the search bar below. Enter a name,
+                      place, or event, and then a date range to find a cruise that matches your needs. It's that easy!
+                    </p>
+                  </li>
+                  <div class="clearfix"></div>
+                </ul>
+              </div><!-- COL-SM-6 -->
+              <div class="clearfix"></div>
+            </div><!-- REAL -->
+          </div><!-- OFFERING -->
+        </div> <!-- CONTAINER WRAP3 -->
+      </div><!-- BANNER -->
+    </div><!-- ITEM ACTIVE -->
 
-      <div class="item">
-        <div class="banner2">
-          <div class="container_wrap3">
-            <h1>Sharing with others on Project Harmony!</h1>
-            <div class="offering">
-              <h2>Making new friends through Project Harmony</h2>
-              <h3>Find like-minded families and individuals</h3>
-              <div class="real">
-                <h4>Sailing together</h4>
-                <div class="col-sm-6">
-                  <ul class="service_grid">
-                    <i class="s1"> </i>
-                    <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
-                      <p><b>Sailings: </b>Join your related sailing to find other socials and families alike.
-                        Through here you can meet new people to share your wonderous experience with! Join your sailing now
-                        to start chatting</p>
-                    </li>
-                    <div class="clearfix"></div>
-                  </ul>
-                </div>
-                <div class="col-sm-6">
-                  <ul class="service_grid">
-                    <i class="s2"> </i>
-                    <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
-                      <p><b>Messaging: </b>Want to get to know someone before you set sail? Through a personal messaging and
-                        forum style chat service, you can learn about your fellow travellers and their families and share your
-                        favourite things to do!
-                      </p>
-                    </li>
-                    <div class="clearfix"></div>
-                  </ul>
-                </div>
-                <div class="clearfix"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="item">
-        <div class="banner3">
-          <div class="container_wrap3">
-            <h1>Make a profile now!</h1>
-            <div class="offering">
-              <h2>Personalize yourself</h2>
-              <h3>Share all those great qualities with others!</h3>
-              <div class="real">
-                <h4>Profile</h4>
-                <div class="col-sm-6">
-                  <ul class="service_grid">
-                    <i class="s1"> </i>
-                    <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
-                      <p><b>Profile: </b>Here you can talk about yourself. Let others know just
-                      who you are and what you love to do! We're all here anyways so lets get sailing together!</p>
-                    </li>
-                    <div class="clearfix"></div>
-                  </ul>
-                </div>
-                <div class="col-sm-6">
-                  <ul class="service_grid">
-                    <i class="s2"> </i>
-                    <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
-                      <p><b>Latin: </b>Lorum ipsum modus ponus, areveli canti osumntum. Savari ilsum no parti. Momentum
-                        lagarus flyi ghacta si elserino.
-                      </p>
-                    </li>
-                    <div class="clearfix"></div>
-                  </ul>
-                </div>
-                <div class="clearfix"></div>
+    <div class="item">
+      <div class="banner2">
+        <div class="container_wrap3">
+          <h1>Sharing an experience with others on Project Harmony!</h1>
+          <div class="offering">
+            <h2>Making new friends through Project Harmony</h2>
+            <h3>Find like-minded families and individuals</h3>
+            <div class="real">
+              <h4>Sailing together</h4>
+              <div class="col-sm-6">
+                <ul class="service_grid">
+                  <i class="s1"> </i>
+                  <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+                    <p><b>Sailings: </b>Join your related sailing to find other socials and families alike.
+                      Through here you can meet new people to share your wonderous experience with! Join your sailing
+                      now
+                      to start chatting</p>
+                  </li>
+                  <div class="clearfix"></div>
+                </ul>
+              </div><!-- COL-SM-6 -->
+              <div class="col-sm-6">
+                <ul class="service_grid">
+                  <i class="s2"> </i>
+                  <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+                    <p><b>Messaging: </b>Want to get to know someone before you set sail? Through a personal messaging
+                      and
+                      forum style chat service, you can learn about your fellow travellers and their families and share
+                      your
+                      favourite things to do!
+                    </p>
+                  </li>
+                  <div class="clearfix"></div>
+                </ul>
+              </div><!-- COL-SM-6 -->
+              <div class="clearfix"></div>
+            </div> <!-- REAL -->
+          </div><!-- OFFERING -->
+        </div><!-- CONTAINER WRAP3 -->
+      </div> <!-- BANNER2 -->
+    </div><!-- ITEM2 -->
+
+    <div class="item">
+      <div class="banner2">
+        <div class="container_wrap3">
+          <h1>Sharing with others on Project Harmony!</h1>
+          <div class="offering">
+            <h2>Making new friends through Project Harmony</h2>
+            <h3>Find like-minded families and individuals</h3>
+            <div class="real">
+              <h4>Sailing together</h4>
+              <div class="col-sm-6">
+                <ul class="service_grid">
+                  <i class="s1"> </i>
+                  <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+                    <p><b>Sailings: </b>Join your related sailing to find other socials and families alike.
+                      Through here you can meet new people to share your wonderous experience with! Join your sailing now
+                      to start chatting</p>
+                  </li>
+                  <div class="clearfix"></div>
+                </ul>
               </div>
+              <div class="col-sm-6">
+                <ul class="service_grid">
+                  <i class="s2"> </i>
+                  <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+                    <p><b>Messaging: </b>Want to get to know someone before you set sail? Through a personal messaging and
+                      forum style chat service, you can learn about your fellow travellers and their families and share your
+                      favourite things to do!
+                    </p>
+                  </li>
+                  <div class="clearfix"></div>
+                </ul>
+              </div>
+              <div class="clearfix"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
+
+    <div class="item">
+      <div class="banner3">
+        <div class="container_wrap3">
+          <h1>Make a profile now!</h1>
+          <div class="offering">
+            <h2>Personalize yourself</h2>
+            <h3>Share all those great qualities with others!</h3>
+            <div class="real">
+              <h4>Profile</h4>
+              <div class="col-sm-6">
+                <ul class="service_grid">
+                  <i class="s1"> </i>
+                  <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+                    <p><b>Profile: </b>Here you can talk about yourself. Let others know just
+                      who you are and what you love to do! We're all here anyways so lets get sailing together!</p>
+                  </li>
+                  <div class="clearfix"></div>
+                </ul>
+              </div><!-- COL-SM-6 -->
+              <div class="col-sm-6">
+                <ul class="service_grid">
+                  <i class="s2"> </i>
+                  <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
+                    <p><b>Latin: </b>Lorum ipsum modus ponus, areveli canti osumntum. Savari ilsum no parti. Momentum
+                      lagarus flyi ghacta si elserino.
+                    </p>
+                  </li>
+                  <div class="clearfix"></div>
+                </ul>
+              </div><!-- COL-SM-6 -->
+              <div class="clearfix"></div>
+            </div> <!-- REAL -->
+          </div> <!-- OFFERING -->
+        </div><!-- CONTAINER WRAP3 -->
+      </div><!-- BANNER3 -->
+    </div> <!-- ITEM 3 -->
+  </div><!-- CAROUSEL INNER -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div><!-- CAROUSEL SLIDE -->
+<!-- END CAROUSEL -->
+<!-- SEARCH SECTION -->
 <div class="content_top">
   <div class="container">
     <div class="col-md-12 search-bar">
@@ -169,96 +209,15 @@
         <input style="width:25%" type="datetime-local" id="datepickerStart" required="true" name="event[start_date]">
         <label class="btn1 btn-2 btn-2g"><input name="submit" type="submit" id="submit" value="Search"></label>
       </form>
-    </div>
-    <!--<div class="col-md-4 bottom_nav">-->
-    <!--<div class="content_menu">-->
-    <!--<ul>-->
-    <!--<li class="active"><a href="#">Recommended</a></li>-->
-    <!--<li><a href="#">Latest</a></li>-->
-    <!--<li><a href="#">Highlights</a></li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-md-4 content_dropdown1">-->
-    <!--<div class="content_dropdown">-->
-    <!--<select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>-->
-    <!--<option value="0">Dubai</option>-->
-    <!--<option value="1">tempor</option>-->
-    <!--<option value="2">congue</option>-->
-    <!--<option value="3">maxim </option>-->
-    <!--<option value="4">mutationem</option>-->
-    <!--<option value="5">hendrerit </option>-->
-    <!--<option value="5"></option>-->
-    <!--<option value="5"></option>-->
-    <!--</select>-->
-    <!--</div>-->
-    <!--<div class="content_dropdown">-->
-    <!--<select class="dropdown" tabindex="10" data-settings='{"wrapperClass":"metro"}'>-->
-    <!--<option value="0">Show Map</option>-->
-    <!--<option value="1">tempor</option>-->
-    <!--<option value="2">congue</option>-->
-    <!--<option value="3">maxim </option>-->
-    <!--<option value="4">mutationem</option>-->
-    <!--<option value="5">hendrerit </option>-->
-    <!--<option value="5"></option>-->
-    <!--<option value="5"></option>-->
-    <!--</select>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-md-4 filter_grid" data-no-turbolink>-->
-    <!--<ul class="filter">-->
-    <!--<li class="fil">Filter :</li>-->
-    <!--<li><a href=""> <i class="icon1"> </i> </a></li>-->
-    <!--<li><a href=""> <i class="icon2"> </i> </a></li>-->
-    <!--<li><a href=""> <i class="icon3"> </i> </a></li>-->
-    <!--<li><a href=""> <i class="icon4"> </i> </a></li>-->
-    <!--<li><a href=""> <i class="icon5"> </i> </a></li>-->
-    <!--</ul>-->
-    <!--</div>-->
-  </div>
-</div>
-<!--<div class="content_middle">
-  <div class="container">
-    <div class="content_middle_box">
-      <div class="top_grid">
-        <% @sailings.each do |sailing| %>
-        <div class="col-md-3 index-grids">
-          <div class="grid1">
-            <div class="view view-first">
-              <div class="index_img"><%= image_tag "pic1.jpg", :class => "img-responsive" %></div>
-              <i class="home"></i>
-              <!--<div class="sale">$2.980</div>
-              <div class="mask">
-                <div class="info"><i class="search"> </i><%= link_to "Cruise Details", sailing, :style => "color:white" %></div>
-                <div class="info_for_mask">
-                  <h4>Departure:</h4>
-                  <p><%= sailing.departure_date.strftime("%B %d, %Y") %></p><br/>
-                  <h4>Return:</h4>
-                  <p><%= sailing.return_date.strftime("%B %d, %Y") %></p></div>
-                <ul class="mask_img">
-                  <!--<li class="star"><%= image_tag "star.png" %></li>
-                  <li class="set"><%= image_tag "set.png" %></li>
-                  <div class="clearfix"> </div>
-                </ul>
-              </div>
-            </div>
-            <div class="inner_wrap">
-              <h3><%= sailing.cruise_ship_company %></h3>
-              <ul class="star1">
-                <h4 class="green"><%= sailing.cruise_ship_name %></h4>
-                <!--<li><a href="#"> <%= image_tag "star1.png" %>(236)</a></li>
-                <li><a href="#">Passengers (236)</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <% end %>
-        <div class="clearfix"> </div>
-      </div>-->
+    </div><!-- COL-MD-12 -->
+
+  </div><!-- CONTAINER -->
+</div> <!-- CONTENT TOP -->
+<!-- END SEARCH SECTION -->
+<!-- SAILING CARDS SECTION -->
 <div class="container">
   <div class="middle_grid wow fadeInUp" data-wow-delay="0.4s">
     <% @sailings.where('id < 11').find_each() do |sailing| %>
-        <!-- LEFT SECTION OF PANEL -->
         <div class="col-md-6 index-grids">
           <div class="grid1">
             <div class="view view-first">
@@ -300,308 +259,55 @@
             <div class="inner_wrap">
               <ul class="star1">
                 <li class="module_left">
-                  <h3><%= sailing.cruise_ship_company %></h3>
+                  <!--<h3><%= sailing.cruise_ship_company %></h3>-->
                   <h2><%= sailing.cruise_ship_name %></h2>
-                  <h4>No. of Cruisers: 1,899</h4>
-                  <h4>Region: <%= sailing.destination_identifier %> </h4>
-                  <h4>Port of Origin: <%= sailing.port_of_origin %> </h4>
-                  <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %></h4>
-                  <h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>
+                  <h4>No. of Cruisers: 412</h4>
+                  <!--<h4>Region: <%= sailing.destination_identifier %> </h4>-->
+                  <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
+                  <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
+                  <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
+                  <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
+                  <h2>Who's On Board?</h2>
+                  <h4>Top languages spoken: English (30%), Chinese (27%)</h4>
+                  <h4>Demographics: 25-35yrs (42%), 50+ (37%)</h4>
+                  <h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>
+                  <h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
+            </div><!-- INNER_WRAP -->
+          </div><!-- GRID1 -->
+        </div><!-- COL-MD-6 -->
     <% end %>
-  </div>
+  </div><!-- MIDDLE GRID -->
+</div><!-- CONTAINER -->
+<!-- END SAILING SECTION -->
+<div class="offering">
 </div>
-<!--<div class="col-md-3 index-grids">
-          <div class="grid1">
-            <div class="view view-first">
-              <div class="index_img1"><%= image_tag "pic6.jpg", :class => "img-responsive" %></div>
-              <div class="mask">
-                <div class="info"><i class="search"> </i> Show More</div>
-                <ul class="mask_img">
-                  <li class="star"><%= image_tag "star.png" %></li>
-                  <li class="set"><%= image_tag "set.png" %></li>
-                  <div class="clearfix"> </div>
-                </ul>
-              </div>
-            </div>
-            <i class="home1"> </i>
-            <div class="inner_wrap">
-              <h3>Lorem Ipsum is simply dummy text</h3>
-              <ul class="star1">
-                <h4 class="yellow">Vision Agency</h4>
-                <li><a href="#"> <%= image_tag "star2.png" %>(136)</a></li>
-              </ul>
-            </div>
-          </div>
+<div class="footer">
+  <div class="container">
+    <div class="footer_grids">
+      <div class="footer-grid">
+        <!-- More content can go here -->
+      </div>
+      <div class="footer-grid">
+        <!-- More content can go here -->
+      </div>
+      <div class="footer-grid last_grid">
+        <!-- More content can go here -->
+        <div class="copy wow fadeInRight" data-wow-delay="0.4s">
+          <p> &copy; 2016 Project Harmony. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a>
+          </p>
         </div>
-        <div class="col-md-3 index-grids">
-          <div class="grid1">
-            <div class="view view-first">
-              <div class="index_img2"><%= image_tag "pic2.jpg", :class => "img-responsive" %></div>
-              <div class="mask">
-                <div class="info"><i class="search"> </i> Show More</div>
-                <ul class="mask_img">
-                  <li class="star"><%= image_tag "star.png" %></li>
-                  <li class="set"><%= image_tag "set.png" %></li>
-                  <div class="clearfix"> </div>
-                </ul>
-              </div>
-            </div>
-            <i class="home2"> </i>
-            <div class="inner_wrap">
-              <h3>Lorem Ipsum is simply dummy text</h3>
-              <ul class="star1">
-                <h4 class="blue">Vision Agency</h4>
-                <li><a href="#"> <%= image_tag "star2.png" %>(136)</a></li>
-              </ul>
-            </div>
-          </div>
+
+        <div class="copy wow fadeInRight" data-wow-delay="0.4s">
+          <p>Update: Thursday, May 12</p>
         </div>
-        <div class="col-md-3 index-grids">
-          <div class="grid1">
-            <div class="view view-first">
-              <div class="index_img"><%= image_tag "pic3.jpg", :class => "img-responsive" %></div>
-              <div class="sale">$2.980</div>
-              <div class="mask">
-                <div class="info"><i class="search"> </i> Show More</div>
-                <ul class="mask_img">
-                  <li class="star"><%= image_tag "star.png" %></li>
-                  <li class="set"><<%= image_tag "set.png" %></li>
-                  <div class="clearfix"> </div>
-                </ul>
-              </div>
-            </div>
-            <i class="home"></i>
-            <div class="inner_wrap">
-              <h3>Lorem Ipsum is simply dummy text</h3>
-              <ul class="star1">
-                <h4 class="green">Vision Agency</h4>
-                <li><a href="#"> <%= image_tag "star1.png" %>(236)</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>-->
-<!--<div class="middle_grid wow fadeInUp" data-wow-delay="0.4s">-->
-<!--<div class="col-md-6 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="index_img"><img src="images/pic4.jpg" class="img-responsive" alt=""/></div>-->
-<!--<i class="m_home"> </i>-->
-<!--<ul class="vision">-->
-<!--<li>Vision Agency</li>-->
-<!--<li class="desc"><a href="#"> <img src="images/star1.png" alt="">(236)</a></li>-->
-<!--</ul>-->
-<!--<div class="inner_wrap1">-->
-<!--<ul class="item_module">-->
-<!--<li class="module_left"><img src="images/m1.jpg" class="img-responsive" alt=""/></li>-->
-<!--<li class="module_right">-->
-<!--<img src="images/m_star.png" class="img-responsive" alt=""/>-->
-<!--<h5>Lucy-p</h5>-->
-<!--<p>"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."</p>-->
-<!--<a href="single.html" class="content_btn">....read more</a>-->
-<!--</li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-6 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="index_img1"><img src="images/pic5.jpg" class="img-responsive" alt=""/></div>-->
-<!--<i class="m_home1"> </i>-->
-<!--<ul class="vision">-->
-<!--<li>Vision Agency</li>-->
-<!--<li class="desc"><a href="#"> <img src="images/star2.png" alt="">(236)</a></li>-->
-<!--</ul>-->
-<!--<div class="inner_wrap1">-->
-<!--<ul class="item_module">-->
-<!--<li class="module_left"><img src="images/m2.jpg" class="img-responsive" alt=""/></li>-->
-<!--<li class="module_right">-->
-<!--<img src="images/m_star1.png" class="img-responsive" alt=""/>-->
-<!--<h5>Lucy-p</h5>-->
-<!--<p>"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."</p>-->
-<!--<a href="single.html" class="content_btn">....read more</a>-->
-<!--</li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="clearfix"> </div>-->
-<!--</div>-->
-<!--<div class="top_grid wow fadeInRight" data-wow-delay="0.4s">-->
-<!--<div class="col-md-3 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="view view-first">-->
-<!--<div class="index_img"><img src="images/pic1.jpg" class="img-responsive" alt=""/></div>-->
-<!--<div class="sale">$2.980</div>-->
-<!--<div class="mask">-->
-<!--<div class="info"><i class="search"> </i> Show More</div>-->
-<!--<ul class="mask_img">-->
-<!--<li class="star"><img src="images/star.png" alt=""/></li>-->
-<!--<li class="set"><img src="images/set.png" alt=""/></li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<i class="home"></i>-->
-<!--<div class="inner_wrap">-->
-<!--<h3>Lorem Ipsum is simply dummy text</h3>-->
-<!--<ul class="star1">-->
-<!--<h4 class="green">Vision Agency</h4>-->
-<!--<li><a href="#"> <img src="images/star1.png" alt="">(236)</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-3 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="view view-first">-->
-<!--<div class="index_img1"><img src="images/pic2.jpg" class="img-responsive" alt=""/></div>-->
-<!--<div class="mask">-->
-<!--<div class="info"><i class="search"> </i> Show More</div>-->
-<!--<ul class="mask_img">-->
-<!--<li class="star"><img src="images/star.png" alt=""/></li>-->
-<!--<li class="set"><img src="images/set.png" alt=""/></li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<i class="home1"> </i>-->
-<!--<div class="inner_wrap">-->
-<!--<h3>Lorem Ipsum is simply dummy text</h3>-->
-<!--<ul class="star1">-->
-<!--<h4 class="yellow">Vision Agency</h4>-->
-<!--<li><a href="#"> <img src="images/star2.png" alt="">(136)</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-3 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="view view-first">-->
-<!--<div class="index_img2"><img src="images/pic6.jpg" class="img-responsive" alt=""/></div>-->
-<!--<div class="mask">-->
-<!--<div class="info"><i class="search"> </i> Show More</div>-->
-<!--<ul class="mask_img">-->
-<!--<li class="star"><img src="images/star.png" alt=""/></li>-->
-<!--<li class="set"><img src="images/set.png" alt=""/></li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<i class="home2"> </i>-->
-<!--<div class="inner_wrap">-->
-<!--<h3>Lorem Ipsum is simply dummy text</h3>-->
-<!--<ul class="star1">-->
-<!--<h4 class="blue">Vision Agency</h4>-->
-<!--<li><a href="#"> <img src="images/star2.png" alt="">(136)</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-3 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="view view-first">-->
-<!--<div class="index_img"><img src="images/pic3.jpg" class="img-responsive" alt=""/></div>-->
-<!--<div class="sale">$2.980</div>-->
-<!--<div class="mask">-->
-<!--<div class="info"><i class="search"> </i> Show More</div>-->
-<!--<ul class="mask_img">-->
-<!--<li class="star"><img src="images/star.png" alt=""/></li>-->
-<!--<li class="set"><img src="images/set.png" alt=""/></li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<i class="home"></i>-->
-<!--<div class="inner_wrap">-->
-<!--<h3>Lorem Ipsum is simply dummy text</h3>-->
-<!--<ul class="star1">-->
-<!--<h4 class="green">Vision Agency</h4>-->
-<!--<li><a href="#"> <img src="images/star1.png" alt="">(236)</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="clearfix"> </div>-->
-<!--</div>-->
-<!--<div class="bottom_grid wow bounce" data-wow-delay="0.4s">-->
-<!--<div class="col-md-6 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="index_img1"><img src="images/pic5.jpg" class="img-responsive" alt=""/></div>-->
-<!--<i class="m_home1"> </i>-->
-<!--<ul class="vision">-->
-<!--<li>Vision Agency</li>-->
-<!--<li class="desc"><a href="#"> <img src="images/star2.png" alt="">(236)</a></li>-->
-<!--</ul>-->
-<!--<div class="inner_wrap1">-->
-<!--<ul class="item_module">-->
-<!--<li class="module_left"><img src="images/m2.jpg" class="img-responsive" alt=""/></li>-->
-<!--<li class="module_right">-->
-<!--<img src="images/m_star.png" class="img-responsive" alt=""/>-->
-<!--<h5>Lucy-p</h5>-->
-<!--<p>"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."</p>-->
-<!--<a href="single.html" class="content_btn">....read more</a>-->
-<!--</li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-3 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="view view-first">-->
-<!--<div class="index_img"><img src="images/pic3.jpg" class="img-responsive" alt=""/></div>-->
-<!--<div class="sale">$2.980</div>-->
-<!--<div class="mask">-->
-<!--<div class="info"><i class="search"> </i> Show More</div>-->
-<!--<ul class="mask_img">-->
-<!--<li class="star"><img src="images/star.png" alt=""/></li>-->
-<!--<li class="set"><img src="images/set.png" alt=""/></li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<i class="b_home"></i>-->
-<!--<div class="inner_wrap2">-->
-<!--<h3>Lorem Ipsum is simply dummy text</h3>-->
-<!--<ul class="star1">-->
-<!--<h4 class="green">Vision Agency</h4>-->
-<!--<li><a href="#"> <img src="images/star1.png" alt="">(236)</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-3 index-grids">-->
-<!--<div class="grid1">-->
-<!--<div class="view view-first">-->
-<!--<div class="index_img1"><img src="images/pic2.jpg" class="img-responsive" alt=""/></div>-->
-<!--<div class="mask">-->
-<!--<div class="info"><i class="search"> </i> Show More</div>-->
-<!--<ul class="mask_img">-->
-<!--<li class="star"><img src="images/star.png" alt=""/></li>-->
-<!--<li class="set"><img src="images/set.png" alt=""/></li>-->
-<!--<div class="clearfix"> </div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--<i class="b_home1"> </i>-->
-<!--<div class="inner_wrap2">-->
-<!--<h3>Lorem Ipsum is simply dummy text</h3>-->
-<!--<ul class="star1">-->
-<!--<h4 class="yellow">Vision Agency</h4>-->
-<!--<li><a href="#"> <img src="images/star2.png" alt="">(136)</a></li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="clearfix"></div>-->
-<!--</div>-->
-<!--</div>-->
+
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div><!-- CONTAINER -->
+</div><!-- End FOOTER -->
 
 <!-- Test Data
       <table>
@@ -628,96 +334,3 @@
       </tbody>
       </table>
       <!-- End Test Data-->
-
-<div class="offering">
-  <!--<h2>What can Hotel Deluxe offer to you ?</h2>-->
-  <!--<h3>Ut wisi enim ad minim veniam, quis</h3>-->
-  <!--<ul class="icons wow fadeInUp" data-wow-delay="0.4s">-->
-  <!--<li><i class="icon1"> </i><span class="one"> </span></li>-->
-  <!--<li><i class="icon2"> </i><span class="two"> </span></li>-->
-  <!--<li><i class="icon3"> </i><span class="three"> </span></li>-->
-  <!--<li><i class="icon4"> </i><span class="four"> </span></li>-->
-  <!--<li><i class="icon5"> </i></li>-->
-  <!--</ul>-->
-  <!--<div class="real">-->
-  <!--<h4>Reality</h4>-->
-  <!--<div class="col-sm-6">-->
-  <!--<ul class="service_grid">-->
-  <!--<i class="s1"> </i>-->
-  <!--<li class="desc1 wow fadeInRight" data-wow-delay="0.4s">-->
-  <!--<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod maxim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum</p>-->
-  <!--</li>-->
-  <!--<div class="clearfix"> </div>-->
-  <!--</ul>-->
-  <!--</div>-->
-  <!--<div class="col-sm-6">-->
-  <!--<ul class="service_grid">-->
-  <!--<i class="s2"> </i>-->
-  <!--<li class="desc1 wow fadeInRight" data-wow-delay="0.4s">-->
-  <!--<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod maxim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum</p>-->
-  <!--</li>-->
-  <!--<div class="clearfix"> </div>-->
-  <!--</ul>-->
-  <!--</div>-->
-  <!--<div class="clearfix"> </div>-->
-  <!--</div>-->
-</div>
-</div>
-</div>
-</div>
-<div class="footer">
-  <div class="container">
-    <!--<div class="footer_top">-->
-    <!--<h3>Subscribe to our newsletter</h3>-->
-    <!--<form>-->
-    <!--<span>-->
-    <!--<i><%= image_tag "mail.png" %></i>-->
-    <!--<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">-->
-    <!--<label class="btn1 btn2 btn-2 btn-2g"> <input name="submit" type="submit" id="submit" value="Subscribe"> </label>-->
-    <!--<div class="clearfix"> </div>-->
-    <!--</span>-->
-    <!--</form>-->
-    <!--</div>-->
-    <div class="footer_grids">
-      <div class="footer-grid">
-        <!--<h4>Ipsum Quis</h4>-->
-        <!--<ul class="list1">-->
-        <!--<li><a href="contact.html">Contact</a></li>-->
-        <!--<li><a href="#">Mirum est</a></li>-->
-        <!--<li><a href="#">Placerat facer</a></li>-->
-        <!--<li><a href="#">Claritatem</a></li>-->
-        <!--<li><a href="#">Sollemnes </a></li>-->
-        <!--</ul>-->
-      </div>
-      <div class="footer-grid">
-        <!--<h4>Quis Ipsum</h4>-->
-        <!--<ul class="list1">-->
-        <!--<li><a href="#">Placerat facer</a></li>-->
-        <!--<li><a href="#">Claritatem</a></li>-->
-        <!--<li><a href="#">Sollemnes </a></li>-->
-        <!--<li><a href="#">Claritas</a></li>-->
-        <!--<li><a href="#">Mirum est</a></li>-->
-        <!--</ul>-->
-      </div>
-      <div class="footer-grid last_grid">
-        <!--<h4>Follow Us</h4>-->
-        <!--<ul class="footer_social wow fadeInLeft" data-wow-delay="0.4s">-->
-        <!--<li><a href=""> <i class="fb"> </i> </a></li>-->
-        <!--<li><a href=""><i class="tw"> </i> </a></li>-->
-        <!--<li><a href=""><i class="google"> </i> </a></li>-->
-        <!--<li><a href=""><i class="u_tube"> </i> </a></li>-->
-        <!--</ul>-->
-        <div class="copy wow fadeInRight" data-wow-delay="0.4s">
-          <p> &copy; 2016 Project Harmony. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a>
-          </p>
-        </div>
-
-        <div class="copy wow fadeInRight" data-wow-delay="0.4s">
-          <p>Update: Monday, May 16</p>
-        </div>
-
-      </div>
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</div>
