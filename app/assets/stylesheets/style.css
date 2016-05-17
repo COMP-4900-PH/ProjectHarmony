@@ -247,8 +247,7 @@ body a{
 }
 #loginContainer a span{
     padding:0px 0px 0 5px;
-    color: #fff;
-    text-transform: uppercase;
+    color: black;
     font-size: 0.85em;
 }
 /* Login Button */
@@ -712,6 +711,7 @@ a#loginButton img {
     -webkit-text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
     -moz-text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
     -o-text-shadow: -1px 0px 1px rgba(214, 214, 214, 0.59);
+    margin-top: 5px;
 }
 .btn-3{
     -webkit-transform: translateY(100px);
@@ -3397,7 +3397,7 @@ p.educate {
 .search-bar {
     text-align:center;
 }
-.search-bar input[type="text"], input[type="email"], input[type="password"], input[type="datetime-local"] {
+.search-bar input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
     background: rgba(111, 111, 111, 0.17);
     transition: border-color 0.3s;
     -o-transition: border-color 0.3s;
@@ -3435,6 +3435,6 @@ p.educate {
 }
 
 .scrolling {
-    height: 150px;
-    overflow: scroll;
+    height: 230px;
+    overflow-y: scroll;
 }

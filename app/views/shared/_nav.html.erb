@@ -1,51 +1,54 @@
 <div class="header" data-no-turbolink>
   <div class="col-sm-8 header-left">
     <div class="logo">
-      <a href="/"><%= image_tag"newlogo.png" %></a>
+      <a href="/"><%= image_tag "newlogo.png" %></a>
     </div>
     <div class="menu">
       <a class="toggleMenu" href="#"><%= image_tag "nav.png" %></a>
       <ul class="nav" id="nav">
-        <li class="active"><%= link_to "Home", root_path %></a></li>
+        <!--<li class="active"><%= link_to "Home", root_path %></a></li>-->
         <!--<li><%= link_to "Sailings", sailings_path %></li> -->
-        <li><%= link_to "Events", events_path %></li>
-        <li><%= link_to "Profile", user_dashboard_path %></li>
+        <!--<li><%= link_to "Events", events_path %></li>-->
+        <!--<li><%= link_to "Profile", user_dashboard_path %></li>-->
         <div class="clearfix"></div>
       </ul>
     </div>
     <div class="search-box">
       <div id="sb-search" class="sb-search">
         <!--<form action="/forum/" accept-charset="UTF-8" method="get">-->
-          <!--<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="q" id="q" required="required">-->
-          <!--<input class="sb-search-submit" type="submit" value="">-->
-          <!--<span class="sb-icon-search"> </span>-->
+        <!--<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="q" id="q" required="required">-->
+        <!--<input class="sb-search-submit" type="submit" value="">-->
+        <!--<span class="sb-icon-search"> </span>-->
         <!--</form>-->
         <% if user_signed_in? %>
             <a href="/mailbox/inbox" class="btn btn-default btn-lg btn-link" style="font-size:36px;"><span class="glyphicon glyphicon-envelope"></span></a>
             <% if unread_messages_count > 0 %>
-              <span class="badge badge-notify"><%= unread_messages_count%></span>
+                <span class="badge badge-notify"><%= unread_messages_count %></span>
             <% end %>
         <% end %>
       </div>
     </div>
     <script>
-      new UISearch( document.getElementById( 'sb-search' ) );
+      new UISearch(document.getElementById('sb-search'));
     </script>
     <div class="clearfix"></div>
   </div>
   <div class="col-sm-4 header_right">
     <% if !user_signed_in? %>
-    <div id="loginContainer" style="float:left;width:50%;height:100%;border:1px solid #F19E1F">
-      <%= link_to "Log in", new_user_session_path %>
-    </div>
-    <div id="loginContainer" style="float:left;width:50%;height:100%;border:1px solid #F19E1F">
-      <% if !user_signed_in? %>
+        <div id="loginContainer" style="float:left;width:50%;height:100%;border:1px solid #F19E1F">
+          <%= link_to "Log in", new_user_session_path %>
+        </div>
+        <div id="loginContainer" style="float:left;width:50%;height:100%;border:1px solid #F19E1F">
           <%= link_to "Sign up", new_user_registration_path %>
-      <% end %>
-    </div><% end %>
+        </div>
+    <% end %>
     <% if user_signed_in? %>
-        <div id="loginContainer" style="border:1px solid #F19E1F">
-        Hello <%= current_user.name %>, <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <div id="loginContainer" style="float:left;width:65%;border:1px solid #F19E1F">
+          Hello <%= current_user.name %>, <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        </div>
+        <div id="loginContainer" style="float:left;width:35%;height:100%;border:1px solid #F19E1F">
+          <span class="glyphicon glyphicon-user"></span>
+          <a href="/dashboard">Profile</a>
         </div>
     <% end %>
     <div class="clearfix"></div>
