@@ -19,16 +19,18 @@ class TravellingPartyController < ApplicationController
       AND travelling_parties.sailing_id = #{travelling_party.sailing_id}"
     @records_array = ActiveRecord::Base.connection.execute(test)
 
-    # If this user has not signed up for a sailing on a particular boat already, alow them to join
+    # If this user has not signed up for a sailing on a particular boat already, allow them to join
     if (@records_array.blank?)
       flash[:notice] = "You have joined the sailing!"
       party_register.save
+      redirect_to(user_dashboard_path)
     else
       # A user cannot join a sailing twice
       flash[:alert] = "You cannot join a sailing twice!"
       # remove the travelling_party record that was created ealier (it was needed to create the party_register) and
       # continue the transaction
       travelling_party.destroy
+      redirect_to :back
     end
 
   end
