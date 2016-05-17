@@ -1,13 +1,13 @@
 
 <div class="media">
   <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="https://placeimg.com/64/64/people" alt="...">
+    <a href="/profile/<%= conversation.originator.id %>">
+      <%= image_tag DetailedUser.find_by_user_id(conversation.originator.id).avatar.url(:small) , size: "50x50" %>
     </a>
+    <a href="/profile/<%= conversation.originator.id %>"><span class="ship-name"><%= conversation.originator.name %></span></a>
   </div>
   <div class="media-body">
     <h4 class="media-heading">
-      <%= conversation.originator.name %> <br>
       <small><b>Subject: </b><%= conversation.subject %></small><br>
       <small><b>Date: </b><%=  conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
     </h4>

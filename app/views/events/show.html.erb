@@ -94,7 +94,7 @@
               <td class="sailing-info">
                 <p class="comment"><%= c.text%></p>
                 <p class="comment comment-date-time" align="right">
-                  <%= c.created_at.to_formatted_s(:long)%>
+                  <%= c.created_at.strftime("%A, %b %d, %Y at %I:%M%p")%>
                 </p>
               </td>
             </tr>
