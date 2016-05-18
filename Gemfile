@@ -27,6 +27,9 @@ gem 'devise', '3.4.1'
 # cancancan authentication
 gem 'cancancan', '~> 1.10'
 
+#ranksack
+gem 'ransack'
+
 #mailboxer
 gem 'bootstrap-sass'
 gem 'mailboxer'
