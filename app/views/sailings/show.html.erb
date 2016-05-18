@@ -168,7 +168,7 @@
               <h2 style="text-align: center;"><%= @sailing.cruise_ship_name %></h2>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-12">
               <div class="tabbable">
                 <ul class="nav nav-tabs" id="sailTabs">
                   <li class="active"><a href="#tab1" data-toggle="tab">Sailing Details</a></li>
@@ -179,9 +179,8 @@
                 <div class="tab-content my-tab">
 
                   <div class="tab-pane active" id="tab1">
-                    </br>
                     <!--<h3>Departure:</h3><button style='float: right' type="button" class="btn btn-danger">Join This Sailing</button>-->
-                    <%= button_to 'Join This Sailing', "/travelling_party/create/#{@sailing.id}", :method=>:post %>
+                    <%= button_to 'Join This Sailing', "/travelling_party/create/#{@sailing.id}", :method=>:post, :class=>"btn btn-success"%><br/>
                     <p><%= @sailing.departure_date.strftime("%B %d, %Y") %></p>
                     </br>
                     <h3>Return:</h3>
