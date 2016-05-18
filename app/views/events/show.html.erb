@@ -6,17 +6,18 @@
   }
 </style>
 
-<script >
-    function pop(id){
-      $('.pop').webuiPopover({
+<script>
+    function pop(tag, id){
+      $('#'+tag).webuiPopover({
         type:'async',
         url:'/popover/' + id,
-        content:function(data){
-          var html = '<h5 style="text-align: center">Recent Sailings and Events Joined</h5><table class="table"><tr><th>Event</th><th>Cruise</th></tr>';
-          for(var key in data){html+='<tr><td>'+ data[key].event_name+'</td>' + '<td>' + data[key].cruise_ship_name +'</td></tr>';}
-          html+='</table>';
-          return html;
-        }, trigger:'hover'
+        content: function( data){
+             console.log(id)
+            var html = '<h5 style="text-align: center">Recent Sailings and Events Joined</h5><table class="table"><tr><th>Event</th><th>Cruise</th></tr>';
+            for(var key in data){html+='<tr><td>'+ data[key].event_name+'</td>' + '<td>' + data[key].cruise_ship_name +'</td></tr>';}
+            html+='</table>';
+            return html;
+        }, trigger:'hover',animation:'pop'
       });
     }
 </script>
@@ -32,7 +33,7 @@
                 <tr class="spaceUnder">
                   <td>
                     <a href="/profile/<%= u.user_id %>">
-                      <%= image_tag u.avatar.url(:small), :class => "img-responsive pop", 'onmouseover'=> "pop(#{u.user_id})" ,'data-title' => "#{u.first_name} #{u.last_name}"  , 'data-placement'=> 'horizontal' %></a></td>
+                      <%= image_tag u.avatar.url(:small), :id=> "pop#{u.user_id}", :class => "img-responsive pop", 'onmouseover'=> "pop('pop#{u.user_id}',#{u.user_id})" ,'data-title' => "#{u.first_name} #{u.last_name}"  , 'data-placement'=> 'horizontal' %></a></td>
                   </td>
                 </tr>
             <% end %>
@@ -134,7 +135,6 @@
     </div>
   </div>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
