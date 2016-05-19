@@ -14,6 +14,7 @@ class DetailedUsersController < ApplicationController
 
   # GET /detailed_users/new
   def new
+    @languages = Language.all
     @user_id = params[:id]
     @detailed_user = DetailedUser.find_by_user_id(@user_id)
     if @detailed_user == nil

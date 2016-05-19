@@ -321,6 +321,12 @@ detailed_users_list = [
 
 ]
 
+# Language seeding data
+language_list = [
+    "Mandarin", "Spanish", "English", "Hindi", "Arabic", "Portuguese", "Bengali",
+    "Russion", "Japanese", "Punjabi", "German", "Korean", "French", "Italian"
+]
+
 ########## Populating Database ##########
 
 # Populating users
@@ -383,4 +389,9 @@ detailed_users_list.each do |first_name, last_name, gender, birth_day,
                        sexual_orientation: sexual_orientation, description: description,
                        primary_language: primary_language, secondary_language: secondary_language,
                        user_id: user_id)
+end
+
+# Populating languages
+language_list.each do |language|
+  Language.create( language: language)
 end
