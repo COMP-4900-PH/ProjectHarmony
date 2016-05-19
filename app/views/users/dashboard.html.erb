@@ -62,6 +62,10 @@
 
                   <!----------- TAB 2 MY EVENTS ------------->
                   <table class="table">
+                    <% if @sailings.empty? %>
+                        <p>You do not have any events yet! You must create a detailed profile, then join a sailing
+                          first.</p>
+                    <% end %>
                     <% @event_register.each do |event| %>
                     <%= render partial: 'event_list', locals: { event: event }%>
                     <% end %>

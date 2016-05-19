@@ -39,6 +39,9 @@ class ApplicationController < ActionController::Base
     elsif(exception.action.to_s == "show")
       exception.default_message = "You need to create a detailed user profile before joining an event."
       path = user_dashboard_path
+    elsif(exception.action.to_s == "new")
+      exception.default_message = "You must be registered for a sailing before hosting an event."
+      path = user_dashboard_path
     end
 
     redirect_to path, :alert => exception.message
