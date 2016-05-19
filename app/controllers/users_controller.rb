@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def profile
     @user = User.find_by_id(params[:id])
     @detailed_user = DetailedUser.find_by_user_id(params[:id])
+    @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => params[:id])
   end
 
   # use by the hover function in events page

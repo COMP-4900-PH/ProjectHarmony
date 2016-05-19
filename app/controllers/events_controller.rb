@@ -28,10 +28,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by_id(params[:id])
     @users = DetailedUser.joins('JOIN event_registers ON event_registers.user_id = detailed_users.user_id WHERE event_id = ' + params[:id])
-    #sql = "select * from detailed_users JOIN comments ON comments.user_id = detailed_users.user_id where comments.event_id = #{params[:id]}"
     @comments = Comment.where(event_id: params[:id])
-    #@comments = DetailedUser.find_by_sql(sql)
-    #abort @comments.inspect
   end
 
   # GET /events/new

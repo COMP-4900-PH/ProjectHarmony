@@ -10,7 +10,7 @@
   <div class="container">
     <div class="dashboard-info">
       <div class="row">
-        <div class="col-lg-push-4 col-lg-8 ">
+        <div class="col-lg-push-3 col-lg-9 ">
           <div class="container-fluid">
             <div class="tabbable">
               <ul class="nav nav-tabs">
@@ -129,16 +129,18 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-pull-8 col-lg-4  profile-info">
-          <%= image_tag @detailed_user.avatar.url(:thumb) , class: 'avatar'%>
-          <a  href="/profile/<%=@user.id%>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
-          <% if @user.detailedUsers || @user.admin %>
-            <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Edit Profile</h3></span></a>
-          <% end %>
-          <% if @user.detailedUsers == false && @user.admin == false %>
-              <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Create Detailed Profile</h3></span></a>
-          <% end %>
-          <a href="/mailbox/inbox" class="btn btn-primary">Messages <span class="badge"><%= unread_messages_count%></span></a>
+        <div class="col-lg-pull-9 col-lg-3  profile-info">
+          <%= image_tag @detailed_user.avatar.url(:thumb), id:"dashboard-avatar"%>
+          <div style="text-align: center; margin-left: 2em; margin-top: 1em">
+            <a  href="/profile/<%=@user.id%>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
+            <% if @user.detailedUsers || @user.admin %>
+                <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Edit Profile</h3></span></a>
+            <% end %>
+            <% if @user.detailedUsers == false && @user.admin == false %>
+                <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Create Detailed Profile</h3></span></a>
+            <% end %>
+            <a href="/mailbox/inbox" class="btn btn-primary">Messages <span class="badge"><%= unread_messages_count%></span></a>
+          </div>
         </div>
       </div>
     </div>
