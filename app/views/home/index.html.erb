@@ -163,12 +163,27 @@
 <div class="content_top">
   <div class="container">
     <div class="col-md-12 search-bar">
-      <form>
-        <input style="width:25%" type="text" value="Keyword, name, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">
-        <input style="width:25%" type="date" id="datepickerStart" required="true" name="event[start_date]">
-        <input style="width:25%" type="date" id="datepickerStart" required="true" name="event[start_date]">
-        <label class="btn1 btn-2 btn-2g"><input name="submit" type="submit" id="submit" value="Search"></label>
-      </form>
+      <!--<form>-->
+        <!--<input style="width:25%" type="text" value="Keyword, name, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">-->
+        <!--<input style="width:25%" type="date" id="datepickerStart" required="true" name="event[start_date]">-->
+        <!--<input style="width:25%" type="date" id="datepickerStart" required="true" name="event[start_date]">-->
+        <!--<label class="btn1 btn-2 btn-2g"><input name="submit" type="submit" id="submit" value="Search"></label>-->
+      <!--</form>-->
+
+      <%= search_form_for @search, url: root_path, method: :post do |f| %>
+          <div class="field">
+            <%= f.label :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, "Cruise Ship Name" %>
+            <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont %>
+          </div>
+          <div class="field">
+            <%= f.label :departure_date_gteq, "Departure Date Between" %>
+            <%= f.search_field :departure_date_gteq, "datepicker" => true %>
+            <%= f.label :return_date_lteq, "and" %>
+            <%= f.search_field :return_date_lteq, "datepicker" => true %>
+          </div>
+          <div class="actions"><%= f.submit "Search" %></div>
+      <% end %>
+
     </div><!-- COL-MD-12 -->
 
   </div><!-- CONTAINER -->
@@ -184,6 +199,7 @@
               <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
               <div class="mask">
                 <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
+                <!--<h2 style="text-align: center"><br/><%= sailing.cruise_ship_company %></h2>-->
                 <div class="inner_wrap1">
                   <h4>Registered Events</h4>
                   <div class="scrolling">

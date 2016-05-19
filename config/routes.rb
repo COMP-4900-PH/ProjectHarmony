@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+
+  root 'home#index'
+  post '/' => "home#index"
+
   get 'event_register/create'
 
   # Route for joining a sailing, via creating a travelling party
@@ -19,7 +27,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   #devise_for :users
   # Routes for sailing model
-  resources :sailings
+  resources :sailings do
+    collection { post :search, to: "home#index" }
+  end
 
   #comments
   post '/comment' => 'events#comment'
@@ -28,12 +38,6 @@ Rails.application.routes.draw do
 
   # Routes for detailed users model
   resources :detailed_users
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  root 'home#index'
 
   # mailbox folder routes
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
