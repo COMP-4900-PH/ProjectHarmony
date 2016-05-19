@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/' => "home#index"
 
   get 'event_register/create'
+  delete 'eventsdelete/:id' => "event_register#destroy"
 
   # Route for joining a sailing, via creating a travelling party
   post 'travelling_party/create/:id' => 'travelling_party#create'

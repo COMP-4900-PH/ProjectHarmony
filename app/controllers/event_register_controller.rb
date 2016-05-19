@@ -52,4 +52,15 @@ class EventRegisterController < ApplicationController
       redirect_to :back
     end
   end
+
+  # DELETE /events/1
+  # DELETE /events/1.json
+  def destroy
+    @event_register.destroy
+    respond_to do |format|
+      format.html { redirect_to user_dashboard_path, notice: 'Event register was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
 end

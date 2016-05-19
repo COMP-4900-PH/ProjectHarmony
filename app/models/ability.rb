@@ -22,11 +22,12 @@ class Ability
       end
 
       # Detailed users can destroy events if they are the owner
-      can :destroy, Event do |event|
-        # this could cause problems as we are using foreign keys
-        # should this be event.user_id == user.id
-        event.creator_id == user
-      end
+      # can :destroy, Event do |event|
+      #   # this could cause problems as we are using foreign keys
+      #   # should this be event.user_id == user.id
+      #   event.creator_id == user
+      # end
+      can :destroy, EventRegister
 
       # Detailed users can create events
       can :create, Event
