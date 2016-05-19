@@ -73,7 +73,7 @@
     <div class="item">
       <div class="banner2">
         <div class="container_wrap3">
-          <h1>Sharing an experience with others on Project Harmony!</h1>
+          <h1>Sharing an experience with others</h1>
           <div class="offering">
             <h2>Making new friends through Project Harmony</h2>
             <h3>Find like-minded families and individuals</h3>
@@ -85,8 +85,7 @@
                   <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
                     <p><b>Sailings: </b>Join your related sailing to find other socials and families alike.
                       Through here you can meet new people to share your wonderous experience with! Join your sailing
-                      now
-                      to start chatting</p>
+                      now to start chatting</p>
                   </li>
                   <div class="clearfix"></div>
                 </ul>
@@ -96,10 +95,8 @@
                   <i class="s2"> </i>
                   <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
                     <p><b>Messaging: </b>Want to get to know someone before you set sail? Through a personal messaging
-                      and
-                      forum style chat service, you can learn about your fellow travellers and their families and share
-                      your
-                      favourite things to do!
+                      and forum style chat service, you can learn about your fellow travellers and their families and share
+                      your favourite things to do!
                     </p>
                   </li>
                   <div class="clearfix"></div>
@@ -190,10 +187,12 @@
 </div> <!-- CONTENT TOP -->
 <!-- END SEARCH SECTION -->
 <!-- SAILING CARDS SECTION -->
+<div class="content_middle">
 <div class="container">
   <div class="middle_grid wow fadeInUp" data-wow-delay="0.4s">
-    <% @sailings.where('id < 11').find_each() do |sailing| %>
-        <div class="col-md-6 index-grids">
+    <!-- ALASKA CRUISES BEGIN -->
+        <div class="col-md-4">
+          <% @sailings.where("destination_identifier = 'Alaska'").find_each() do |sailing| %>
           <div class="grid1">
             <div class="view view-first">
               <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
@@ -220,6 +219,11 @@
                             <td><%= event.max_participants %></td>
                           </tr>
                       <% end %>
+                      <% if sailing.events.blank? %>
+                          <tr>
+                            <td>No Events are currently listed</td>
+                          </tr>
+                      <% end %>
 
                       </tbody>
                     </table>
@@ -227,18 +231,18 @@
                   <label class="btn1 btn-3 btn-2g">
                     <%= link_to 'Full Details', sailing %>
                   </label>
-                </div>
+                </div><!-- INNER_WRAP1 -->
                 <div class="clearfix"></div>
                 </ul>
-              </div>
-            </div>
+              </div><!-- MASK -->
+            </div><!-- VIEW VIEW-FIRST -->
             <div class="inner_wrap">
               <ul class="star1">
                 <li class="module_left">
                   <!--<h3><%= sailing.cruise_ship_company %></h3>-->
                   <h2><%= sailing.cruise_ship_name %></h2>
                   <h4>No. of Cruisers: 412</h4>
-                  <!--<h4>Region: <%= sailing.destination_identifier %> </h4>-->
+                  <h4>Region: <%= sailing.destination_identifier %> </h4>
                   <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
                   <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
                   <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
@@ -252,10 +256,147 @@
               </ul>
             </div><!-- INNER_WRAP -->
           </div><!-- GRID1 -->
-        </div><!-- COL-MD-6 -->
-    <% end %>
+          <% end %>
+        </div><!-- COL-MD-4 -->
+    <!-- ALASKA CRUISES END -->
+    <!-- EUROPE/MEDITERRANEAN CRUISES BEGIN -->
+    <div class="col-md-4">
+      <% @sailings.where("destination_identifier = 'Europe/Mediterranean'").find_each() do |sailing| %>
+          <div class="grid1">
+            <div class="view view-first">
+              <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+              <div class="mask">
+                <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
+                <div class="inner_wrap1">
+                  <h4>Registered Events</h4>
+                  <div class="scrolling">
+                    <table class="table">
+                      <thead>
+                      <tr>
+                        <th>Event</th>
+                        <th>Description</th>
+                        <th>Participants</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+
+                      <% sailing.events.each do |event| %>
+                          <tr>
+                            <td><%= event.event_name %></td>
+                            <td><%= event.description %></td>
+                            <td><%= event.max_participants %></td>
+                          </tr>
+                      <% end %>
+                      <% if sailing.events.blank? %>
+                          <tr>
+                            <td>No Events are currently listed</td>
+                          </tr>
+                      <% end %>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <label class="btn1 btn-3 btn-2g">
+                    <%= link_to 'Full Details', sailing %>
+                  </label>
+                </div><!-- INNER_WRAP1 -->
+                <div class="clearfix"></div>
+                </ul>
+              </div><!-- MASK -->
+            </div><!-- VIEW VIEW-FIRST -->
+            <div class="inner_wrap">
+              <ul class="star1">
+                <li class="module_left">
+                  <!--<h3><%= sailing.cruise_ship_company %></h3>-->
+                  <h2><%= sailing.cruise_ship_name %></h2>
+                  <h4>No. of Cruisers: 412</h4>
+                  <h4>Region: <%= sailing.destination_identifier %> </h4>
+                  <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
+                  <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
+                  <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
+                  <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
+                  <h2>Who's On Board?</h2>
+                  <h4>Top languages spoken: English (30%), Chinese (27%)</h4>
+                  <h4>Demographics: 25-35yrs (42%), 50+ (37%)</h4>
+                  <h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>
+                  <h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>
+                </li>
+              </ul>
+            </div><!-- INNER_WRAP -->
+          </div><!-- GRID1 -->
+      <% end %>
+    </div><!-- COL-MD-4 -->
+    <!-- EUROPE/MEDITERRANEAN CRUISES END -->
+    <!-- CARIBBEAN CRUISES BEGIN -->
+    <div class="col-md-4">
+      <% @sailings.where("destination_identifier = 'Caribbean'").find_each() do |sailing| %>
+          <div class="grid1">
+            <div class="view view-first">
+              <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+              <div class="mask">
+                <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
+                <div class="inner_wrap1">
+                  <h4>Registered Events</h4>
+                  <div class="scrolling">
+                    <table class="table">
+                      <thead>
+                      <tr>
+                        <th>Event</th>
+                        <th>Description</th>
+                        <th>Participants</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <% sailing.events.each do |event| %>
+                          <tr>
+                            <td><%= event.event_name %></td>
+                            <td><%= event.description %></td>
+                            <td><%= event.max_participants %></td>
+                          </tr>
+                          <% end %>
+                          <% if sailing.events.blank? %>
+                          <tr>
+                            <td>No Events are currently listed</td>
+                          </tr>
+                      <% end %>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <label class="btn1 btn-3 btn-2g">
+                    <%= link_to 'Full Details', sailing %>
+                  </label>
+                </div><!-- INNER_WRAP1 -->
+                <div class="clearfix"></div>
+                </ul>
+              </div><!-- MASK -->
+            </div><!-- VIEW VIEW-FIRST -->
+            <div class="inner_wrap">
+              <ul class="star1">
+                <li class="module_left">
+                  <!--<h3><%= sailing.cruise_ship_company %></h3>-->
+                  <h2><%= sailing.cruise_ship_name %></h2>
+                  <h4>No. of Cruisers: 412</h4>
+                  <h4>Region: <%= sailing.destination_identifier %> </h4>
+                  <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
+                  <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
+                  <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
+                  <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
+                  <h2>Who's On Board?</h2>
+                  <h4>Top languages spoken: English (30%), Chinese (27%)</h4>
+                  <h4>Demographics: 25-35yrs (42%), 50+ (37%)</h4>
+                  <h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>
+                  <h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>
+                </li>
+              </ul>
+            </div><!-- INNER_WRAP -->
+          </div><!-- GRID1 -->
+      <% end %>
+    </div><!-- COL-MD-4 -->
+    <!-- CARIBBEAN CRUISES END -->
   </div><!-- MIDDLE GRID -->
 </div><!-- CONTAINER -->
+</div>
 <!-- END SAILING SECTION -->
 <div class="offering">
 </div>
