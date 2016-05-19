@@ -28,6 +28,7 @@ class Ability
       #   event.creator_id == user
       # end
       can :destroy, EventRegister
+      can :destroy, Event
 
       # Detailed users can create events
       can :create, Event

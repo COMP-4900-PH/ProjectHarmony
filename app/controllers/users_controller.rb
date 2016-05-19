@@ -6,6 +6,11 @@ class UsersController < ApplicationController
     @events = Event.where(creator_id: current_user.id)
     #@event_register = EventRegister.where(user_id: current_user.id)
     @event_register = Event.joins(:event_registers, :sailing).where("event_registers.user_id" => current_user.id)
+
+    #@event_register = Event.select("Events.*,event_registers.id as e_id").joins(:event_registers, :sailing).where("event_registers.user_id" => current_user.id)
+    #abort @event_register.inspect
+
+
     @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
   end
 
