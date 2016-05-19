@@ -11,7 +11,6 @@ class HomeController < ApplicationController
     @uniqueSailings = @sailings.uniq.pluck(:destination_identifier)
     # Selects unique events
     @uniqueEvents = @events.uniq.pluck(:event_name)
-
   end
 
 end
