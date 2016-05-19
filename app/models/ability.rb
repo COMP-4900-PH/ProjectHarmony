@@ -18,14 +18,14 @@ class Ability
       can :update, Event do |event|
         # this could cause problems as we are using foreign keys
         # should this be event.user_id == user.id
-        event.creator_id == current_user.id
+        event.creator_id == user
       end
 
       # Detailed users can destroy events if they are the owner
       can :destroy, Event do |event|
         # this could cause problems as we are using foreign keys
         # should this be event.user_id == user.id
-        event.creator_id == current_user.id
+        event.creator_id == user
       end
 
       # Detailed users can create events

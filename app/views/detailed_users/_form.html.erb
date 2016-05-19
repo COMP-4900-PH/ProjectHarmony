@@ -97,11 +97,11 @@
       <fieldset class="form-group form-inline input-group-lg">
         <div class="formBoxes2">
           <label class="label2" for="firstName">Primary Language</label>
-          <input type="text" class="form-control" name="detailed_user[primary_language]" id="primLang" placeholder="Preferred Language">
+          <%= select_tag "detailed_user[primary_language]", options_from_collection_for_select(@languages, "language", "language"), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
         </div>
         <div class="formBoxes2">
           <label class="label2" for="LastName">Secondary Language</label>
-          <input type="text" class="form-control" name="detailed_user[secondary_language]" id="secLang" placeholder="Second Language">
+          <%= select_tag "detailed_user[secondary_language]", options_from_collection_for_select(@languages, "language", "language"), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
         </div>
       </fieldset>
 
