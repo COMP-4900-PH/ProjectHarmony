@@ -70,7 +70,7 @@ class DetailedUsersController < ApplicationController
         user = User.find_by_id(@detailed_user.user_id)
         user.detailedUsers = true
         user.save
-        format.html { redirect_to @detailed_user, notice: 'Detailed user was successfully updated.' }
+        format.html { redirect_to user_dashboard_path, notice: 'Detailed user was successfully updated.' }
         format.json { render :show, status: :ok, location: @detailed_user }
       else
         format.html { render :edit }
