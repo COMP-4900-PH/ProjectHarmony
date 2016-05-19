@@ -10,68 +10,43 @@
           <h3>Introduction</h3>
           Greeting Cruisers! I love traveling and meeting new friends.
           <hr class="hr-line">
-          <h3>Recent Sailings</h3>
-          <table class="table profile-table">
-            <tr>
-              <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-              <td class="sailing-info">
-                <a href="/sailings/1"><span class="ship-name">Celebrity Infinity</span></a><br>
-                Carnival Breeze <br>
-                Departure: September 25, 2016 <br>
-                Return: October 02, 2016
-              </td>
-            </tr>
-            <tr>
-              <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-              <td class="sailing-info">
-                <a href="/sailings/1"><span class="ship-name">Royal Carribean</span></a><br>
-                Allure of the Seas <br>
-                Departure: September 25, 2016 <br>
-                Return: October 02, 2016
-              </td>
+          <h3>Sailings</h3>
 
+          <table class="table profile-table">
+
+            <% @sailings.each do |s| %>
+            <tr>
+              <td width="10"><img src="http://placehold.it/100x100" alt="..."><br></td>
+              <td class="sailing-info">
+                <a href="/sailings/<%= s.id %>"><span class="ship-name"><%= s.cruise_ship_name %></span></a><br>
+                <%= s.cruise_ship_company%> <br>
+                Departure: <%= s.departure_date.to_formatted_s(:long) %> <br>
+                Return: <%= s.return_date.to_formatted_s(:long) %>
+              </td>
             </tr>
+            <tr>
+              <td width="10"></td>
+              <td>
+                <table class="table profile-table">
+                  <th></th>
+                  <th>
+                    Events Joined
+                  </th>
+                  <% @event = Event.joins(:event_registers).where("event_registers.user_id" => @user.id, :sailing_id => s.id, :start_date => s.departure_date..s.return_date) #get events on this sailing that the user joined %>
+                  <% @event.each do |e| %>
+                  <tr>
+                    <td width="10"><%= image_tag e.image.url(:small), size: '40x40' %></td>
+                    <td>
+                      <a href="/events/<%= e.id %>"><span class="event-list"><%= e.event_name %></span></a>
+                    </td>
+                  </tr>
+                  <% end %>
+                </table>
+              </td>
+            </tr>
+            <% end %>
           </table>
           <hr class="hr-line">
-          <h3>Joined Events</h3>
-          <table class="table profile-table">
-            <tr>
-              <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-              <td class="sailing-info">
-                <span class="ship-name">Mexican Fiesta</span>
-                <p>A authentic mexican party</p> <br>
-                Age group: All age group <br>
-                Host: Salvador Gonzalez <br>
-                Sailing: Royal Carribean Cruises <br>
-
-              </td>
-            </tr>
-            <tr>
-              <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-              <td class="sailing-info">
-                <span class="ship-name">Tennis At Atrium</span><br>
-
-                <p>Tennis tornament for the youth</p>
-                Age group: 18 -30<br>
-                Host: Maggie Frank <br>
-                Sailing: Nowegian Dawn <br>
-
-              </td>
-            </tr>
-            <tr>
-              <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-              <td class="sailing-info">
-                <span class="ship-name">Skyride Escapade</span><br>
-
-                <p>Pool party at carnival skyride</p>
-
-                Age group: 18-30 <br>
-                Host: Brandon Lee <br>
-                Sailing: Carnival Cruises <br>
-
-              </td>
-            </tr>
-          </table>
         </div>
           <div class="col-lg-pull-8 col-lg-4  profile-info">
             <%= image_tag @detailed_user.avatar.url(:thumb) , class: 'avatar'%><br><br><br>
@@ -89,3 +64,4 @@
     </div>
   </div>
 </div>
+
