@@ -32,7 +32,15 @@ class ApplicationController < ActionController::Base
   protected
 
   rescue_from CanCan::AccessDenied do |exception|
-    # Not root url, but user_dashboard
-    redirect_to new_user_session_path, :alert => exception.message
+  path = root_path
+    if(exception.action.to_s == "create")
+      exception.default_message = "You need to create a detailed user profile before joining a sailing."
+      path = user_dashboard_path
+    elsif(exception.action.to_s == "show")
+      exception.default_message = "You need to create a detailed user profile before joining an event."
+      path = user_dashboard_path
+    end
+
+    redirect_to path, :alert => exception.message
   end
 end
