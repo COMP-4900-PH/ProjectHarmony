@@ -1,7 +1,7 @@
 <!--<h1>Hello <%= current_user.name %></h1>-->
 <script>
-  $('[data-toggle=tab]').click(function(){
-    if ($(this).parent().hasClass('active')){
+  $('[data-toggle=tab]').click(function () {
+    if ($(this).parent().hasClass('active')) {
       $($(this).attr("href")).toggleClass('active');
     }
   })
@@ -10,7 +10,7 @@
   <div class="container">
     <div class="dashboard-info">
       <div class="row">
-        <div class="col-lg-push-4 col-lg-8 ">
+        <div class="col-lg-push-3 col-lg-9 ">
           <div class="container-fluid">
             <div class="tabbable">
               <ul class="nav nav-tabs">
@@ -22,123 +22,85 @@
                 <div class="tab-pane active" id="tab1">
 
                   <!----------- TAB 1 SAILINGS ------------->
-
-                  <table>
-                    <thead>
-                    <tr>
-                      <th colspan="3"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <% if @sailings.empty? %>
-                      <p>You have not registered for any sailings yet! You must create a detailed profile to do this.</p>
-                    <% end %>
+                  <% if @sailings.empty? %>
+                      <p>You have not registered for any sailings yet! You must create a detailed profile to do
+                        this.</p>
+                  <% end %>
+                  <table class="table">
                     <% @sailings.each do |sail| %>
-                        <tr>
-                          <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-                          <td class="sailing-info">
-                            <a href="/sailings/<%= sail.id %>"><span class="ship-name"><%= sail.cruise_ship_name %></span></a><br><br>
-                            <p><%= sail.destination_identifier %></p>
-                            <p><%= sail.departure_date.strftime("%F %I:%M%p")  %></p>
-                            <p><%= sail.return_date.strftime("%F %I:%M%p")  %></p>
-                            <br>
-                            <p><%= %></p>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-danger">Leave</button>
-                          </td>
+                    <tr>
+                      <td width="10"><img src="http://placehold.it/100x100"></td>
+                      <td>
+                        <a href="/sailings/<%= sail.id %>"><span class="ship-name"><%= sail.cruise_ship_name %></span></a><br><br>
+                        Destination: <%= sail.destination_identifier %>
+                      </td>
+                      <td>
+                        <div style="margin-top: 2em">
+                          <div class="row">
+                            <div class="col-md-4">
+                              Departure:
+                            </div>
+                            <div class="col-md-8">
+                              <%= sail.departure_date.to_formatted_s(:long) %>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">
+                              Return:
+                            </div>
+                            <div class="col-md-8">
+                              <%= sail.return_date.to_formatted_s(:long) %>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
                     <% end %>
-                    </tbody>
                   </table>
                 </div>
                 <div class="tab-pane" id="tab2">
 
                   <!----------- TAB 2 MY EVENTS ------------->
-
-                  <table>
-                    <thead>
-                    <tr>
-                      <th colspan="3"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <% if @sailings.empty? %>
-                        <p>You have not registered for any events yet! You must create a detailed profile, then join a sailing to do this.</p>
+                  <table class="table">
+                    <% @event_register.each do |event| %>
+                    <%= render partial: 'event_list', locals: { event: event }%>
                     <% end %>
-                    <% @event_register.each do |eventregister| %>
-                        <tr>
-                          <td><img src="https://placeimg.com/100/100/tech" alt="..."><br></td>
-                          <td class="sailing-info">
-                            <a href="/events/<%= eventregister.event_id %>"><span class="ship-name"><%= eventregister.event.event_name %></span></a><br><br>
-                            <p><%= eventregister.event.start_date.strftime("%F %I:%M%p") %></p>
-                            <p><%= eventregister.event.end_date.strftime("%F %I:%M%p") %></p>
-                            <p><%= eventregister.event.description %></p>
-                            <br>
-                            <p><%= eventregister.event.location %></p>
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-danger">Not Going</button>
-                          </td>
-                    <% end %>
-                    </tbody>
                   </table>
+
                 </div>
                 <div class="tab-pane" id="tab3">
-
+                  <div class="col-md-2 event-filter">
+                    <%= link_to 'New Event', new_event_path, class: "btn btn-success", id: 'new-event' %>
+                  </div>
                   <!----------- TAB 3 HOSTED EVENTS ------------->
 
-                  <table>
-                    <thead>
-                    <tr>
-                      <th colspan="3"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <th>Event name</th>
-                      <th>Start Date</th>
-                      <th>End Date</th>
-                      <th>Location</th>
-                      <th>Description</th>
-                      <th>Max Participants</th>
-                      <th>Ship Name</th>
-                    </tr>
+                  <table class="table">
                     <% @events.each do |event| %>
-                        <tr>
-                          <td><%= event.event_name %></td>
-                          <td><%= event.try(:start_date).try(:strftime, "%F %I:%M%p") %></td>
-                          <td><%= event.try(:end_date).try(:strftime, "%F %I:%M%p") %></td>
-                          <td><%= event.location %></td>
-                          <td><%= event.description %></td>
-                          <td><%= event.max_participants %></td>
-                          <td><%= event.sailing.cruise_ship_name %></td>
-                          <% if false %>
-                              <td><%= link_to 'Show', sailing %></td>
-                              <td><%= link_to 'Edit', edit_sailing_path(sailing) %></td>
-                              <td><%= link_to 'Destroy', sailing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                          <% end %>
-                        </tr>
+                        <%= render partial: 'event_list', locals: { event: event } %>
                     <% end %>
-                    </tbody>
                   </table>
                   <% if @sailings.empty? %>
-                      <p>You do not have any hosted events yet! You must create a detailed profile, then join a sailing to do this.</p>
+                      <p>You do not have any hosted events yet! You must create a detailed profile, then join a sailing
+                        to do this.</p>
                   <% end %>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-pull-8 col-lg-4  profile-info">
-          <%= image_tag @detailed_user.avatar.url(:thumb) , class: 'avatar'%>
-          <a  href="/profile/<%=@user.id%>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
-          <% if @user.detailedUsers || @user.admin %>
-            <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Edit Profile</h3></span></a>
-          <% end %>
-          <% if @user.detailedUsers == false && @user.admin == false %>
-              <a  href="/editprofile/<%=@user.id%>"><span class="ship-name"><h3>Create Detailed Profile</h3></span></a>
-          <% end %>
-          <a href="/mailbox/inbox" class="btn btn-primary">Messages <span class="badge"><%= unread_messages_count%></span></a>
+        <div class="col-lg-pull-9 col-lg-3  profile-info">
+          <%= image_tag @detailed_user.avatar.url(:thumb), id: "dashboard-avatar" %>
+          <div style="text-align: center; margin-left: 2em; margin-top: 1em">
+            <a href="/profile/<%= @user.id %>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
+            <% if @user.detailedUsers || @user.admin %>
+                <a href="/editprofile/<%= @user.id %>"><span class="ship-name"><h3>Edit Profile</h3></span></a>
+            <% end %>
+            <% if @user.detailedUsers == false && @user.admin == false %>
+                <a href="/editprofile/<%= @user.id %>"><span class="ship-name"><h3>Create Detailed Profile</h3></span></a>
+            <% end %>
+            <a href="/mailbox/inbox" class="btn btn-primary">Messages
+              <span class="badge"><%= unread_messages_count %></span></a>
+          </div>
         </div>
       </div>
     </div>

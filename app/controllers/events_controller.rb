@@ -28,16 +28,14 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by_id(params[:id])
     @users = DetailedUser.joins('JOIN event_registers ON event_registers.user_id = detailed_users.user_id WHERE event_id = ' + params[:id])
-    #sql = "select * from detailed_users JOIN comments ON comments.user_id = detailed_users.user_id where comments.event_id = #{params[:id]}"
     @comments = Comment.where(event_id: params[:id])
-    #@comments = DetailedUser.find_by_sql(sql)
-    #abort @comments.inspect
   end
 
-  # GET /events/new
+  # GET /events/new/1
   def new
     @event = Event.new
-    @sailings = Sailing.select('id, (cruise_ship_name || "-" || official_id) AS cruise').order('cruise_ship_name ASC').uniq
+    #@sailings = Sailing.select('"sailings.id", (cruise_ship_name || "-" || official_id) AS cruise').order('cruise_ship_name ASC').uniq
+    @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
   end
 
   # GET /events/1/edit
