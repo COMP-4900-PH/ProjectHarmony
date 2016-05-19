@@ -27,8 +27,11 @@ gem 'devise', '3.4.1'
 # cancancan authentication
 gem 'cancancan', '~> 1.10'
 
-#ranksack
+#ransack
 gem 'ransack'
+
+#boostrap-datepicker
+gem 'bootstrap-datepicker-rails'
 
 #mailboxer
 gem 'bootstrap-sass'
