@@ -59,6 +59,11 @@
 
 .event-filter {
     margin-top: 1em;
+    width: 100%;
+}
+
+#new-event {
+    float: right;
 }
 
 .comment {
@@ -137,4 +142,8 @@
     padding: 0;
     font-size: small;
     color: #31b0d5;
+}
+
+.info-tab-event {
+
 }
