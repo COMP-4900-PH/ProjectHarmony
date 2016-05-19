@@ -31,10 +31,11 @@ class EventsController < ApplicationController
     @comments = Comment.where(event_id: params[:id])
   end
 
-  # GET /events/new
+  # GET /events/new/1
   def new
     @event = Event.new
-    @sailings = Sailing.select('id, (cruise_ship_name || "-" || official_id) AS cruise').order('cruise_ship_name ASC').uniq
+    #@sailings = Sailing.select('"sailings.id", (cruise_ship_name || "-" || official_id) AS cruise').order('cruise_ship_name ASC').uniq
+    @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
   end
 
   # GET /events/1/edit
