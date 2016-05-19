@@ -4,13 +4,15 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     @detailed_user = DetailedUser.find_by_user_id(current_user.id)
     @events = Event.where(creator_id: current_user.id)
-    @event_register = EventRegister.where(user_id: current_user.id)
+    #@event_register = EventRegister.where(user_id: current_user.id)
+    @event_register = Event.joins(:event_registers, :sailing).where("event_registers.user_id" => current_user.id)
     @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
   end
 
   def profile
     @user = User.find_by_id(params[:id])
     @detailed_user = DetailedUser.find_by_user_id(params[:id])
+    @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => params[:id])
   end
 
   # use by the hover function in events page

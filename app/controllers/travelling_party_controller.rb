@@ -14,10 +14,10 @@ class TravellingPartyController < ApplicationController
     party_register.user_id = current_user.id
 
     # This needs to be converted into an active record query
-    test = "select * from party_registers INNER JOIN travelling_parties on party_registers.travelling_party_id = travelling_parties.id
+    query = "select * from party_registers INNER JOIN travelling_parties on party_registers.travelling_party_id = travelling_parties.id
       where party_registers.user_id = #{current_user.id}
       AND travelling_parties.sailing_id = #{travelling_party.sailing_id}"
-    @records_array = ActiveRecord::Base.connection.execute(test)
+    @records_array = ActiveRecord::Base.connection.execute(query)
 
     # If this user has not signed up for a sailing on a particular boat already, allow them to join
     if (@records_array.blank?)
@@ -34,5 +34,4 @@ class TravellingPartyController < ApplicationController
     end
 
   end
-
 end

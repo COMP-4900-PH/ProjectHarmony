@@ -1,0 +1,31 @@
+<tr>
+  <td width="10"><%= image_tag event.image.url(:small)%></td>
+  <td>
+    <a href="events/<%= event.id %>"><h4 class="ship-name"><%= event.event_name %></h4></a>
+    <div class="row">
+      <div class="col-md-1">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-6">
+        <%= event.start_date.to_formatted_s(:long) %> - <%= event.end_date.to_formatted_s(:long) %>
+      </div>
+      <div class="col-md-1">
+        <i class="fa fa-ship" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-4">
+        <a href="sailings/<%=event.sailing.id %>"><span class="ship-name"><%= event.sailing.cruise_ship_name %></a> </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+        <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-11">
+        <%= event.location %>
+      </div>
+    </div>
+  </td>
+  <td>
+    <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" class="btn btn-danger" href="/events/61"><span>Delete</span></a>
+  </td>
+</tr>

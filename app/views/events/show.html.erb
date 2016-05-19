@@ -69,7 +69,11 @@
                 <h3><%= @event.location %></h3>
               </div>
               <div class="col-md-1">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+
+                <%= form_tag(new_conversation_path) do %>
+                    <input name="recipients[]" type="hidden" value="<%= @event.creator_id %>"/>
+                    <button type="submit" style="border:none; background: transparent"><i class="fa fa-envelope-o ship-name" aria-hidden="true"></i></button>
+                <% end %>
               </div>
               <div class="col-md-11">
                 <a href=""><span class="ship-name"><%= User.find_by_id(@event.creator_id).name%></span></a> <span> - organizer </span>
