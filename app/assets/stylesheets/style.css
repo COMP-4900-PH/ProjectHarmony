@@ -26,7 +26,7 @@ body a{
 .header{
     background:#fff;
     padding:0;
-    margin-left: 16em;
+    margin-left: 2em;
 }
 .header-left{
     /*--float: left;
@@ -406,8 +406,8 @@ a#loginButton img {
     padding-bottom: 3em;
 }
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel2-inner > .item > img,
+.carousel2-inner > .item > a > img {
     width: 70%;
     margin: auto;
 }
@@ -1332,7 +1332,7 @@ ul.vision li.desc a{
 .inner_wrap1 {
     background: #fff;
     padding:1em 1em 1em;
-    height:inherit;
+    height:80%;
     border-bottom-left-radius: 3px;
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-bottom-left-radius: 3px;
@@ -2222,12 +2222,12 @@ p.educate {
         width: 100%;
     }
     .header {
-        margin-left: 10em;
+        margin-left: 2em;
     }
 }
 @media (max-width:1366px){
     .header {
-        margin-left: 8em;
+        margin-left: 2em;
     }
 
     #loginForm {
@@ -2236,7 +2236,7 @@ p.educate {
 }
 @media (max-width:1280px){
     .header {
-        margin-left:5em;
+        margin-left:2em;
     }
     .footer span {
         width:62%;
@@ -2274,7 +2274,7 @@ p.educate {
 }
 @media (max-width:1024px){
     .header {
-        margin-left:3em;
+        margin-left:2em;
     }
     .footer span{
         width:60%;
@@ -2485,6 +2485,7 @@ p.educate {
     }
     .btn1 {
         padding: 14px 20px;
+        margin: 10px;
         font-size: 0.95em;
     }
     .banner {
@@ -3441,3 +3442,17 @@ p.educate {
     overflow-y: scroll;
 }
 
+.backdrop {
+    background:#eea236;
+    padding:1em 1em 1em;
+}
+.cardList{
+    text-align: center;
+}
+
+.container2 {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
