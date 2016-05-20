@@ -94,7 +94,7 @@
 }
 
 .formBoxes {
-    padding: 0 30px 0 50px;
+    padding: 0 20px 0 50px;
     margin-right: 30px;
     display: inline-block;
 }
@@ -104,7 +104,12 @@
     margin-right: 10px;
     display: inline-block;
 }
-
+.radioCustom {
+    padding: 0 10px 0 50px;
+    margin-right: 10px;
+    display: inline-block;
+    float: right;
+}
 
 .label2 {
     margin-right: 10px;
@@ -112,7 +117,16 @@
 
 .label3 {
     margin-right: 17px;
+    margin-left: 4px;
 
+}
+.label4 {
+     margin-left: 10px;
+     margin-right: 15px;
+
+ }
+.label5 {
+    margin-right: 15px;
 }
 .radLabel {
     padding-left: 50px;
