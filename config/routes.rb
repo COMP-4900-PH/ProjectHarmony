@@ -26,6 +26,11 @@ Rails.application.routes.draw do
 
   get 'popover/:id' => 'users#popover'
 
+  # Routes for cruise regions pages
+  get 'alaska' => 'home#alaska'
+  get 'mediterranean' => 'home#mediterranean'
+  get 'caribbean' => 'home#caribbean'
+
   # Routes for user model
   devise_for :users, :controllers => {:registrations => "registrations"}
   #devise_for :users

@@ -202,7 +202,7 @@
       <!--<div class="backdrop">-->
       <div class="col-md-4">
         <div class="container2">
-        <h2>Alaskan Cruises</h2>
+        <a href="/alaska" class="non-white"><h2 class="cruiseheader">Alaskan Cruises</h2></a>
         <% @sailings.where("destination_identifier = 'Alaska'").order("RANDOM()").limit(1).each  do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
@@ -282,7 +282,7 @@
       <!-- ALASKA CRUISES END -->
       <!-- EUROPE/MEDITERRANEAN CRUISES BEGIN -->
       <div class="col-md-4">
-        <h3>Europe/Mediterranean Cruises</h3>
+        <a href="/mediterranean" class="non-white"><h2 class="cruiseheader">Europe/Mediterranean Cruises</h2></a>
         <% @sailings.where("destination_identifier = 'Europe/Mediterranean'").order("RANDOM()").limit(1).each do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
@@ -358,7 +358,7 @@
       <!-- EUROPE/MEDITERRANEAN CRUISES END -->
       <!-- CARIBBEAN CRUISES BEGIN -->
       <div class="col-md-4">
-        <h3>Caribbean Cruises</h3>
+        <a href="/caribbean" class="non-white"><h2 class="cruiseheader">Caribbean Cruises</h2></a>
         <% @sailings.where("destination_identifier = 'Caribbean'").order("RANDOM()").limit(1).each do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
