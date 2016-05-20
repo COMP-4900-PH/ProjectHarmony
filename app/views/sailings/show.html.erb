@@ -189,32 +189,18 @@
                   <div class="tab-pane active" id="tab1">
                     <!--<h3>Departure:</h3><button style='float: right' type="button" class="btn btn-danger">Join This Sailing</button>-->
                     <%= button_to 'Join This Sailing', "/travelling_party/create/#{@sailing.id}", :method=>:post, :class=>"btn btn-success"%><br/>
+                    <h4><%= @sailing.cruise_ship_name %> sets sail in <%= days %> days!</h4>
+                    </br>
+                    <h3>Destination Region</h3>
+                    <p><%= @sailing.destination_identifier %></p></br>
+                    <h3>Departure:</h3>
+                    <p>Departing from <%= @sailing.port_of_origin %> on</p>
                     <p><%= @sailing.departure_date.strftime("%B %d, %Y") %></p>
                     </br>
                     <h3>Return:</h3>
+                    <p>Arriving at <%= @sailing.port_of_destination %> on</p>
                     <p><%= @sailing.return_date.strftime("%B %d, %Y") %></p>
                     </br>
-                    <h4><%= @sailing.cruise_ship_name %> sets sail in <%= days %> days and counting!</h4>
-                    </br>
-                    <h3>Sail Synopsis</h3>
-                    <p>If you’re looking to make an exotic destination your next vacation, let’s talk about the ‘how’ and ‘why’ of Hawaii.
-                      The answers are as follows: visit Hawaii on a Carnival cruise (of course), and… visit Hawaii because
-                      this place is simply spectacular! Take a Hawaii cruise and explore exotic locations spread across
-                      four islands — the Hawaiian island chain is home to names you know, like Maui, Kona and Honolulu.
-                      These spots feature postcard-worthy waterfalls, volcanoes and some of the world’s most stunning, sunning beaches.
-                      You’ll find these spread across an island chain so otherworldly that you may forget you’re in the states!
-                      Best of all, that postcard you’re sure to send home will require only domestic postage.
-                    </p>
-                    </br>
-                    <h3>Brief Itinerary</h3>
-                      <ul>
-                        <li>Depart: Vancouver</li>
-                        <li>Port 2: Hilo</li>
-                        <li>Port 3: Kona</li>
-                        <li>Port 4: Kauai</li>
-                        <li>Port 5: Maui</li>
-                        <li>Destination: Honolulu</li>
-                      </ul>
                   </div>
 
                   <div class="tab-pane" id="tab2">
