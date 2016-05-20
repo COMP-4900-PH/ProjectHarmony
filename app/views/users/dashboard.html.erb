@@ -62,9 +62,8 @@
 
                   <!----------- TAB 2 MY EVENTS ------------->
                   <table class="table">
-                    <% if @sailings.empty? %>
-                        <p>You do not have any events yet! You must create a detailed profile, then join a sailing
-                          first.</p>
+                    <% if @event_register.empty? %>
+                        <p>You do not have any events yet! You must create a detailed profile and join a sailing before joining an event.</p>
                     <% end %>
                     <% @event_register.each do |event| %>
                     <%= render partial: 'event_list', locals: { event: event }%>
@@ -83,7 +82,7 @@
                         <%= render partial: 'event_list', locals: { event: event } %>
                     <% end %>
                   </table>
-                  <% if @sailings.empty? %>
+                  <% if @events.empty? %>
                       <p>You do not have any hosted events yet! You must create a detailed profile, then join a sailing
                         to do this.</p>
                   <% end %>

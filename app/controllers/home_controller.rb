@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
 
   def index
+    # abort params[:q].inspect
+    # Returns all sailings in database, if there are no search params
     @search = Sailing.search(params[:q])
     @sailings = @search.result
-    # Returns all sailings in database
-    # @sailings = Sailing.all
     # Returns all events in database
     @events = Event.all
     # Selects unique sailing destinations

@@ -174,9 +174,9 @@
           </div>
           <div class="field">
             <%= f.label :departure_date_gteq, "Departure Date Between" %>
-            <%= f.search_field :departure_date_gteq, "datepicker" => true %>
+            <%= f.search_field :departure_date_gteq, :type => "date", :style => "width:25%" %>
             <%= f.label :return_date_lteq, "and" %>
-            <%= f.search_field :return_date_lteq, "datepicker" => true %>
+            <%= f.search_field :return_date_lteq, :type => "date", :style => "width:25%" %>
           </div>
           <div class="actions"><%= f.submit "Search" %></div>
       <% end %>
