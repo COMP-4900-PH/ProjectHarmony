@@ -29,25 +29,25 @@
       <fieldset class="form-group form-inline input-group-lg">
         <div class="formBoxes">
           <label class="label3">Birth Date</label>
-          <input class="form-control" type="date" <% if !@detailed_user.birth_day.nil?  %>value="<%= @detailed_user.birth_day.strftime("%F")%>" <% end %> name="detailed_user[birth_day]">
+          <input class="form-control" type="date" <% if !@detailed_user.birth_day.nil?  %>value="<%= @detailed_user.birth_day.strftime("%F")%>" <% end %> name="detailed_user[birth_day]" required="required">
         </div>
       <!-- GENDER -->
         <label class="label3">Select Gender</label>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad1" value="m" <% if @detailed_user.gender == 'm' %>checked <%end%>>
+              <input type="radio" name="detailed_user[gender]" id="rad1" value="m" required="required" <% if @detailed_user.gender == 'm' %>checked <%end%>>
               Male
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad2" value="f" <% if @detailed_user.gender == 'f' %>checked <%end%>>
+              <input type="radio" name="detailed_user[gender]" id="rad2" value="f" required="required" <% if @detailed_user.gender == 'f' %>checked <%end%>>
               Female
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad3" value="o"<% if @detailed_user.gender == 'o' %>checked <%end%>>
+              <input type="radio" name="detailed_user[gender]" id="rad3" value="o"required="required" <% if @detailed_user.gender == 'o' %>checked <%end%>>
               Other
             </label>
           </div>
