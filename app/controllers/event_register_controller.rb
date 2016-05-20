@@ -56,9 +56,11 @@ class EventRegisterController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+    event = Event.joins(:event_registers).find_by("event_registers.id" => params[:id], "event_registers.user_id" => current_user.id)
+    sailing = Sailing.find_by_id(event.sailing_id).cruise_ship_name
     @event_register.destroy
     respond_to do |format|
-      format.html { redirect_to user_dashboard_path, notice: 'Event register was successfully destroyed.' }
+      format.html { redirect_to user_dashboard_path, notice: "You have left #{event.event_name} event in #{sailing} cruise" }
       format.json { head :no_content }
     end
   end

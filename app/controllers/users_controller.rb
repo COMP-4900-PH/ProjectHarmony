@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     #@event_register = EventRegister.where(user_id: current_user.id)
     @event_register = Event.joins(:event_registers, :sailing).where("event_registers.user_id" => current_user.id)
     @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
+    #abort @sailings.inspect
   end
 
   def profile

@@ -16,11 +16,11 @@
       <fieldset class="form-group form-inline input-group-lg">
         <div class="formBoxes">
           <label class="label2" for="firstName">First Name</label>
-          <input type="text" class="form-control" name="detailed_user[first_name]"  placeholder="Enter your first name..." pattern="[A-Za-z]+" title="Only letters allowed" required>
+          <input type="text" class="form-control" name="detailed_user[first_name]" value="<%= @detailed_user.first_name%>" placeholder="Enter your first name..." pattern="[A-Za-z]+" title="Only letters allowed" required>
         </div>
         <div class="formBoxes">
           <label class="label2" for="LastName">Last Name</label>
-          <input type="text" class="form-control" name="detailed_user[last_name]"  pattern="[A-Za-z]+" required title="Only letters allowed" id="lName" placeholder="Enter your Last name..." >
+          <input type="text" class="form-control" name="detailed_user[last_name]" value="<%= @detailed_user.last_name%>" pattern="[A-Za-z]+" required title="Only letters allowed" id="lName" placeholder="Enter your Last name..." >
         </div>
       </fieldset>
       <!-- USER NAME END -->
@@ -29,7 +29,7 @@
       <fieldset class="form-group form-inline input-group-lg">
         <div class="formBoxes">
           <label class="label3">Birth Date</label>
-          <input class="form-control" type="date" name="detailed_user[birth_day]">
+          <input class="form-control" type="date" <% if !@detailed_user.birth_day.nil?  %>value="<%= @detailed_user.birth_day.strftime("%F")%>" <% end %> name="detailed_user[birth_day]">
         </div>
       </fieldset>
 
@@ -39,19 +39,19 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad1" value="MaleOpt" checked>
+              <input type="radio" name="detailed_user[gender]" id="rad1" value="MaleOpt" <% if @detailed_user.gender == 'MaleOpt' %>checked <%end%>>
               Male
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad2" value="FemaleOpt">
+              <input type="radio" name="detailed_user[gender]" id="rad2" value="FemaleOpt" <% if @detailed_user.gender == 'FemaleOpt' %>checked <%end%>>
               Female
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad3" value="OtherOpt">
+              <input type="radio" name="detailed_user[gender]" id="rad3" value="OtherOpt"<% if @detailed_user.gender == 'OtherOpt' %>checked <%end%>>
               Other
             </label>
           </div>
@@ -62,31 +62,31 @@
         <div class="col-sm-10">
           <div class="radio">
             <label>
-              <input type="radio" name="orientation" id="rad1" value="MaleOpt" checked>
+              <input type="radio" name="orientation" id="rad1" value="MaleOpt" <% if @detailed_user.sexual_orientation == 'MaleOpt' %>checked <%end%>>
               Straight or Heterosexual
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[sexual_orientation]" id="rad2" value="FemaleOpt">
+              <input type="radio" name="detailed_user[sexual_orientation]" id="rad2" value="FemaleOpt" <% if @detailed_user.sexual_orientation == 'FemaleOpt' %>checked <%end%>>
               Lesbian,Gay, Homosexual
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt">
+              <input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>
               Bisexual
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt">
+              <input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>
               Don't Know
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt">
+              <input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>
               Something Else
             </label>
           </div>
@@ -97,11 +97,11 @@
       <fieldset class="form-group form-inline input-group-lg">
         <div class="formBoxes2">
           <label class="label2" for="firstName">Primary Language</label>
-          <%= select_tag "detailed_user[primary_language]", options_from_collection_for_select(@languages, "language", "language"), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
+          <%= select_tag "detailed_user[primary_language]", options_from_collection_for_select(@languages, "language", "language", selected: @detailed_user.primary_language), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
         </div>
         <div class="formBoxes2">
           <label class="label2" for="LastName">Secondary Language</label>
-          <%= select_tag "detailed_user[secondary_language]", options_from_collection_for_select(@languages, "language", "language"), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
+          <%= select_tag "detailed_user[secondary_language]", options_from_collection_for_select(@languages, "language", "language", selected: @detailed_user.secondary_language), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
         </div>
       </fieldset>
 
@@ -109,7 +109,7 @@
       <div class="form-group input-group-lg">
         <div class="formBoxes">
           <label class="label2">About</label>
-          <textarea class="form-control mytextarea" name="detailed_user[description]" rows="6" placeholder="Tell us about yourself?"></textarea>
+          <textarea class="form-control mytextarea" name="detailed_user[description]" rows="6" placeholder="Tell us about yourself?"><%= @detailed_user.description %></textarea>
         </div>
       </div>
       <fieldset class="form-group">

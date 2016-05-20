@@ -36,6 +36,11 @@ class EventsController < ApplicationController
     @event = Event.new
     #@sailings = Sailing.select('"sailings.id", (cruise_ship_name || "-" || official_id) AS cruise').order('cruise_ship_name ASC').uniq
     @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
+
+    if(@sailings.blank?)
+      flash[:alert] = "you have not joined a sailing"
+      redirect_to :back
+    end
   end
 
   # GET /events/1/edit
@@ -88,9 +93,11 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+    event = Event.find_by_id(params[:id])
+    sailing = Sailing.find_by_id(event.sailing_id).cruise_ship_name
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to user_dashboard_path, notice: "#{event.event_name} Event in #{sailing} cruise was successfully deleted."}
       format.json { head :no_content }
     end
   end
