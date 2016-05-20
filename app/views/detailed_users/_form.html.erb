@@ -35,19 +35,19 @@
         <label class="label3">Select Gender</label>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad1" value="MaleOpt" <% if @detailed_user.gender == 'MaleOpt' %>checked <%end%>>
+              <input type="radio" name="detailed_user[gender]" id="rad1" value="m" <% if @detailed_user.gender == 'm' %>checked <%end%>>
               Male
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad2" value="FemaleOpt" <% if @detailed_user.gender == 'FemaleOpt' %>checked <%end%>>
+              <input type="radio" name="detailed_user[gender]" id="rad2" value="f" <% if @detailed_user.gender == 'f' %>checked <%end%>>
               Female
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="detailed_user[gender]" id="rad3" value="OtherOpt"<% if @detailed_user.gender == 'OtherOpt' %>checked <%end%>>
+              <input type="radio" name="detailed_user[gender]" id="rad3" value="o"<% if @detailed_user.gender == 'o' %>checked <%end%>>
               Other
             </label>
           </div>
@@ -57,7 +57,7 @@
       <fieldset class="form-group form-inline input-group-lg">
         <div class="formBoxes2">
           <label class="label2" for="country">Country of Origin</label>
-          <select class="form-control" id="selCountry">
+          <select class="form-control" id="selCountry" name="detailed_user[country]">
             <option>Canada</option>
             <option>United States</option>
             <option>United Kingdom</option>
@@ -72,7 +72,7 @@
         </div>
         <div class="formBoxes2">
           <label class="label4" for="city">City of Origin</label>
-          <input class="form-control" type="text">
+          <input class="form-control" type="text" name="detailed_user[city]">
         </div>
       </fieldset>
 
