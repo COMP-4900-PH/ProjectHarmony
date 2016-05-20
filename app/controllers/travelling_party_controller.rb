@@ -36,6 +36,8 @@ class TravellingPartyController < ApplicationController
 
   end
 
+
+
   # def travelling_party_params
   #   params.fetch(:travelling_party, {}).permit(:sailing_id)
   # end

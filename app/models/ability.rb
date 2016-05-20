@@ -30,6 +30,8 @@ class Ability
       can :destroy, EventRegister
       can :destroy, Event
 
+      can :destroy, PartyRegister
+
       # Detailed users can create events
       can :create, Event
 

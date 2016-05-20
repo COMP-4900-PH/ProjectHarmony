@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/' => "home#index"
 
   get 'event_register/create'
-  delete 'eventsdelete/:id' => "event_register#destroy"
+
 
   # Route for joining a sailing, via creating a travelling party
   post 'travelling_party/create/:id' => 'travelling_party#create'
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'profile/:id' => 'users#profile'
   get 'editprofile/:id' => 'detailed_users#new'
   post 'editprofile' => 'detailed_users#create'
+  delete 'eventsdelete/:id' => "event_register#destroy"
+  delete 'leavesailing/:id' => "party_register#destroy"
 
   get 'popover/:id' => 'users#popover'
 
@@ -39,6 +41,9 @@ Rails.application.routes.draw do
 
   # Routes for detailed users model
   resources :detailed_users
+
+  # Party_register
+  resources :party_register
 
   # mailbox folder routes
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox

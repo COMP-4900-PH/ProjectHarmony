@@ -1,4 +1,3 @@
-<!--<h1>Hello <%= current_user.name %></h1>-->
 <script>
   $('[data-toggle=tab]').click(function () {
     if ($(this).parent().hasClass('active')) {
@@ -54,6 +53,9 @@
                           </div>
                         </div>
                       </td>
+                      <td>
+                        <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" class="btn btn-danger" href="/leavesailing/<%=   PartyRegister.joins(:travelling_party => :sailing).find_by("travelling_parties.sailing_id" => sail.id, "party_registers.user_id" => current_user.id).id %>"><span>leave</span></a>
+                      </td>
                     </tr>
                     <% end %>
                   </table>
@@ -95,7 +97,7 @@
                           </td>
                           <td>
                             <% @ev = EventRegister.find_by(event_id:event.id,user_id:current_user.id) %>
-                            <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" class="btn btn-danger" href="/eventsdelete/<%= @ev.id  %>"><span>Delete</span></a>
+                            <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" class="btn btn-danger" href="/eventsdelete/<%= @ev.id  %>"><span>unjoin</span></a>
                           </td>
                         </tr>
                     <% end %>
