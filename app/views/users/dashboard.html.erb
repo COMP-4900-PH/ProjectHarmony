@@ -159,7 +159,9 @@
         <div class="col-lg-pull-9 col-lg-3  profile-info">
           <%= image_tag @detailed_user.avatar.url(:thumb), id: "dashboard-avatar" %>
           <div style="text-align: center; margin-left: 2em; margin-top: 1em">
-            <a href="/profile/<%= @user.id %>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
+            <% if @user.detailedUsers == true %>
+              <a href="/profile/<%= @user.id %>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
+            <% end %>
             <% if @user.detailedUsers || @user.admin %>
                 <a href="/editprofile/<%= @user.id %>"><span class="ship-name"><h3>Edit Profile</h3></span></a>
             <% end %>

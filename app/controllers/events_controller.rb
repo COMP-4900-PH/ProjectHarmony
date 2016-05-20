@@ -53,6 +53,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     respond_to do |format|
       if @event.save
+        # When a host adds an event, he/she gets automatically joined
+        EventRegister.create(:user_id => current_user.id, :event_id => @event.id)
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else

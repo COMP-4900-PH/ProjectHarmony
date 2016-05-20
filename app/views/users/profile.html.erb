@@ -5,7 +5,7 @@
         <div class="col-lg-push-4 col-lg-8 ">
           <h2 id="name-h2"><%= @user.name %></h2>
           <hr class="hr-line">
-          Location: <%= @detailed_user.city + ", " + @detailed_user.country %>
+          Location: <%= @detailed_user.city %>, <%= @detailed_user.country %>
           <br><br>
           <h3>Introduction</h3>
           <%= @detailed_user.description %>
@@ -55,7 +55,7 @@
                 <%= submit_tag("Send a message", class: "btn btn-primary") %>
             <% end %>
             <hr class="hr-line-2">
-            <h3><%= @detailed_user.first_name + " " + @detailed_user.last_name %></h3>
+            <h3><%= @detailed_user.first_name %> <%= @detailed_user.last_name %></h3>
             <h4>Languages Spoken:</h4>
             <%= @detailed_user.primary_language %> <br>
             <%= @detailed_user.secondary_language %> <br>
@@ -67,4 +67,3 @@
     </div>
   </div>
 </div>
-
