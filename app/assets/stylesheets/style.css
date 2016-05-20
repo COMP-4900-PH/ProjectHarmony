@@ -383,8 +383,8 @@ a#loginButton img {
     padding-bottom: 3em;
 }
 .banner2{
-     background: url("MultiCruise.jpg") no-repeat center top;
-     background-size:cover;
+     /*background: url("MultiCruise.jpg") no-repeat center top;*/
+     background-size:100% 100%;
      -webkit-background-size:cover;
      -moz-background-size:cover;
      -o-background-size:cover;

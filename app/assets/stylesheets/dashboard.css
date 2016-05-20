@@ -158,6 +158,9 @@
     color: #31b0d5;
 }
 
-.info-tab-event {
-
+#ship-image {
+    max-width: 100%;
+    max-height: 500px;
+    height: auto;
 }
+
