@@ -5,4 +5,5 @@ class TravellingParty < ActiveRecord::Base
   has_many :event_registers
   has_many :events, through: :event_registers
   has_many :users, through: :party_registers
+  accepts_nested_attributes_for :non_registered_user
 end
