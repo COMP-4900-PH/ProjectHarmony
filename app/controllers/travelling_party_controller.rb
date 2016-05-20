@@ -3,6 +3,7 @@ class TravellingPartyController < ApplicationController
 
   # POST /travelling_party/1
   def create
+    # @travel_party = TravellingParty.new(travelling_party_params)
     # Creates a new travelling party for selected sailing
     travelling_party = TravellingParty.new()
     travelling_party.sailing_id = params[:id]
@@ -34,4 +35,9 @@ class TravellingPartyController < ApplicationController
     end
 
   end
+
+  # def travelling_party_params
+  #   params.fetch(:travelling_party, {}).permit(:sailing_id)
+  # end
+
 end
