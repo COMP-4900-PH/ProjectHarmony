@@ -120,17 +120,7 @@ body a{
         text-align:center;
         top:15px;
     }
-    .n
-
-
-
-
-
-
-
-
-
-    av li ul{
+    .n av li ul{
         width:100%;
     }
     .menu ul{
@@ -393,6 +383,17 @@ a#loginButton img {
      padding-top:3em;
      padding-bottom:3em;
  }
+
+.banner-ship{
+    background-size:cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    min-height:410px;
+    text-align:center;
+    padding-top:3em;
+    padding-bottom:3em;
+}
 
 .banner3{
     background: url("socializing.jpg") no-repeat center top;
