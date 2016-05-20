@@ -3400,7 +3400,7 @@ p.educate {
 .search-bar {
     text-align:center;
 }
-.search-bar input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
+.search-bar input[type="text"], .search-bar input[type="email"], .search-bar input[type="password"], .search-bar input[type="date"] {
     background: rgba(111, 111, 111, 0.17);
     transition: border-color 0.3s;
     -o-transition: border-color 0.3s;
