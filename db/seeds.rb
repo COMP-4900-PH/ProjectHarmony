@@ -295,29 +295,29 @@ non_registered_users_list = [
 
 # Detailed user seeding data
 detailed_users_list = [
-    ["Luke", "Skywalker", "m", '1950-06-06', "straight", "I am a jedi, like my father before me", "Spanish", "Mandarin", 1],
-    ["Leia", "Organa", "f", '1982-06-06', "straight", "Help me Obi-Wan Kenobi, you're my only hope", "English", nil, 2],
-    ["Darth", "Vader", "m", '1947-06-06', "straight", "I've been waiting for your Obi-Wan. We meet again, at last. The circle is now complete.", "French", "English", 3],
-    ["Han", "Solo", "m", '1968-06-06', "straight", "Don't get cocky kid", "English", "Arabic", 4],
-    ["Yoda", "Admin", "m", '1930-06-06', "straight", "Do. Or do not. There is no try.", "Russian", "Spanish", 5],
+    ["Luke", "Skywalker", "m", '1950-06-06', "straight", "I am a jedi, like my father before me", "Spanish", "Mandarin", 1, "Tatooine", "Mos Eisley"],
+    ["Leia", "Organa", "f", '1982-06-06', "straight", "Help me Obi-Wan Kenobi, you're my only hope", "English", nil, 2, "Alderaan", "Aldera"],
+    ["Darth", "Vader", "m", '1947-06-06', "straight", "I've been waiting for you Obi-Wan. We meet again, at last. The circle is now complete.", "French", "English", 3, "Tatooine", "Anchorhead"],
+    ["Han", "Solo", "m", '1968-06-06', "straight", "Don't get cocky kid", "English", "Arabic", 4, "Corellia", "Coronet"],
+    ["Yoda", "Admin", "m", '1930-06-06', "straight", "Do. Or do not. There is no try.", "Russian", "Spanish", 5, "Dagobah", "Swamp Cave"],
 
-    ["Darth", "Maul", "m", '1954-06-06', "straight", "Die, jedi, die!", "Hindi", "German", 6],
-    ["Boba", "Fett", "m", '1950-06-06', "straight", "What if he doesn't survive? He's worth a lot to me.", "French", "Mandarin", 7],
-    ["Obi-Wan", "Kenobi", "m", '1942-06-06', "straight", "These aren't the droids you're looking for.", "German", "Italian", 8],
-    ["Chewbacca", "C", "m", '1975-06-06', "straight", "GWWRAAAGRGGRHHH", "English", "Arabic", 9],
-    ["Padme", "Amidala", "f", '1988-06-06', "straight", "Obi-Wan.. there is good in him. I know there is.. still..", "Russian", "Spanish", 10],
+    ["Darth", "Maul", "m", '1954-06-06', "straight", "Die, jedi, die!", "Hindi", "German", 6, "Dathomir", "Csaplar"],
+    ["Boba", "Fett", "m", '1950-06-06', "straight", "What if he doesn't survive? He's worth a lot to me.", "French", "Mandarin", 7, "Kamino", "Timira City"],
+    ["Obi-Wan", "Kenobi", "m", '1942-06-06', "straight", "These aren't the droids you're looking for.", "German", "Italian", 8, "Stewjon", "Taris"],
+    ["Chewbacca", "C", "m", '1975-06-06', "straight", "GWWRAAAGRGGRHHH", "English", "Arabic", 9, "Kashyyyk", "Kachirho"],
+    ["Padme", "Amidala", "f", '1988-06-06', "straight", "Obi-Wan.. there is good in him. I know there is.. still..", "Russian", "Spanish", 10, "Naboo", "Keren"],
 
-    ["Jabba", "the Hutt", "m", '1967-06-06', "straight", "Your mind tricks won't work on me boy", "English", "French", 11],
-    ["Mace", "Windu", "m", '1977-06-06', "straight", "May the force be with us all", "German", "Mandarin", 12],
-    ["Lando", "Calrissian", "m", '1981-06-06', "straight", "Why you slimy, double-crossing, no good swindler. You've got a lot of guts coming here, after what you pulled.", "German", "Italian", 13],
-    ["Wedge", "Antilles", "m", '1989-06-06', "straight", "Look at the size of that thing!", "Mandarin", "Spanish", 14],
-    ["JarJar", "Binks", "m", '1985-06-06', "straight", "Mesa Jar-Jar Binks", "Russian", "English", 15],
+    ["Jabba", "the Hutt", "m", '1967-06-06', "straight", "Your mind tricks won't work on me boy", "English", "French", 11, "Tatooine", "Mos Espa"],
+    ["Mace", "Windu", "m", '1977-06-06', "straight", "May the force be with us all", "German", "Mandarin", 12, "Haruun Kal", "Kegan"],
+    ["Lando", "Calrissian", "m", '1981-06-06', "straight", "Why you slimy, double-crossing, no good swindler. You've got a lot of guts coming here, after what you pulled.", "German", "Italian", 13, "Bespin", "Cloud City"],
+    ["Wedge", "Antilles", "m", '1989-06-06', "straight", "Look at the size of that thing!", "Mandarin", "Spanish", 14, "Corellia", "Doaba Guerfel"],
+    ["JarJar", "Binks", "m", '1985-06-06', "straight", "Mesa Jar-Jar Binks", "Russian", "English", 15, "Naboo", "Otoh Gunga"],
 
-    ["R2D2", "Droid", "m", '1995-06-06', "straight", "Beep-boop", "Hindi", "French", 16],
-    ["C-3PO", "Droid", "m", '1992-06-06', "straight", "Sir, the possibility of successfully navigating an asteroid field is approximately 3,720 to 1", "Mandarin", "German", 17],
-    ["Kylo", "Ren", "m", '1996-06-06', "straight", "It's too late..", "English", "Russian", 18],
-    ["Emperor", "Palpatine", "m", '1963-06-06', "straight", "There is a great disturbance in the force", "French", "Hindi", 19],
-    ["Rey", "S", "m", '1996-06-06', "straight", "And you will drop your weapon", "English", "Arabic", 20],
+    ["R2D2", "Droid", "m", '1995-06-06', "straight", "Beep-boop", "Hindi", "French", 16, "Naboo", "Kaadara"],
+    ["C-3PO", "Droid", "m", '1992-06-06', "straight", "Sir, the possibility of successfully navigating an asteroid field is approximately 3,720 to 1", "Mandarin", "German", 17, "Tatooine", "Mos Taike"],
+    ["Kylo", "Ren", "m", '1996-06-06', "straight", "It's too late..", "English", "Russian", 18, "Unknown", "Unknown"],
+    ["Emperor", "Palpatine", "m", '1963-06-06', "straight", "There is a great disturbance in the force", "French", "Hindi", 19, "Naboo", "Theed"],
+    ["Rey", "S", "m", '1996-06-06', "straight", "And you will drop your weapon", "English", "Arabic", 20, "Jakku", "Dreshdae"],
 
 ]
 
@@ -384,11 +384,11 @@ end
 
 # Populating detailed user
 detailed_users_list.each do |first_name, last_name, gender, birth_day,
-    sexual_orientation, description, primary_language, secondary_language, user_id|
+    sexual_orientation, description, primary_language, secondary_language, user_id, country, city|
   DetailedUser.create( first_name: first_name, last_name: last_name, gender: gender, birth_day: birth_day,
                        sexual_orientation: sexual_orientation, description: description,
                        primary_language: primary_language, secondary_language: secondary_language,
-                       user_id: user_id)
+                       user_id: user_id, country: country, city: city)
 end
 
 # Populating languages
