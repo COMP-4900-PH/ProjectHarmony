@@ -172,15 +172,15 @@
             <% if false %>
             <%= f.label :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont %>
               <% end %>
-            <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, :style => 'width:25%', placeholder: "Cruise Ship Name" %>
+            <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, :style => 'width:35%', placeholder: "Destination, ship name, company..." %>
           <% if false %>
             <%= f.label :departure_date_gteq, "Departure Date Between" %>
           <% end %>
-            <%= f.text_field :departure_date_gteq, "datepicker" => true,:style => 'width:25%', placeholder: "Date From" %>
+            <%= f.text_field :departure_date_gteq, "datepicker" => true,:style => 'width:20%', placeholder: "Date From", :type => "date" %>
           <% if false %>
             <%= f.label :return_date_lteq, "and" %>
           <% end %>
-            <%= f.text_field :return_date_lteq, "datepicker" => true, :style => 'width:25%', placeholder: "Date To" %>
+            <%= f.text_field :return_date_lteq, "datepicker" => true, :style => 'width:20%', placeholder: "Date To", :type => "date" %>
           <label class="actions btn1 btn-2 btn-2g"><%= f.submit "Search" %></label>
       <% end %>
 
