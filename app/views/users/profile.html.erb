@@ -8,7 +8,7 @@
           Location: Vancouver, Canada
           <br><br>
           <h3>Introduction</h3>
-          Greeting Cruisers! I love traveling and meeting new friends.
+          <%= @detailed_user.description %>
           <hr class="hr-line">
           <h3>Sailings</h3>
 
@@ -55,10 +55,13 @@
                 <%= submit_tag("Send a message", class: "btn btn-primary") %>
             <% end %>
             <hr class="hr-line-2">
-            <h3>Interests</h3>
-            Scuba diving <br>
-            River rafting <br>
-            Bungee jumping <br>
+            <h3><%= @detailed_user.first_name + " " + @detailed_user.last_name %></h3>
+            <h4>Languages Spoken:</h4>
+            <%= @detailed_user.primary_language %> <br>
+            <%= @detailed_user.secondary_language %> <br>
+            <h4>Personal Info:</h4>
+            <%= @detailed_user.birth_day.strftime("%B %d, %Y") %> <br>
+            <%= @detailed_user.gender %> <br>
         </div>
       </div>
     </div>

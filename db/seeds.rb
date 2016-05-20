@@ -297,7 +297,7 @@ non_registered_users_list = [
 detailed_users_list = [
     ["Luke", "Skywalker", "m", '1950-06-06', "straight", "I am a jedi, like my father before me", "Spanish", "Mandarin", 1],
     ["Leia", "Organa", "f", '1982-06-06', "straight", "Help me Obi-Wan Kenobi, you're my only hope", "English", nil, 2],
-    ["Darth", "Vader", "m", '1947-06-06', "straight", "I've been waiting for your Obi-Wan. We meet again, at last. The circle is now complete.", "French", "English", 3],
+    ["Darth", "Vader", "m", '1947-06-06', "straight", "I've been waiting for you Obi-Wan. We meet again, at last. The circle is now complete.", "French", "English", 3],
     ["Han", "Solo", "m", '1968-06-06', "straight", "Don't get cocky kid", "English", "Arabic", 4],
     ["Yoda", "Admin", "m", '1930-06-06', "straight", "Do. Or do not. There is no try.", "Russian", "Spanish", 5],
 
