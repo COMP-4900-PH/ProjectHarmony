@@ -7,7 +7,7 @@
     <% end %>
   </li>
   <li class="<%= active_page(:sent) %>">
-    <%= link_to mailbox_sent_path do %>
+    <%= link_to mailbox_sent_path, :class => "non-white" do %>
 
         <em class="fa fa-paper-plane-o fa-lg"></em>
         <span class="ship-name">Sent</span>
@@ -15,7 +15,7 @@
   </li>
 
   <li class="<%= active_page(:trash) %>">
-    <%= link_to mailbox_trash_path do %>
+    <%= link_to mailbox_trash_path, :class => "non-white" do %>
         <em class="fa fa-trash-o fa-lg"></em>
         <span class="ship-name">Trash</span>
     <% end %>
