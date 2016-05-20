@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516160733) do
+ActiveRecord::Schema.define(version: 20160520164221) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20160516160733) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "city"
+    t.string   "country"
   end
 
   add_index "detailed_users", ["user_id"], name: "index_detailed_users_on_user_id"
@@ -167,6 +169,7 @@ ActiveRecord::Schema.define(version: 20160516160733) do
     t.string   "port_of_destination"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "image"
   end
 
   create_table "travelling_parties", force: :cascade do |t|
