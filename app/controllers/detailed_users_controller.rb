@@ -30,7 +30,7 @@ class DetailedUsersController < ApplicationController
   # POST /detailed_users.json
   def create
     @detailed_user = DetailedUser.new(detailed_user_params)
-   if DetailedUser.find_by_user_id(@detailed_user.user_id)
+    if DetailedUser.find_by_user_id(@detailed_user.user_id)
      respond_to do |format|
        if @detailed_user.update(detailed_user_params)
          # Unsure if these lines are needed here - (mike may 13)
@@ -98,6 +98,6 @@ class DetailedUsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def detailed_user_params
-    params.fetch(:detailed_user, {}).permit(:first_name, :last_name, :picture, :gender, :birth_day, :sexual_orientation, :description, :primary_language, :secondary_language, :user_id, :avatar)
+    params.fetch(:detailed_user, {}).permit(:first_name, :last_name, :picture, :gender, :birth_day, :sexual_orientation, :description, :primary_language, :secondary_language, :user_id, :avatar, :city, :country)
   end
 end
