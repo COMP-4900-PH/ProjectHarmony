@@ -46,6 +46,7 @@ class Ability
 
       #Detailed users can edit events
       can :edit, Event
+      can :update, Event
 
       #add comment to an event
       can :comment, Event

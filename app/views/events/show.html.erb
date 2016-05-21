@@ -118,8 +118,8 @@
             </div>
           <% end %>
         </div>
-        <div class="col-md-3">
-          <%= image_tag @event.image.url(:thumb) , class: 'avatar'%><br><br><br>
+        <div class="col-md-3" style="text-align: center;">
+          <%= image_tag @event.image.url(:thumb) , id: 'event-image' , class: "img-responsive"%><br><br><br>
           <div style="text-align: center;">
             <h3>Cruise</h3>
             <a href="/sailings/<%= @event.sailing_id%>"><span class="ship-name"><%= Sailing.find_by_id(@event.sailing_id).cruise_ship_name%></span></a>
