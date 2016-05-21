@@ -201,7 +201,7 @@
         <% @sailings.where("destination_identifier = 'Alaska'").limit(5).each  do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
-                <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+                <div class="index_img1"><%= image_tag "cruises/#{sailing.image}" ,:size => "500x170", :class => "ship-image-card" %></div>
                 <div class="mask">
                   <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
                   <!--<h2 style="text-align: center"><br/><%= sailing.cruise_ship_company %></h2>-->
@@ -281,7 +281,7 @@
         <% @sailings.where("destination_identifier = 'Europe/Mediterranean'").limit(5).each do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
-                <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+                <div class="index_img1"><%= image_tag "cruises/#{sailing.image}" ,:size => "500x170", :class => "ship-image-card" %></div>
                 <div class="mask">
                   <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
                   <div class="inner_wrap1">
@@ -357,7 +357,7 @@
         <% @sailings.where("destination_identifier = 'Caribbean'").limit(5).each do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
-                <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+                <div class="index_img1"><%= image_tag "cruises/#{sailing.image}", :size => "500x170" ,:class => "ship-image-card" %></div>
                 <div class="mask">
                   <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
                   <div class="inner_wrap1">
