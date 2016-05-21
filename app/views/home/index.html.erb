@@ -22,9 +22,9 @@
 
   });
 
-  $(function() {
-    $('.sdate').datepicker({dateFormat: 'yy-mm-dd'});
-  });
+//  $(function() {
+//    $('.sdate').datepicker({dateFormat: 'yy-mm-dd'});
+//  });
 
 </script>
 <!-- CAROUSEL SECTION -->
@@ -129,7 +129,8 @@
                   <i class="s1"> </i>
                   <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
                     <p><b>Profile: </b>Here you can talk about yourself. Let others know just
-                      who you are and what you love to do! We're all here anyways so lets get sailing together!</p>
+                      who you are and what you love to do! This could be favourite hobbies, past cruises, or even extraodinary accomplishments.
+                      We're all here anyways so lets get sailing together!</p>
                   </li>
                   <div class="clearfix"></div>
                 </ul>
@@ -174,19 +175,22 @@
       <!--</form>-->
 
       <%= search_form_for @search, url: root_path, method: :post do |f| %>
-            <% if false %>
-            <%= f.label :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont %>
-              <% end %>
-            <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, :style => 'width:35%', placeholder: "Destination, ship name, company..." %>
-          <% if false %>
-            <%= f.label :departure_date_gteq, "Departure Date Between" %>
-          <% end %>
-            <%= f.text_field :departure_date_gteq, "datepicker" => true,:style => 'width:20%', :class => 'sdate', placeholder: "Date From" %>
-          <% if false %>
-            <%= f.label :return_date_lteq, "and" %>
-          <% end %>
-            <%= f.text_field :return_date_lteq, "datepicker" => true, :style => 'width:20%', :class => 'sdate', placeholder: "Date To" %>
+          <div class="col-md-3 col-lg-3">
+          <label>Keyword Search</label>
+            <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, :style => 'height: 70px;' , placeholder: "Destination, ship name, company..." %>
+          </div>
+          <div class="col-md-3 col-lg-3">
+          <label>Date From</label>
+            <%= f.text_field :departure_date_gteq, "datepicker" => true, :type => 'date',:class => 'dateStyle', placeholder: "Date From" %>
+            </div>
+            <div class="col-md-3 col-lg-3">
+          <label>Date To</label>
+            <%= f.text_field :return_date_lteq, "datepicker" => true, :type => 'date',:class => 'dateStyle', placeholder: "Date To" %>
+              </div>
+          <div class="col-md-3 col-lg-3" style="padding-top: 23px;">
           <label class="actions btn1 btn-2 btn-2g"><%= f.submit "Search" %></label>
+          </div>
+
       <% end %>
 
     </div><!-- COL-MD-12 -->
