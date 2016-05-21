@@ -45,6 +45,8 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @event = Event.joins(:event_registers).find_by("event_registers.event_id" => params[:id], "event_registers.user_id" => current_user.id)
+    @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
   end
 
   # POST /events
