@@ -11,6 +11,25 @@ class HomeController < ApplicationController
     @uniqueSailings = @sailings.uniq.pluck(:destination_identifier)
     # Selects unique events
     @uniqueEvents = @events.uniq.pluck(:event_name)
+
+  end
+
+  def alaska
+    @search = Sailing.search(params[:q])
+    @sailings = @search.result
+    render "home/alaska"
+  end
+
+  def mediterranean
+    @search = Sailing.search(params[:q])
+    @sailings = @search.result
+    render "home/mediterranean"
+  end
+
+  def caribbean
+    @search = Sailing.search(params[:q])
+    @sailings = @search.result
+    render "home/caribbean"
   end
 
 end

@@ -3457,3 +3457,13 @@ p.educate {
     margin-right: auto;
     margin-left: auto;
 }
+
+.cruiseheader {
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.regionTitle {
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
