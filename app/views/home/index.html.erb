@@ -202,8 +202,9 @@
       <!--<div class="backdrop">-->
       <div class="col-md-4">
         <div class="container2">
-        <a href="/alaska" class="non-white"><h2 class="cruiseheader">Alaskan Cruises</h2></a>
-        <% @sailings.where("destination_identifier = 'Alaska'").order("RANDOM()").limit(1).each  do |sailing| %>
+        <a href="/alaska" class="non-white"><h2 class="cruiseheader">Alaska</h2></a>
+          <!--.order("RANDOM()").limit(5) -->
+        <% @sailings.where("destination_identifier = 'Alaska'").limit(5).each  do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
                 <div class="index_img1"><%= image_tag "cruises/#{sailing.image}" ,:size => "500x170", :class => "ship-image-card" %></div>
@@ -282,8 +283,8 @@
       <!-- ALASKA CRUISES END -->
       <!-- EUROPE/MEDITERRANEAN CRUISES BEGIN -->
       <div class="col-md-4">
-        <a href="/mediterranean" class="non-white"><h2 class="cruiseheader">Europe/Mediterranean Cruises</h2></a>
-        <% @sailings.where("destination_identifier = 'Europe/Mediterranean'").order("RANDOM()").limit(1).each do |sailing| %>
+        <a href="/mediterranean" class="non-white"><h2 class="cruiseheader">Europe/Mediterranean</h2></a>
+        <% @sailings.where("destination_identifier = 'Europe/Mediterranean'").limit(5).each do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
                 <div class="index_img1"><%= image_tag "cruises/#{sailing.image}" ,:size => "500x170", :class => "ship-image-card" %></div>
@@ -358,8 +359,8 @@
       <!-- EUROPE/MEDITERRANEAN CRUISES END -->
       <!-- CARIBBEAN CRUISES BEGIN -->
       <div class="col-md-4">
-        <a href="/caribbean" class="non-white"><h2 class="cruiseheader">Caribbean Cruises</h2></a>
-        <% @sailings.where("destination_identifier = 'Caribbean'").order("RANDOM()").limit(1).each do |sailing| %>
+        <a href="/caribbean" class="non-white"><h2 class="cruiseheader">Caribbean</h2></a>
+        <% @sailings.where("destination_identifier = 'Caribbean'").limit(5).each do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
                 <div class="index_img1"><%= image_tag "cruises/#{sailing.image}", :size => "500x170" ,:class => "ship-image-card" %></div>
