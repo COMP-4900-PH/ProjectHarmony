@@ -337,10 +337,10 @@ end
 
 
 # Populating sailings
-sailings_list.each do |official_id, image , destination_identifier, cruise_ship_name,
+sailings_list.each do |official_id, image, destination_identifier, cruise_ship_name,
     cruise_ship_company, departure_date, return_date, port_of_origin,
     port_of_destination, created_at, updated_at|
-  Sailing.create( official_id: official_id, image: image ,destination_identifier: destination_identifier,
+  Sailing.create( official_id: official_id, image: image, destination_identifier: destination_identifier,
                   cruise_ship_name: cruise_ship_name, cruise_ship_company: cruise_ship_company,
                   departure_date: departure_date, return_date: return_date,
                   port_of_origin: port_of_origin, port_of_destination: port_of_destination,
