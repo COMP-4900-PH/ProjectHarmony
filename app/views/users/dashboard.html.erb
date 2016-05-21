@@ -142,7 +142,9 @@
                           </td>
                           <td>
                             <% @ev = Event.find_by(id:event.id,creator_id:current_user.id) %>
-                            <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" class="btn btn-danger" href="/events/<%= @ev.id  %>"><span>Delete</span></a>
+                            <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" class="btn btn-danger" href="/events/<%= @ev.id  %>"><span>Delete</span></a><br><br>
+                            <!--<a href="" class="btn btn-primary"> &nbsp; Edit &nbsp;&nbsp;</a>-->
+                            <%= link_to "&nbsp;&nbsp;Edit&nbsp;&nbsp;".html_safe, edit_event_path(event) ,:class => "btn btn-primary" %>
                           </td>
                         </tr>
                     <% end %>

@@ -44,6 +44,10 @@ class Ability
       # Detailed users can view the show events page
       can :show, Event
 
+      #Detailed users can edit events
+      can :edit, Event
+      can :update, Event
+
       #add comment to an event
       can :comment, Event
 

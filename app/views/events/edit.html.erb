@@ -1,6 +1,11 @@
-<h1>Editing Event</h1>
+<div class="dashboard" data-no-turbolink>
+  <div class="container">
+    <div class="dashboard-info">
 
-<%= render 'form' %>
+      <h2 class="wow fadeInLeft animated" data-wow-delay="0.4s" style="text-align: center; padding-top: 1em; visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">Edit Event</h2>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+      <%= render partial: 'edit_form' , locals: { event: @event, cruise: @sailings } %>
+
+    </div>
+  </div>
+</div>

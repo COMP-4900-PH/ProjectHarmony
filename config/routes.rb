@@ -41,6 +41,10 @@ Rails.application.routes.draw do
 
   #comments
   post '/comment' => 'events#comment'
+
+  #EVENTS UPDATE
+  put 'events/:id/edit' => 'events#update'
+
   # Routes for events model
   resources :events
 
