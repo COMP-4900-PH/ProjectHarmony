@@ -174,3 +174,12 @@
     margin-left: auto;
 }
 
+#join-sailing-button{
+    float: right;
+    margin-right: 5em;
+}
+
+.button-div{
+    width: 100%;
+}
+
