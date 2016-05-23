@@ -176,7 +176,7 @@
           <div class="col-md-4">
             <div class="grid1">
               <div class="view view-first">
-                <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+                <div class="index_img1"><%= image_tag "cruises/#{sailing.image}", :size => "500x170" ,:class => "ship-image-card" %></div>
                 <div class="mask">
                   <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
                   <div class="inner_wrap1">
@@ -232,7 +232,7 @@
                       days</h4>
                     <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
-                    <h4>Languages: <%= image_tag "lang_iconCAN.png" %>&nbsp;30%, <%= image_tag "lang_iconCHI.png" %>&nbsp;27%</h4>
+                    <h4>Languages: <%= image_tag "lang_iconCAN.png" %>&nbsp;30%, <%= image_tag "Mandarin.png" %>&nbsp;27%</h4>
                     <h4>Demographics:</h4>
                     <h5>50+ 47%</h5>
                     <h5>35-45 22%</h5>

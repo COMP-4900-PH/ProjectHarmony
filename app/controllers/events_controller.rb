@@ -28,7 +28,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by_id(params[:id])
     @users = DetailedUser.joins('JOIN event_registers ON event_registers.user_id = detailed_users.user_id WHERE event_id = ' + params[:id])
-    @comments = Comment.where(event_id: params[:id])
+    @comments = Comment.where(event_id: params[:id]).order('created_at DESC')
   end
 
   # GET /events/new/1
@@ -45,6 +45,8 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    @event = Event.joins(:event_registers).find_by("event_registers.event_id" => params[:id], "event_registers.user_id" => current_user.id)
+    @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
   end
 
   # POST /events

@@ -22,9 +22,9 @@
 
   });
 
-  $(function() {
-    $('.sdate').datepicker({dateFormat: 'yy-mm-dd'});
-  });
+//  $(function() {
+//    $('.sdate').datepicker({dateFormat: 'yy-mm-dd'});
+//  });
 
 </script>
 <!-- CAROUSEL SECTION -->
@@ -101,8 +101,7 @@
                   <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
                     <p><b>Messaging: </b>Want to get to know someone before you set sail? Through a personal messaging
                       and forum style chat service, you can learn about your fellow travellers and their families and
-                      share
-                      your favourite things to do!
+                      share your favourite things to do!
                     </p>
                   </li>
                   <div class="clearfix"></div>
@@ -129,7 +128,8 @@
                   <i class="s1"> </i>
                   <li class="desc1 wow fadeInRight" data-wow-delay="0.4s">
                     <p><b>Profile: </b>Here you can talk about yourself. Let others know just
-                      who you are and what you love to do! We're all here anyways so lets get sailing together!</p>
+                      who you are and what you love to do! This could be favourite hobbies, past cruises, or even accomplishments.
+                      We're all here, so let's get sailing together!</p>
                   </li>
                   <div class="clearfix"></div>
                 </ul>
@@ -174,19 +174,22 @@
       <!--</form>-->
       <!--<%= @sailings_data.inspect %>-->
       <%= search_form_for @search, url: root_path, method: :post do |f| %>
-            <% if false %>
-            <%= f.label :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont %>
-              <% end %>
-            <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, :style => 'width:35%', placeholder: "Destination, ship name, company..." %>
-          <% if false %>
-            <%= f.label :departure_date_gteq, "Departure Date Between" %>
-          <% end %>
-            <%= f.text_field :departure_date_gteq, "datepicker" => true,:style => 'width:20%', :class => 'sdate', placeholder: "Date From" %>
-          <% if false %>
-            <%= f.label :return_date_lteq, "and" %>
-          <% end %>
-            <%= f.text_field :return_date_lteq, "datepicker" => true, :style => 'width:20%', :class => 'sdate', placeholder: "Date To" %>
+          <div class="col-md-3 col-lg-3">
+          <label>Keyword Search</label>
+            <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, :style => 'height: 70px;' , placeholder: "Destination, ship name..." %>
+          </div>
+          <div class="col-md-3 col-lg-3">
+          <label>Date From</label>
+            <%= f.text_field :departure_date_gteq, "datepicker" => true, :type => 'date',:class => 'dateStyle', placeholder: "Date From" %>
+            </div>
+            <div class="col-md-3 col-lg-3">
+          <label>Date To</label>
+            <%= f.text_field :return_date_lteq, "datepicker" => true, :type => 'date',:class => 'dateStyle', placeholder: "Date To" %>
+              </div>
+          <div class="col-md-3 col-lg-3" style="padding-top: 23px;">
           <label class="actions btn1 btn-2 btn-2g"><%= f.submit "Search" %></label>
+          </div>
+
       <% end %>
 
     </div><!-- COL-MD-12 -->
@@ -202,11 +205,12 @@
       <!--<div class="backdrop">-->
       <div class="col-md-4">
         <div class="container2">
-        <a href="/alaska" class="non-white"><h2 class="cruiseheader">Alaskan Cruises</h2></a>
-        <% @sailings.where("destination_identifier = 'Alaska'").order("RANDOM()").limit(1).each  do |sailing| %>
+        <a href="/alaska" class="non-white"><h2 class="cruiseheader">Alaska</h2></a>
+          <!--.order("RANDOM()").limit(5) -->
+        <% @sailings.where("destination_identifier = 'Alaska'").limit(5).each  do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
-                <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+                <div class="index_img1"><%= image_tag "cruises/#{sailing.image}" ,:size => "500x170", :class => "ship-image-card" %></div>
                 <div class="mask">
                   <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
                   <!--<h2 style="text-align: center"><br/><%= sailing.cruise_ship_company %></h2>-->
@@ -309,11 +313,11 @@
       <!-- ALASKA CRUISES END -->
       <!-- EUROPE/MEDITERRANEAN CRUISES BEGIN -->
       <div class="col-md-4">
-        <a href="/mediterranean" class="non-white"><h2 class="cruiseheader">Europe/Mediterranean Cruises</h2></a>
-        <% @sailings.where("destination_identifier = 'Europe/Mediterranean'").order("RANDOM()").limit(1).each do |sailing| %>
+        <a href="/mediterranean" class="non-white"><h2 class="cruiseheader">Europe/Mediterranean</h2></a>
+        <% @sailings.where("destination_identifier = 'Europe/Mediterranean'").limit(5).each do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
-                <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+                <div class="index_img1"><%= image_tag "cruises/#{sailing.image}" ,:size => "500x170", :class => "ship-image-card" %></div>
                 <div class="mask">
                   <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
                   <div class="inner_wrap1">
@@ -361,19 +365,45 @@
                   <li class="module_left">
                     <!--<h3><%= sailing.cruise_ship_company %></h3>-->
                     <h2><%= sailing.cruise_ship_name %></h2>
-                    <h4>No. of Cruisers: 412</h4>
+                    <h4>No. of Cruisers: <%= sailing.people_on_sailing %></h4>
                     <!--<h4>Region: <%= sailing.destination_identifier %> </h4>-->
                     <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
                     <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
                     <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
                     <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
-                    <h4>Languages: <%= image_tag "United-States-icon.png" %>&nbsp;47%, <%= image_tag "Spanish.png" %>&nbsp;31%</h4>
+                    <h4>Languages: </h4>
+
+                    <% primary_language_hash = Hash.new(0) %>
+                    <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
+                    <!--<%= debug primary_language_hash %>-->
+
+                    <% secondary_language_hash = Hash.new(0) %>
+                    <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
+                    <!--<%= debug secondary_language_hash %>-->
+
+                    <% if (!primary_language_hash.empty?) %>
+                    <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
+                    <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                    <% end %>
                     <h4>Demographics:</h4>
-                    <h5>25-30 35%</h5>
-                    <h5>50+ 32%</h5>
-                    <h5>30-40 27%</h5>
-                    <h4>Top Travellers: Cpt. Kirk, Spock, Data</h4>
+                    <% age_under_18 = 0 %>
+                    <% age_18_to_50 = 0 %>
+                    <% age_51_and_over = 0 %>
+                    <% sailing.gather_data.each do |user| %>
+                        <% if(user.user_age >= 51) %>
+                            <% age_51_and_over += 1 %>
+                        <% end %>
+                        <% if(user.user_age >= 18 && user.user_age < 51) %>
+                            <% age_18_to_50 += 1 %>
+                        <% end %>
+                        <% if(user.user_age < 18) %>
+                            <% age_under_18 += 1 %>
+                        <% end %>
+                    <% end %>
+                    <h5>51+ <%= age_51_and_over %></h5>
+                    <h5>18-50 <%= age_18_to_50 %></h5>
+                    <h5>0-18 <%= age_under_18 %></h5>
                     <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
                     <!--<h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>-->
                   </li>
@@ -385,11 +415,11 @@
       <!-- EUROPE/MEDITERRANEAN CRUISES END -->
       <!-- CARIBBEAN CRUISES BEGIN -->
       <div class="col-md-4">
-        <a href="/caribbean" class="non-white"><h2 class="cruiseheader">Caribbean Cruises</h2></a>
-        <% @sailings.where("destination_identifier = 'Caribbean'").order("RANDOM()").limit(1).each do |sailing| %>
+        <a href="/caribbean" class="non-white"><h2 class="cruiseheader">Caribbean</h2></a>
+        <% @sailings.where("destination_identifier = 'Caribbean'").limit(5).each do |sailing| %>
             <div class="grid1">
               <div class="view view-first">
-                <div class="index_img1"><%= image_tag "pic4.jpg" %></div>
+                <div class="index_img1"><%= image_tag "cruises/#{sailing.image}", :size => "500x170" ,:class => "ship-image-card" %></div>
                 <div class="mask">
                   <h2 style="text-align: center">Cruise Info<br/><%= sailing.cruise_ship_name %></h2>
                   <div class="inner_wrap1">
@@ -436,19 +466,45 @@
                   <li class="module_left">
                     <!--<h3><%= sailing.cruise_ship_company %></h3>-->
                     <h2><%= sailing.cruise_ship_name %></h2>
-                    <h4>No. of Cruisers: 412</h4>
+                    <h4>No. of Cruisers: <%= sailing.people_on_sailing %></h4>
                     <!--<h4>Region: <%= sailing.destination_identifier %> </h4>-->
                     <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
                     <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
                     <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
                     <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
-                    <h4>Languages: <%= image_tag "France-icon.png" %>&nbsp;52%,<%= image_tag "Germany.png" %>&nbsp;27%</h4>
+                    <h4>Languages: </h4>
+
+                    <% primary_language_hash = Hash.new(0) %>
+                    <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
+                    <!--<%= debug primary_language_hash %>-->
+
+                    <% secondary_language_hash = Hash.new(0) %>
+                    <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
+                    <!--<%= debug secondary_language_hash %>-->
+
+                    <% if (!primary_language_hash.empty?) %>
+                        <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
+                        <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                    <% end %>
                     <h4>Demographics:</h4>
-                    <h5>25-35 45%</h5>
-                    <h5>18-25 35%</h5>
-                    <h5>50+ 12%</h5>
-                    <h4>Top Travellers: Matt, Sam, Mike</h4>
+                    <% age_under_18 = 0 %>
+                    <% age_18_to_50 = 0 %>
+                    <% age_51_and_over = 0 %>
+                    <% sailing.gather_data.each do |user| %>
+                        <% if(user.user_age >= 51) %>
+                            <% age_51_and_over += 1 %>
+                        <% end %>
+                        <% if(user.user_age >= 18 && user.user_age < 51) %>
+                            <% age_18_to_50 += 1 %>
+                        <% end %>
+                        <% if(user.user_age < 18) %>
+                            <% age_under_18 += 1 %>
+                        <% end %>
+                    <% end %>
+                    <h5>51+ <%= age_51_and_over %></h5>
+                    <h5>18-50 <%= age_18_to_50 %></h5>
+                    <h5>0-18 <%= age_under_18 %></h5>
                     <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
                     <!--<h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>-->
                   </li>
@@ -481,7 +537,7 @@
         </div>
 
         <div class="copy wow fadeInRight" data-wow-delay="0.4s">
-          <p>Update: Thursday, May 19</p>
+          <p>Update: Sunday, May 22</p>
         </div>
 
       </div>

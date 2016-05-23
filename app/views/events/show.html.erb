@@ -28,12 +28,17 @@
       <div class="row">
         <div class="col-md-2">
           <!-- ATTENDEES -->
-          <table style="margin-left: 1em; margin-top: 1em">
+          <h3 style="text-align: center; padding-top: 1.3em"><%= @users.count%> Attending</h3>
+          <table class="table"  style="margin-left: 1em; margin-top: 1em">
             <% @users.each do |u|%>
                 <tr class="spaceUnder">
-                  <td>
+                  <td width="40%">
                     <a href="/profile/<%= u.user_id %>">
-                      <%= image_tag u.avatar.url(:small), :id=> "pop#{u.user_id}", :class => "img-responsive pop", 'onmouseover'=> "pop('pop#{u.user_id}',#{u.user_id})" ,'data-title' => "#{u.first_name} #{u.last_name}"  , 'data-placement'=> 'horizontal' %></a></td>
+                      <%= image_tag u.avatar.url(:small), :id=> "pop#{u.user_id}", :size => "100x100", :class => "pop", 'onmouseover'=> "pop('pop#{u.user_id}',#{u.user_id})" ,'data-title' => "#{u.first_name} #{u.last_name}"  , 'data-placement'=> 'horizontal' %>
+                    </a>
+                  </td>
+                  <td align="left">
+                    <%= u.first_name %>
                   </td>
                 </tr>
             <% end %>
@@ -95,7 +100,7 @@
           <table class="table">
             <% @comments.each do |c|%>
             <tr>
-              <td width="12%"> <%= image_tag DetailedUser.find_by_user_id(c.user_id).avatar.url(:small) , size: "50x50" %><br><%= DetailedUser.find_by_user_id(c.user_id).first_name %></td>
+              <td width="12%"><a href="/profile/<%= c.user_id %>"> <%= image_tag DetailedUser.find_by_user_id(c.user_id).avatar.url(:small) , size: "50x50" %><br><span class="ship-name"><%= DetailedUser.find_by_user_id(c.user_id).first_name %></span></a></td>
               <td class="sailing-info">
                 <p class="comment"><%= c.text%></p>
                 <p class="comment comment-date-time" align="right">
@@ -118,8 +123,8 @@
             </div>
           <% end %>
         </div>
-        <div class="col-md-3">
-          <%= image_tag @event.image.url(:thumb) , class: 'avatar'%><br><br><br>
+        <div class="col-md-3" style="text-align: center;">
+          <%= image_tag @event.image.url(:thumb) , id: 'event-image' , class: "img-responsive"%><br><br><br>
           <div style="text-align: center;">
             <h3>Cruise</h3>
             <a href="/sailings/<%= @event.sailing_id%>"><span class="ship-name"><%= Sailing.find_by_id(@event.sailing_id).cruise_ship_name%></span></a>

@@ -164,3 +164,22 @@
     height: auto;
 }
 
+.ship-image-card {
+    width:100%;
+}
+
+#event-image{
+    margin-top: 3em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#join-sailing-button{
+    float: right;
+    margin-right: 5em;
+}
+
+.button-div{
+    width: 100%;
+}
+
