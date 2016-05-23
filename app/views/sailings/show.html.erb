@@ -190,9 +190,7 @@
 
                   <div class="tab-pane active" id="tab1">
                     <!--<h3>Departure:</h3><button style='float: right' type="button" class="btn btn-danger">Join This Sailing</button>-->
-
-                    <%= button_to 'Join This Sailing', "/travelling_party/create/#{@sailing.id}", :method=>:post, :class=>"btn btn-success"%><br/>
-                    <h4><%= @sailing.cruise_ship_name %> sets sail in <%= days %> days!</h4>
+                    <h4 style="text-align: center"><%= @sailing.cruise_ship_name %> sets sail in <%= days %> days!</h4>
                     </br>
                     <h3>Destination Region</h3>
                     <p><%= @sailing.destination_identifier %></p></br>
