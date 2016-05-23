@@ -267,39 +267,43 @@
                       days</h4>
                     <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
-                    <h4>Languages: </h4>
+                    <div class="row" style="position: static">
+                      <div class="col-md-6" align="right" style="position: static">
+                        <h4>Languages: </h4>
 
-                    <% primary_language_hash = Hash.new(0) %>
-                    <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
-                    <!--<%= debug primary_language_hash %>-->
-                    <!--<%= primary_language_hash.max_by{ |k,v| v}[0] %>-->
+                        <% primary_language_hash = Hash.new(0) %>
+                        <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
+                        <!--<%= debug primary_language_hash %>-->
 
-                    <% secondary_language_hash = Hash.new(0) %>
-                    <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
-                    <!--<%= debug secondary_language_hash %>-->
-                    <!--<%= secondary_language_hash.max_by{ |k,v| v}[0] %>-->
+                        <% secondary_language_hash = Hash.new(0) %>
+                        <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
+                        <!--<%= debug secondary_language_hash %>-->
 
-
-                    <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
-                    <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
-                    <h4>Demographics:</h4>
-                    <% age_under_18 = 0 %>
-                    <% age_18_to_50 = 0 %>
-                    <% age_51_and_over = 0 %>
-                    <% sailing.gather_data.each do |user| %>
-                        <% if(user.user_age >= 51) %>
-                          <% age_51_and_over += 1 %>
+                        <% if (!primary_language_hash.empty?) %>
+                            <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
+                            <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
                         <% end %>
-                        <% if(user.user_age >= 18 && user.user_age < 51) %>
-                            <% age_18_to_50 += 1 %>
+                      </div>
+                      <div class="col-md-6" align="left" style="position: static">
+                        <h4>Demographics:</h4>
+                        <% age_under_18 = 0 %>
+                        <% age_18_to_50 = 0 %>
+                        <% age_51_and_over = 0 %>
+                        <% sailing.gather_data.each do |user| %>
+                            <% if(user.user_age >= 51) %>
+                                <% age_51_and_over += 1 %>
+                            <% end %>
+                            <% if(user.user_age >= 18 && user.user_age < 51) %>
+                                <% age_18_to_50 += 1 %>
+                            <% end %>
+                            <% if(user.user_age < 18) %>
+                                <% age_under_18 += 1 %>
+                            <% end %>
                         <% end %>
-                        <% if(user.user_age < 18) %>
-                            <% age_under_18 += 1 %>
-                        <% end %>
-                    <% end %>
-                    <h5>51+ <%= age_51_and_over %></h5>
-                    <h5>18-50 <%= age_18_to_50 %></h5>
-                    <h5>0-18 <%= age_under_18 %></h5>
+                        <h5>51+ <%= age_51_and_over %></h5>
+                        <h5>18-50 <%= age_18_to_50 %></h5>
+                        <h5>0-18 <%= age_under_18 %></h5>
+                      </div>
                     <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
                     <!--<h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>-->
                   </li>
@@ -372,38 +376,43 @@
                     <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
                     <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
-                    <h4>Languages: </h4>
+                    <div class="row" style="position: static">
+                      <div class="col-md-6" align="right" style="position: static">
+                        <h4>Languages: </h4>
 
-                    <% primary_language_hash = Hash.new(0) %>
-                    <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
-                    <!--<%= debug primary_language_hash %>-->
+                        <% primary_language_hash = Hash.new(0) %>
+                        <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
+                        <!--<%= debug primary_language_hash %>-->
 
-                    <% secondary_language_hash = Hash.new(0) %>
-                    <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
-                    <!--<%= debug secondary_language_hash %>-->
+                        <% secondary_language_hash = Hash.new(0) %>
+                        <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
+                        <!--<%= debug secondary_language_hash %>-->
 
-                    <% if (!primary_language_hash.empty?) %>
-                    <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
-                    <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
-                    <% end %>
-                    <h4>Demographics:</h4>
-                    <% age_under_18 = 0 %>
-                    <% age_18_to_50 = 0 %>
-                    <% age_51_and_over = 0 %>
-                    <% sailing.gather_data.each do |user| %>
-                        <% if(user.user_age >= 51) %>
-                            <% age_51_and_over += 1 %>
+                        <% if (!primary_language_hash.empty?) %>
+                            <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
+                            <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
                         <% end %>
-                        <% if(user.user_age >= 18 && user.user_age < 51) %>
-                            <% age_18_to_50 += 1 %>
+                      </div>
+                      <div class="col-md-6" align="left" style="position: static">
+                        <h4>Demographics:</h4>
+                        <% age_under_18 = 0 %>
+                        <% age_18_to_50 = 0 %>
+                        <% age_51_and_over = 0 %>
+                        <% sailing.gather_data.each do |user| %>
+                            <% if(user.user_age >= 51) %>
+                                <% age_51_and_over += 1 %>
+                            <% end %>
+                            <% if(user.user_age >= 18 && user.user_age < 51) %>
+                                <% age_18_to_50 += 1 %>
+                            <% end %>
+                            <% if(user.user_age < 18) %>
+                                <% age_under_18 += 1 %>
+                            <% end %>
                         <% end %>
-                        <% if(user.user_age < 18) %>
-                            <% age_under_18 += 1 %>
-                        <% end %>
-                    <% end %>
-                    <h5>51+ <%= age_51_and_over %></h5>
-                    <h5>18-50 <%= age_18_to_50 %></h5>
-                    <h5>0-18 <%= age_under_18 %></h5>
+                        <h5>51+ <%= age_51_and_over %></h5>
+                        <h5>18-50 <%= age_18_to_50 %></h5>
+                        <h5>0-18 <%= age_under_18 %></h5>
+                      </div>
                     <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
                     <!--<h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>-->
                   </li>
@@ -456,6 +465,7 @@
                     </br>
                     </br>
                     <h5><i>Register and join a cruise to partake in events!</i></h5>
+                    <br>
                   </div><!-- INNER_WRAP1 -->
                   <div class="clearfix"></div>
                   </ul>
@@ -473,38 +483,44 @@
                     <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
                     <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
-                    <h4>Languages: </h4>
+                    <div class="row" style="position: static">
+                      <div class="col-md-6" align="right" style="position: static">
+                        <h4>Languages: </h4>
 
-                    <% primary_language_hash = Hash.new(0) %>
-                    <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
-                    <!--<%= debug primary_language_hash %>-->
+                        <% primary_language_hash = Hash.new(0) %>
+                        <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
+                        <!--<%= debug primary_language_hash %>-->
 
-                    <% secondary_language_hash = Hash.new(0) %>
-                    <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
-                    <!--<%= debug secondary_language_hash %>-->
+                        <% secondary_language_hash = Hash.new(0) %>
+                        <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
+                        <!--<%= debug secondary_language_hash %>-->
 
-                    <% if (!primary_language_hash.empty?) %>
-                        <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
-                        <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
-                    <% end %>
-                    <h4>Demographics:</h4>
-                    <% age_under_18 = 0 %>
-                    <% age_18_to_50 = 0 %>
-                    <% age_51_and_over = 0 %>
-                    <% sailing.gather_data.each do |user| %>
-                        <% if(user.user_age >= 51) %>
-                            <% age_51_and_over += 1 %>
+                        <% if (!primary_language_hash.empty?) %>
+                            <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
+                            <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
                         <% end %>
-                        <% if(user.user_age >= 18 && user.user_age < 51) %>
-                            <% age_18_to_50 += 1 %>
+                      </div>
+                      <div class="col-md-6" align="left" style="position: static">
+                        <h4>Demographics:</h4>
+                        <% age_under_18 = 0 %>
+                        <% age_18_to_50 = 0 %>
+                        <% age_51_and_over = 0 %>
+                        <% sailing.gather_data.each do |user| %>
+                            <% if(user.user_age >= 51) %>
+                                <% age_51_and_over += 1 %>
+                            <% end %>
+                            <% if(user.user_age >= 18 && user.user_age < 51) %>
+                                <% age_18_to_50 += 1 %>
+                            <% end %>
+                            <% if(user.user_age < 18) %>
+                                <% age_under_18 += 1 %>
+                            <% end %>
                         <% end %>
-                        <% if(user.user_age < 18) %>
-                            <% age_under_18 += 1 %>
-                        <% end %>
-                    <% end %>
-                    <h5>51+ <%= age_51_and_over %></h5>
-                    <h5>18-50 <%= age_18_to_50 %></h5>
-                    <h5>0-18 <%= age_under_18 %></h5>
+                        <h5>51+ <%= age_51_and_over %></h5>
+                        <h5>18-50 <%= age_18_to_50 %></h5>
+                        <h5>0-18 <%= age_under_18 %></h5>
+                      </div>
+                    </div>
                     <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
                     <!--<h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>-->
                   </li>
