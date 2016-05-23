@@ -13,6 +13,10 @@ class SailingsController < ApplicationController
   # GET /sailings/1.json
   def show
     @events = Event.all
+    @has_joined = nil
+    if !current_user.nil?
+      @has_joined = Sailing.joins(:travelling_parties => {:party_registers => :user}).find_by(:id => params[:id], "users.id" => current_user.id)
+    end
   end
 
   # GET /sailings/new

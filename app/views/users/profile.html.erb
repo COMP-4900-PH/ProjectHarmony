@@ -32,7 +32,7 @@
                   <th>
                     Events Joined
                   </th>
-                  <% @event = Event.joins(:event_registers).where("event_registers.user_id" => @user.id, :sailing_id => s.id, :start_date => s.departure_date..s.return_date) #get events on this sailing that the user joined %>
+                  <% @event = Event.joins(:event_registers).where("event_registers.user_id" => @user.id, :sailing_id => s.id) #get events on this sailing that the user joined %>
                   <% @event.each do |e| %>
                   <tr>
                     <td width="10"><%= image_tag e.image.url(:small), size: '40x40' %></td>

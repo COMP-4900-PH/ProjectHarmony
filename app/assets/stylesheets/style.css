@@ -3467,3 +3467,9 @@ p.educate {
     padding: 10px 0 10px 0;
     text-align: center;
 }
+
+#nav-avatar{
+    position: relative;
+    padding: 0;
+    margin: 0;
+}

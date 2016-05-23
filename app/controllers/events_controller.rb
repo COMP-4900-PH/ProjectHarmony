@@ -28,7 +28,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by_id(params[:id])
     @users = DetailedUser.joins('JOIN event_registers ON event_registers.user_id = detailed_users.user_id WHERE event_id = ' + params[:id])
-    @comments = Comment.where(event_id: params[:id])
+    @comments = Comment.where(event_id: params[:id]).order('created_at DESC')
   end
 
   # GET /events/new/1

@@ -173,17 +173,24 @@
 
             <div class="col-md-12">
               <div class="tabbable">
+                <div class="button-div">
+                  <% if !@has_joined.nil? %>
+                      <button id="join-sailing-button" type="button" class="btn btn-success disabled">You have joined this sailing</button><br/>
+                  <%else%>
+                      <%= button_to 'Join This Sailing', "/travelling_party/create/#{@sailing.id}", :method=>:post, :id => "join-sailing-button", :class=>"btn btn-success"%><br/>
+                  <%end%>
+                </div>
                 <ul class="nav nav-tabs" id="sailTabs">
                   <li class="active"><a href="#tab1" data-toggle="tab">Sailing Details</a></li>
                   <li><a href="#tab2" data-toggle="tab">Vacationer Info</a></li>
                   <li><a href="#tab3" data-toggle="tab">Sailing Events</a></li>
                 </ul>
-
                 <div class="tab-content my-tab">
+
 
                   <div class="tab-pane active" id="tab1">
                     <!--<h3>Departure:</h3><button style='float: right' type="button" class="btn btn-danger">Join This Sailing</button>-->
-                    <%= button_to 'Join This Sailing', "/travelling_party/create/#{@sailing.id}", :method=>:post, :class=>"btn btn-success"%><br/>
+
                     <p><%= @sailing.departure_date.strftime("%B %d, %Y") %></p>
                     </br>
                     <h3>Return:</h3>
