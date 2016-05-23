@@ -296,15 +296,15 @@ non_registered_users_list = [
 # Detailed user seeding data
 detailed_users_list = [
     ["Luke", "Skywalker", "m", '1950-06-06', "straight", "I am a jedi, like my father before me", "Spanish", "Mandarin", 1, "Tatooine", "Mos Eisley"],
-    ["Leia", "Organa", "f", '1982-06-06', "straight", "Help me Obi-Wan Kenobi, you're my only hope", "English", nil, 2, "Alderaan", "Aldera"],
+    ["Leia", "Organa", "f", '1982-06-06', "straight", "Help me Obi-Wan Kenobi, you're my only hope", "English", "Spanish", 2, "Alderaan", "Aldera"],
     ["Darth", "Vader", "m", '1947-06-06', "straight", "I've been waiting for you Obi-Wan. We meet again, at last. The circle is now complete.", "French", "English", 3, "Tatooine", "Anchorhead"],
-    ["Han", "Solo", "m", '1968-06-06', "straight", "Don't get cocky kid", "English", "Arabic", 4, "Corellia", "Coronet"],
+    ["Han", "Solo", "m", '1968-06-06', "straight", "Don't get cocky kid", "English", "Spanish", 4, "Corellia", "Coronet"],
     ["Yoda", "Admin", "m", '1930-06-06', "straight", "Do. Or do not. There is no try.", "Russian", "Spanish", 5, "Dagobah", "Swamp Cave"],
 
     ["Darth", "Maul", "m", '1954-06-06', "straight", "Die, jedi, die!", "Hindi", "German", 6, "Dathomir", "Csaplar"],
     ["Boba", "Fett", "m", '1950-06-06', "straight", "What if he doesn't survive? He's worth a lot to me.", "French", "Mandarin", 7, "Kamino", "Timira City"],
     ["Obi-Wan", "Kenobi", "m", '1942-06-06', "straight", "These aren't the droids you're looking for.", "German", "Italian", 8, "Stewjon", "Taris"],
-    ["Chewbacca", "C", "m", '1975-06-06', "straight", "GWWRAAAGRGGRHHH", "English", "Arabic", 9, "Kashyyyk", "Kachirho"],
+    ["Chewbacca", "C", "m", '1975-06-06', "straight", "GWWRAAAGRGGRHHH", "English", "Russian", 9, "Kashyyyk", "Kachirho"],
     ["Padme", "Amidala", "f", '1988-06-06', "straight", "Obi-Wan.. there is good in him. I know there is.. still..", "Russian", "Spanish", 10, "Naboo", "Keren"],
 
     ["Jabba", "the Hutt", "m", '1967-06-06', "straight", "Your mind tricks won't work on me boy", "English", "French", 11, "Tatooine", "Mos Espa"],
@@ -317,14 +317,14 @@ detailed_users_list = [
     ["C-3PO", "Droid", "m", '1992-06-06', "straight", "Sir, the possibility of successfully navigating an asteroid field is approximately 3,720 to 1", "Mandarin", "German", 17, "Tatooine", "Mos Taike"],
     ["Kylo", "Ren", "m", '1996-06-06', "straight", "It's too late..", "English", "Russian", 18, "Unknown", "Unknown"],
     ["Emperor", "Palpatine", "m", '1963-06-06', "straight", "There is a great disturbance in the force", "French", "Hindi", 19, "Naboo", "Theed"],
-    ["Rey", "S", "m", '1996-06-06', "straight", "And you will drop your weapon", "English", "Arabic", 20, "Jakku", "Dreshdae"],
+    ["Rey", "S", "m", '1996-06-06', "straight", "And you will drop your weapon", "English", "Russian", 20, "Jakku", "Dreshdae"],
 
 ]
 
 # Language seeding data
 language_list = [
-    "Mandarin", "Spanish", "English", "Hindi", "Arabic", "Portuguese", "Bengali",
-    "Russion", "Japanese", "Punjabi", "German", "Korean", "French", "Italian"
+    "Mandarin", "Spanish", "English", "Hindi", "Portuguese",
+    "Russian", "Japanese", "German", "French", "Italian"
 ]
 
 ########## Populating Database ##########
@@ -337,10 +337,10 @@ end
 
 
 # Populating sailings
-sailings_list.each do |official_id, image , destination_identifier, cruise_ship_name,
+sailings_list.each do |official_id, image, destination_identifier, cruise_ship_name,
     cruise_ship_company, departure_date, return_date, port_of_origin,
     port_of_destination, created_at, updated_at|
-  Sailing.create( official_id: official_id, image: image ,destination_identifier: destination_identifier,
+  Sailing.create( official_id: official_id, image: image, destination_identifier: destination_identifier,
                   cruise_ship_name: cruise_ship_name, cruise_ship_company: cruise_ship_company,
                   departure_date: departure_date, return_date: return_date,
                   port_of_origin: port_of_origin, port_of_destination: port_of_destination,
