@@ -166,12 +166,6 @@
 <div class="content_top">
   <div class="container">
     <div class="col-md-12 search-bar">
-      <!--<form>-->
-      <!--<input style="width:25%" type="text" value="Keyword, name, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">-->
-      <!--<input style="width:25%" type="date" id="datepickerStart" required="true" name="event[start_date]">-->
-      <!--<input style="width:25%" type="date" id="datepickerStart" required="true" name="event[start_date]">-->
-      <!--<label class="btn1 btn-2 btn-2g"><input name="submit" type="submit" id="submit" value="Search"></label>-->
-      <!--</form>-->
       <!--<%= @sailings_data.inspect %>-->
       <%= search_form_for @search, url: root_path, method: :post do |f| %>
           <div class="col-md-3 col-lg-3">
@@ -189,11 +183,8 @@
           <div class="col-md-3 col-lg-3" style="padding-top: 23px;">
           <label class="actions btn1 btn-2 btn-2g"><%= f.submit "Search" %></label>
           </div>
-
       <% end %>
-
     </div><!-- COL-MD-12 -->
-
   </div><!-- CONTAINER -->
 </div> <!-- CONTENT TOP -->
 <!-- END SEARCH SECTION -->
@@ -222,11 +213,10 @@
                         <tr>
                           <th>Event</th>
                           <th>Description</th>
-                          <th>Participants</th>
+                          <th>Max Participants</th>
                         </tr>
                         </thead>
                         <tbody>
-
                         <% sailing.events.each do |event| %>
                             <tr>
                               <td><%= event.event_name %></td>
@@ -239,7 +229,6 @@
                               <td>No Events are currently listed</td>
                             </tr>
                         <% end %>
-
                         </tbody>
                       </table>
                     </div>
@@ -257,15 +246,11 @@
               <div class="inner_wrap">
                 <ul class="star1">
                   <li class="module_left">
-                    <!--<h3><%= sailing.cruise_ship_company %></h3>-->
                     <h2><%= sailing.cruise_ship_name %></h2>
                     <h4>No. of Cruisers: <%= sailing.people_on_sailing %></h4>
-                    <!--<h4>Region: <%= sailing.destination_identifier %> </h4>-->
-                    <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
                     <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
                     <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %>
                       days</h4>
-                    <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
                     <div class="row" style="position: static">
                       <div class="col-md-6" align="right" style="position: static">
@@ -333,11 +318,10 @@
                         <tr>
                           <th>Event</th>
                           <th>Description</th>
-                          <th>Participants</th>
+                          <th>Max Participants</th>
                         </tr>
                         </thead>
                         <tbody>
-
                         <% sailing.events.each do |event| %>
                             <tr>
                               <td><%= event.event_name %></td>
@@ -350,7 +334,6 @@
                               <td>No Events are currently listed</td>
                             </tr>
                         <% end %>
-
                         </tbody>
                       </table>
                     </div>
@@ -368,14 +351,10 @@
               <div class="inner_wrap">
                 <ul class="star1">
                   <li class="module_left">
-                    <!--<h3><%= sailing.cruise_ship_company %></h3>-->
                     <h2><%= sailing.cruise_ship_name %></h2>
                     <h4>No. of Cruisers: <%= sailing.people_on_sailing %></h4>
-                    <!--<h4>Region: <%= sailing.destination_identifier %> </h4>-->
-                    <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
                     <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
                     <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
-                    <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
                     <div class="row" style="position: static">
                       <div class="col-md-6" align="right" style="position: static">
@@ -441,7 +420,7 @@
                         <tr>
                           <th>Event</th>
                           <th>Description</th>
-                          <th>Participants</th>
+                          <th>Max Participants</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -457,7 +436,6 @@
                               <td>No Events are currently listed</td>
                             </tr>
                         <% end %>
-
                         </tbody>
                       </table>
                     </div>
@@ -476,14 +454,10 @@
               <div class="inner_wrap">
                 <ul class="star1">
                   <li class="module_left">
-                    <!--<h3><%= sailing.cruise_ship_company %></h3>-->
                     <h2><%= sailing.cruise_ship_name %></h2>
                     <h4>No. of Cruisers: <%= sailing.people_on_sailing %></h4>
-                    <!--<h4>Region: <%= sailing.destination_identifier %> </h4>-->
-                    <!--<h4>Port of Origin: <%= sailing.port_of_origin %> </h4>-->
                     <% sailLength = (sailing.return_date.to_time.to_i - sailing.departure_date.to_time.to_i) / 60 / 60 / 24 %>
                     <h4>Departure: <%= sailing.departure_date.strftime("%B %d, %Y") %> for  <%= sailLength %> days</h4>
-                    <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
                     <div class="row" style="position: static">
                       <div class="col-md-6" align="right" style="position: static">
@@ -555,7 +529,7 @@
         </div>
 
         <div class="copy wow fadeInRight" data-wow-delay="0.4s">
-          <p>Update: Sunday, May 22</p>
+          <p>Update: Tuesday, May 24</p>
         </div>
 
       </div>
@@ -563,29 +537,3 @@
     </div>
   </div><!-- CONTAINER -->
 </div><!-- End FOOTER -->
-
-<!-- Test Data
-      <table>
-        <thead>
-        <tr>
-          <th colspan="3"></th>
-        </tr>
-        </thead>
-      <tbody>
-      <tr>
-        <th>Ship Name</th>
-        <th>Company</th>
-        <th>Departure Date</th>
-        <th>Return Date</th>
-      </tr>
-      <% @sailings.each do |sailing| %>
-          <tr>
-            <td><%= link_to sailing.cruise_ship_name, sailing %></td>
-            <td><%= sailing.cruise_ship_company %></td>
-            <td><%= sailing.departure_date.strftime("%B %d, %Y") %></td>
-            <td><%= sailing.return_date.strftime("%B %d, %Y") %></td>
-          </tr>
-      <% end %>
-      </tbody>
-      </table>
-      <!-- End Test Data-->
