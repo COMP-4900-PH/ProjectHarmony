@@ -2,7 +2,7 @@ class Sailing < ActiveRecord::Base
   has_many :travelling_parties
   has_many :events
 
-  attr_accessor :people_on_sailing, :top_primary_language, :top_secondary_language
+  attr_accessor :people_on_sailing, :top_primary_language, :top_secondary_language, :age_under_18, :age_18_to_50, :age_51_and_over
 
   # Calculate the amount of days until the ship leaves
   def daysToSailing
@@ -49,6 +49,27 @@ class Sailing < ActiveRecord::Base
     secondary_language_hash = Hash.new(0)
     self.secondary_language.each { |language| secondary_language_hash[language] += 1 }
     @top_secondary_language = secondary_language_hash.max_by{ |k,v| v}
+  end
+
+  # Count users ages and organize them into three age groups
+  def create_age_groups
+    age_under_18 = 0
+    age_18_to_50 = 0
+    age_51_and_over = 0
+    self.gather_data.each do |user|
+      if(user.user_age >= 51)
+        age_51_and_over += 1
+      end
+      if(user.user_age >= 18 && user.user_age < 51)
+        age_18_to_50 += 1
+      end
+      if(user.user_age < 18)
+        age_under_18 += 1
+      end
+    end
+    @age_under_18 = age_under_18
+    @age_18_to_50 = age_18_to_50
+    @age_51_and_over = age_51_and_over
   end
 
 end
