@@ -10,135 +10,130 @@
         </div>
     <% end %>
 
-    <div class="actions">
-      <!-- USER NAME -->
+    <div class="actions form-detailed-user">
       <input type="hidden" name="detailed_user[user_id]" value="<%= @user_id %>">
-      <fieldset class="form-group form-inline input-group-lg">
-        <div class="formBoxes">
-          <label class="label2" for="firstName">First Name</label>
-          <input type="text" class="form-control" name="detailed_user[first_name]" value="<%= @detailed_user.first_name%>" placeholder="Enter your first name..." pattern="[A-Za-z]+" title="Only letters allowed" required>
-        </div>
-        <div class="formBoxes">
-          <label class="label2" for="LastName">Last Name</label>
-          <input type="text" class="form-control" name="detailed_user[last_name]" value="<%= @detailed_user.last_name%>" pattern="[A-Za-z]+" required title="Only letters allowed" id="lName" placeholder="Enter your Last name..." >
-        </div>
-      </fieldset>
-      <!-- USER NAME END -->
-
-      <!-- BIRTHDAY -->
-      <fieldset class="form-group form-inline input-group-lg">
-        <div class="formBoxes">
-          <label class="label3">Birth Date</label>
-          <input class="form-control" type="date" <% if !@detailed_user.birth_day.nil?  %>value="<%= @detailed_user.birth_day.strftime("%F")%>" <% end %> name="detailed_user[birth_day]" required="required">
-        </div>
-      <!-- GENDER -->
-        <label class="label3">Select Gender</label>
-          <div class="radio">
-            <label>
-              <input type="radio" name="detailed_user[gender]" id="rad1" value="m" required="required" <% if @detailed_user.gender == 'm' %>checked <%end%>>
-              Male
-            </label>
+      <div class="container-fluid">
+        <!-- USER NAME -->
+        <div class="row">
+          <div class="col-md-6">
+            <label class="label2" for="firstName">First Name</label>
+            <input type="text" class="form-control" name="detailed_user[first_name]" value="<%= @detailed_user.first_name%>" placeholder="Enter your first name..." pattern="[A-Za-z]+" title="Only letters allowed" required>
           </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="detailed_user[gender]" id="rad2" value="f" required="required" <% if @detailed_user.gender == 'f' %>checked <%end%>>
-              Female
-            </label>
+          <div class="col-md-6">
+            <label class="label2" for="LastName">Last Name</label>
+            <input type="text" class="form-control" name="detailed_user[last_name]" value="<%= @detailed_user.last_name%>" pattern="[A-Za-z]+" required title="Only letters allowed" id="lName" placeholder="Enter your Last name..." >
           </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="detailed_user[gender]" id="rad3" value="o"required="required" <% if @detailed_user.gender == 'o' %>checked <%end%>>
-              Other
-            </label>
+        </div>
+
+        <div class="row">
+          <!-- BIRTHDAY -->
+          <div class="col-md-6">
+            <label class="label3">Birth Date</label>
+            <input class="form-control" type="date" <% if !@detailed_user.birth_day.nil?  %>value="<%= @detailed_user.birth_day.strftime("%F")%>" <% end %> name="detailed_user[birth_day]" required="required">
           </div>
-      </fieldset>
+          <!-- GENDER -->
+          <div class="col-md-6">
+            <label class="label3">Select Gender</label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="detailed_user[gender]" id="rad1" value="m" required="required" <% if @detailed_user.gender == 'm' %>checked <%end%>>
+                Male
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="detailed_user[gender]" id="rad2" value="f" required="required" <% if @detailed_user.gender == 'f' %>checked <%end%>>
+                Female
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="detailed_user[gender]" id="rad3" value="o"required="required" <% if @detailed_user.gender == 'o' %>checked <%end%>>
+                Other
+              </label>
+            </div>
+          </div>
+        </div>
 
-      <!-- CITY/COUNTRY of ORIGIN -->
-      <fieldset class="form-group form-inline input-group-lg">
-        <div class="formBoxes2">
-          <label class="label2" for="country">Country of Origin</label>
-          <select class="form-control" id="selCountry" name="detailed_user[country]">
-            <option>Canada</option>
-            <option>United States</option>
-            <option>United Kingdom</option>
-            <option>Spain</option>
-            <option>Norway</option>
-            <option>France</option>
-            <option>Italy</option>
-            <option>Germany</option>
-            <option>China</option>
-            <option>Australia</option>
-          </select>
+        <!-- CITY/COUNTRY of ORIGIN -->
+        <% @country = [{"country"=>"Canada"}, {"country"=>"United States"}, {"country" => "United Kingdom"}, {"country" => "Spain"}, {"country" => "United Kingdom"}, {"country" => "Norway"}, {"country" => "France"}, {"country" => "China"}, {"country" => "Italy"}, {"country" => "Japan"} ] %>
+        <div class="row">
+          <div class="col-md-6">
+            <label class="label2" for="country">Country of Origin</label>
+            <%= select_tag "detailed_user[country]", options_for_select(@country.collect {|p| [ p['country']] },selected: @detailed_user.country), :class=>"form-control" %>
+            </div>
+          <div class="col-md-6">
+            <label class="label4" for="city">City of Origin</label>
+            <input class="form-control" type="text" value="<%= @detailed_user.city%>" name="detailed_user[city]">
+          </div>
         </div>
-        <div class="formBoxes2">
-          <label class="label4" for="city">City of Origin</label>
-          <input class="form-control" type="text" name="detailed_user[city]">
-        </div>
-      </fieldset>
 
-      <!-- Language Select -->
-      <fieldset class="form-group form-inline input-group-lg">
-        <div class="formBoxes2">
-          <label class="label2" for="firstName">Primary Language</label>
-          <%= select_tag "detailed_user[primary_language]", options_from_collection_for_select(@languages, "language", "language", selected: @detailed_user.primary_language), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
+        <!-- Language Select -->
+        <div class="row">
+          <div class="col-md-6">
+            <label class="label2" for="firstName">Primary Language</label>
+            <%= select_tag "detailed_user[primary_language]", options_from_collection_for_select(@languages, "language", "language", selected: @detailed_user.primary_language), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
+          </div>
+          <div class="col-md-6">
+            <label class="label2" for="LastName">Secondary Language</label>
+            <%= select_tag "detailed_user[secondary_language]", options_from_collection_for_select(@languages, "language", "language", selected: @detailed_user.secondary_language), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
+          </div>
         </div>
-        <div class="formBoxes2">
-          <label class="label2" for="LastName">Secondary Language</label>
-          <%= select_tag "detailed_user[secondary_language]", options_from_collection_for_select(@languages, "language", "language", selected: @detailed_user.secondary_language), {:include_blank => "Language Select",:class => "form-control", :required => "true"}  %>
-        </div>
-      </fieldset>
 
-      <!-- ABOUT -->
-      <div class="form-group input-group-lg">
-        <div class="formBoxes">
-          <label class="label2">About</label>
-          <textarea class="form-control mytextarea" name="detailed_user[description]" rows="6" placeholder="Tell us about yourself?"><%= @detailed_user.description %></textarea>
+        <!-- SEXUAL ORIENTATION -->
+        <!--<div class="row">-->
+          <!--<div class="col-md-12">-->
+            <!--<label class="label2">Sexual Orientation</label>-->
+            <!--<div class="radio">-->
+              <!--<label>-->
+                <!--<input type="radio" name="orientation" id="rad1" value="MaleOpt" <% if @detailed_user.sexual_orientation == 'MaleOpt' %>checked <%end%>>-->
+                <!--Straight or Heterosexual-->
+              <!--</label>-->
+            <!--</div>-->
+            <!--<div class="radio">-->
+              <!--<label>-->
+                <!--<input type="radio" name="detailed_user[sexual_orientation]" id="rad2" value="FemaleOpt" <% if @detailed_user.sexual_orientation == 'FemaleOpt' %>checked <%end%>>-->
+                <!--Lesbian,Gay, Homosexual-->
+              <!--</label>-->
+            <!--</div>-->
+            <!--<div class="radio">-->
+              <!--<label>-->
+                <!--<input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>-->
+                <!--Bisexual-->
+              <!--</label>-->
+            <!--</div>-->
+            <!--<div class="radio">-->
+              <!--<label>-->
+                <!--<input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>-->
+                <!--Don't Know-->
+              <!--</label>-->
+            <!--</div>-->
+            <!--<div class="radio">-->
+              <!--<label>-->
+                <!--<input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>-->
+                <!--Something Else-->
+              <!--</label>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <div class="row">
+          <div class="col-md-12">
+            <label class="label2">About</label>
+            <textarea style="width:100%;" class="form-control mytextarea" name="detailed_user[description]" rows="6" placeholder="Tell us about yourself?"><%= @detailed_user.description %></textarea>
+          </div>
         </div>
+
+        <div  class="row">
+          <div class="col-md-12">
+            <label for="InputFile">Select a Profile Picture</label>
+            <!--<input type="file" class="form-control-file" id="InputFile">-->
+            <%= f.file_field :avatar %>
+          </div>
+        </div>
+
+        <div style="text-align: center; padding-bottom: 3em"><%= f.submit 'Update Detailed User', :class => 'btn btn-success' %></div>
       </div>
-
-      <!-- SEXUAL ORIENTATION -->
-      <!--<label class="col-sm-2">Sexual Orientation</label>-->
-      <!--<div class="col-sm-10">-->
-        <!--<div class="radio">-->
-          <!--<label>-->
-            <!--<input type="radio" name="orientation" id="rad1" value="MaleOpt" <% if @detailed_user.sexual_orientation == 'MaleOpt' %>checked <%end%>>-->
-            <!--Straight or Heterosexual-->
-          <!--</label>-->
-        <!--</div>-->
-        <!--<div class="radio">-->
-          <!--<label>-->
-            <!--<input type="radio" name="detailed_user[sexual_orientation]" id="rad2" value="FemaleOpt" <% if @detailed_user.sexual_orientation == 'FemaleOpt' %>checked <%end%>>-->
-            <!--Lesbian,Gay, Homosexual-->
-          <!--</label>-->
-        <!--</div>-->
-        <!--<div class="radio">-->
-          <!--<label>-->
-            <!--<input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>-->
-            <!--Bisexual-->
-          <!--</label>-->
-        <!--</div>-->
-        <!--<div class="radio">-->
-          <!--<label>-->
-            <!--<input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>-->
-            <!--Don't Know-->
-          <!--</label>-->
-        <!--</div>-->
-        <!--<div class="radio">-->
-          <!--<label>-->
-            <!--<input type="radio" name="detailed_user[sexual_orientation]" id="rad3" value="OtherOpt" <% if @detailed_user.sexual_orientation == 'OtherOpt' %>checked <%end%>>-->
-            <!--Something Else-->
-          <!--</label>-->
-        <!--</div>-->
-      <!--</fieldset>-->
-      <!-- PROFILE PIC -->
-      <fieldset class="form-group">
-        <div class="filebox">
-          <label for="InputFile">Select a Profile Picture</label>
-          <!--<input type="file" class="form-control-file" id="InputFile">-->
-          <%= f.file_field :avatar %>
-        </div>
-      </fieldset>
-      <%= f.submit %>
     </div>
 <% end %>
 

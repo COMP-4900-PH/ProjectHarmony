@@ -87,6 +87,14 @@
     padding-bottom: 2em;
 }
 
+@media (min-width: 1200px) {
+    .event-form2 {
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
 .proHeader {
     padding: 10px 10px 30px 10px;
     margin: 0;
@@ -195,3 +203,12 @@
     width: 100%;
 }
 
+
+
+@media (min-width: 1200px) {
+    .form-detailed-user {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+}
