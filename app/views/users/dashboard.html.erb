@@ -160,7 +160,6 @@
         </div>
         <div class="col-lg-pull-9 col-lg-3  profile-info">
           <%= image_tag @detailed_user.avatar.url(:thumb), id: "dashboard-avatar" %>
-          <%= @detailed_user.user_age %>
           <div style="text-align: center; margin-left: 2em; margin-top: 1em">
             <% if @user.detailedUsers == true %>
               <a href="/profile/<%= @user.id %>"><span class="ship-name"><h2><%= current_user.name %></h2></span></a>
