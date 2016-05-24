@@ -267,6 +267,8 @@
                         <% if (!primary_language_hash.empty?) %>
                             <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
                             <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                        <% else %>
+                            There are no travellers on this sailing.
                         <% end %>
                       </div>
                       <div class="col-md-6" align="left" style="position: static">
@@ -371,6 +373,8 @@
                         <% if (!primary_language_hash.empty?) %>
                             <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
                             <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                        <% else %>
+                            There are no travellers on this sailing.
                         <% end %>
                       </div>
                       <div class="col-md-6" align="left" style="position: static">
@@ -474,6 +478,8 @@
                         <% if (!primary_language_hash.empty?) %>
                             <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
                             <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                        <% else %>
+                            There are no travellers on this sailing.
                         <% end %>
                       </div>
                       <div class="col-md-6" align="left" style="position: static">
