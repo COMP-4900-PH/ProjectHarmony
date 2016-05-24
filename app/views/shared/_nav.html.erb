@@ -43,22 +43,12 @@
         </div>
     <% end %>
     <% if user_signed_in? %>
-        <!--<div id="loginContainer" style="float:left;width:65%;border:1px solid #F19E1F">-->
-          <!-- Hello <%= current_user.name %>, <%= link_to "Logout", destroy_user_session_path, method: :delete %> -->
-        <!--</div>-->
-        <!--<div id="loginContainer" style="float:left;width:35%;height:100%;border:1px solid #F19E1F">-->
-          <!--<span class="glyphicon glyphicon-user"></span>-->
-          <!--<a href="/dashboard">Profile</a>-->
-        <!--</div>-->
-
-        <!-- ALTERNATIVE LAYOUT --->
-        <div id="loginContainer" style="float:left;width:65%;border:1px solid #F19E1F; padding-bottom: 1em; padding-top: 1em">
-          <a href="/dashboard"><%= image_tag DetailedUser.find_by_id(current_user.id).avatar.url(:thumb) , :id=> "nav-avatar", :size => "40x40"%> <%= current_user.name %></a>
+        <div id="loginContainer" style="float:left;width:65%;border:1px solid #F19E1F">
+           Hello <%= current_user.name %>, <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         </div>
-        <div id="loginContainer" style="float:left;width:35%;height:100%;border:1px solid #F19E1F; padding-bottom: 1.6em; padding-top: 1.5em;">
-          <!--<span class="glyphicon glyphicon-user"></span>-->
-          <!--<a href="/dashboard">Profile</a>-->
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <div id="loginContainer" style="float:left;width:35%;height:100%;border:1px solid #F19E1F">
+          <span class="glyphicon glyphicon-user"></span>
+          <a href="/dashboard">Profile</a>
         </div>
     <% end %>
     <div class="clearfix"></div>
