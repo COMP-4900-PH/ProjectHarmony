@@ -3,6 +3,9 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+  #Override the create method of devise plugin
+  # Creates an entry in detail_users table
+  # After account is created
   def create
     build_resource(sign_up_params)
 
