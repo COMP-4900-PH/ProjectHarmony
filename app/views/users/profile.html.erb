@@ -16,7 +16,7 @@
 
             <% @sailings.each do |s| %>
             <tr>
-              <td width="10"><img src="http://placehold.it/100x100" alt="..."><br></td>
+              <td width="10"><%= image_tag "cruises/#{s.image}", :size => "100x100"%><br></td>
               <td class="sailing-info">
                 <a href="/sailings/<%= s.id %>"><span class="ship-name"><%= s.cruise_ship_name %></span></a><br>
                 <%= s.cruise_ship_company%> <br>
