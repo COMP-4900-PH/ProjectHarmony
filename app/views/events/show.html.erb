@@ -35,10 +35,8 @@
                   <td width="40%">
                     <a href="/profile/<%= u.user_id %>">
                       <%= image_tag u.avatar.url(:small), :id=> "pop#{u.user_id}", :size => "100x100", :class => "pop", 'onmouseover'=> "pop('pop#{u.user_id}',#{u.user_id})" ,'data-title' => "#{u.first_name} #{u.last_name}"  , 'data-placement'=> 'horizontal' %>
+                      <br><%= u.first_name %>
                     </a>
-                  </td>
-                  <td align="left">
-                    <%= u.first_name %>
                   </td>
                 </tr>
             <% end %>
