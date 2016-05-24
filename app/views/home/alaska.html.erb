@@ -226,14 +226,33 @@
                       days</h4>
                     <!--<h4>Return: <%= sailing.return_date.strftime("%B %d, %Y") %></h4>-->
                     <h2>Who's On Board?</h2>
-                    <h4>Languages: <%= image_tag "lang_iconCAN.png" %>&nbsp;30%, <%= image_tag "Mandarin.png" %>&nbsp;27%</h4>
-                    <h4>Demographics:</h4>
-                    <h5>50+ 47%</h5>
-                    <h5>35-45 22%</h5>
-                    <h5>25-35 17</h5>
-                    <h4>Top Travellers: Yoda, Bobbafet, Vader</h4>
-                    <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
-                    <!--<h4><b style="font-size: 25px; text-decoration: underline;">112</b> Singles going from Project Harmony!</h4>-->
+                    <div class="row" style="position: static">
+                      <div class="col-md-6" align="right" style="position: static">
+                        <h4>Languages: </h4>
+
+                        <% primary_language_hash = Hash.new(0) %>
+                        <% sailing.primary_language.each { |language| primary_language_hash[language] += 1 } %>
+                        <!--<%= debug primary_language_hash %>-->
+
+                        <% secondary_language_hash = Hash.new(0) %>
+                        <% sailing.secondary_language.each { |language| secondary_language_hash[language] += 1 } %>
+                        <!--<%= debug secondary_language_hash %>-->
+
+                        <% if (!primary_language_hash.empty?) %>
+                            <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
+                            <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                        <% else %>
+                            There are no travellers on this sailing.
+                        <% end %>
+                      </div>
+                      <div class="col-md-6" align="left" style="position: static">
+                        <h4>Demographics:</h4>
+                        <% sailing.create_age_groups %>
+                        <h5>51+ <%= sailing.age_51_and_over %></h5>
+                        <h5>18-50 <%= sailing.age_18_to_50 %></h5>
+                        <h5>0-18 <%= sailing.age_under_18 %></h5>
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </div><!-- INNER_WRAP -->
