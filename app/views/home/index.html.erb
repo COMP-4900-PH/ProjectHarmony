@@ -266,27 +266,16 @@
                         <% if (!primary_language_hash.empty?) %>
                             <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
                             <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                        <% else %>
+                            There are no travellers on this sailing.
                         <% end %>
                       </div>
                       <div class="col-md-6" align="left" style="position: static">
                         <h4>Demographics:</h4>
-                        <% age_under_18 = 0 %>
-                        <% age_18_to_50 = 0 %>
-                        <% age_51_and_over = 0 %>
-                        <% sailing.gather_data.each do |user| %>
-                            <% if(user.user_age >= 51) %>
-                                <% age_51_and_over += 1 %>
-                            <% end %>
-                            <% if(user.user_age >= 18 && user.user_age < 51) %>
-                                <% age_18_to_50 += 1 %>
-                            <% end %>
-                            <% if(user.user_age < 18) %>
-                                <% age_under_18 += 1 %>
-                            <% end %>
-                        <% end %>
-                        <h5>51+ <%= age_51_and_over %></h5>
-                        <h5>18-50 <%= age_18_to_50 %></h5>
-                        <h5>0-18 <%= age_under_18 %></h5>
+                        <% sailing.create_age_groups %>
+                        <h5>51+ <%= sailing.age_51_and_over %></h5>
+                        <h5>18-50 <%= sailing.age_18_to_50 %></h5>
+                        <h5>0-18 <%= sailing.age_under_18 %></h5>
                       </div>
                       </div>
                     <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
@@ -370,27 +359,16 @@
                         <% if (!primary_language_hash.empty?) %>
                             <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
                             <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                        <% else %>
+                            There are no travellers on this sailing.
                         <% end %>
                       </div>
                       <div class="col-md-6" align="left" style="position: static">
                         <h4>Demographics:</h4>
-                        <% age_under_18 = 0 %>
-                        <% age_18_to_50 = 0 %>
-                        <% age_51_and_over = 0 %>
-                        <% sailing.gather_data.each do |user| %>
-                            <% if(user.user_age >= 51) %>
-                                <% age_51_and_over += 1 %>
-                            <% end %>
-                            <% if(user.user_age >= 18 && user.user_age < 51) %>
-                                <% age_18_to_50 += 1 %>
-                            <% end %>
-                            <% if(user.user_age < 18) %>
-                                <% age_under_18 += 1 %>
-                            <% end %>
-                        <% end %>
-                        <h5>51+ <%= age_51_and_over %></h5>
-                        <h5>18-50 <%= age_18_to_50 %></h5>
-                        <h5>0-18 <%= age_under_18 %></h5>
+                        <% sailing.create_age_groups %>
+                        <h5>51+ <%= sailing.age_51_and_over %></h5>
+                        <h5>18-50 <%= sailing.age_18_to_50 %></h5>
+                        <h5>0-18 <%= sailing.age_under_18 %></h5>
                       </div>
                       </div>
                     <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
@@ -473,27 +451,16 @@
                         <% if (!primary_language_hash.empty?) %>
                             <%= image_tag primary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= primary_language_hash.max_by{ |k,v| v}[1] %>,
                             <%= image_tag secondary_language_hash.max_by{ |k,v| v}[0] + ".png" %>&nbsp;<%= secondary_language_hash.max_by{ |k,v| v}[1] %>
+                        <% else %>
+                            There are no travellers on this sailing.
                         <% end %>
                       </div>
                       <div class="col-md-6" align="left" style="position: static">
                         <h4>Demographics:</h4>
-                        <% age_under_18 = 0 %>
-                        <% age_18_to_50 = 0 %>
-                        <% age_51_and_over = 0 %>
-                        <% sailing.gather_data.each do |user| %>
-                            <% if(user.user_age >= 51) %>
-                                <% age_51_and_over += 1 %>
-                            <% end %>
-                            <% if(user.user_age >= 18 && user.user_age < 51) %>
-                                <% age_18_to_50 += 1 %>
-                            <% end %>
-                            <% if(user.user_age < 18) %>
-                                <% age_under_18 += 1 %>
-                            <% end %>
-                        <% end %>
-                        <h5>51+ <%= age_51_and_over %></h5>
-                        <h5>18-50 <%= age_18_to_50 %></h5>
-                        <h5>0-18 <%= age_under_18 %></h5>
+                        <% sailing.create_age_groups %>
+                        <h5>51+ <%= sailing.age_51_and_over %></h5>
+                        <h5>18-50 <%= sailing.age_18_to_50 %></h5>
+                        <h5>0-18 <%= sailing.age_under_18 %></h5>
                       </div>
                     </div>
                     <!--<h4>Total of <b style="font-size: 25px; text-decoration: underline;">35</b> families going from Project Harmony!</h4>-->
