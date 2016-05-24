@@ -81,7 +81,7 @@
                 <% end %>
               </div>
               <div class="col-md-11">
-                <a href=""><span class="ship-name"><%= User.find_by_id(@event.creator_id).name%></span></a> <span> - organizer </span>
+                <a href="/profile/<%= @event.creator_id%>"><span class="ship-name"><%= User.find_by_id(@event.creator_id).name%></span></a> <span> - organizer </span>
               </div>
 
               <!-- DESCRIPTION -->
