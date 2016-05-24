@@ -137,29 +137,23 @@
 <div class="content_top">
   <div class="container">
     <div class="col-md-12 search-bar">
-      <!--<form>-->
-      <!--<input style="width:25%" type="text" value="Keyword, name, ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Keyword, name, date, ...';}">-->
-      <!--<input style="width:25%" type="date" id="datepickerStart" required="true" name="event[start_date]">-->
-      <!--<input style="width:25%" type="date" id="datepickerStart" required="true" name="event[start_date]">-->
-      <!--<label class="btn1 btn-2 btn-2g"><input name="submit" type="submit" id="submit" value="Search"></label>-->
-      <!--</form>-->
-
       <%= search_form_for @search, url: root_path, method: :post do |f| %>
-          <% if false %>
-              <%= f.label :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont %>
-          <% end %>
-          <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, :style => 'width:35%', placeholder: "Destination, ship name, company..." %>
-          <% if false %>
-              <%= f.label :departure_date_gteq, "Departure Date Between" %>
-          <% end %>
-          <%= f.text_field :departure_date_gteq, "datepicker" => true, :style => 'width:20%', :class => 'sdate', placeholder: "Date From" %>
-          <% if false %>
-              <%= f.label :return_date_lteq, "and" %>
-          <% end %>
-          <%= f.text_field :return_date_lteq, "datepicker" => true, :style => 'width:20%', :class => 'sdate', placeholder: "Date To" %>
-          <label class="actions btn1 btn-2 btn-2g"><%= f.submit "Search" %></label>
+          <div class="col-md-5 div-key">
+            <label>Keyword Search</label>
+            <%= f.text_field :cruise_ship_name_or_cruise_ship_company_or_destination_identifier_cont, :style => 'height: 70px;' , placeholder: "Destination, ship name..." %>
+          </div>
+          <div class="col-md-3 div-pad">
+            <label>Date From</label>
+            <%= f.text_field :departure_date_gteq, "datepicker" => true, :type => 'date',:class => 'dateStyle', placeholder: "Date From" %>
+          </div>
+          <div class="col-md-3 div-pad">
+            <label>Date To</label>
+            <%= f.text_field :return_date_lteq, "datepicker" => true, :type => 'date',:class => 'dateStyle', placeholder: "Date To" %>
+          </div>
+          <div class="col-md-1 div-pad" style="padding-top: 23px;">
+            <label class="actions btn1 btn-2 btn-2g"><%= f.submit "Search" %></label>
+          </div>
       <% end %>
-
     </div><!-- COL-MD-12 -->
 
   </div><!-- CONTAINER -->

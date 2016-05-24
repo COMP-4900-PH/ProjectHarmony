@@ -32,3 +32,12 @@
     background-color: #ffc04d;
     border:1px solid #E89007;
 }
+
+.div-pad {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.div-key {
+    padding-right: 0px;
+}
