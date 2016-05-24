@@ -2333,8 +2333,8 @@ p.educate {
         margin-right: 1em;
     }
     .view .mask, .view .content {
-        width: 206px;
-        height: 142px;
+        width: 100%;
+        height: 100%;
     }
     ul.mask_img {
         padding: 0 2em;
@@ -2455,7 +2455,7 @@ p.educate {
     }
     .menu {
         width: 52.5555%;
-        text-align: center;
+        text-align: right;
     }
     #loginForm {
         width: 223px;
@@ -2512,11 +2512,11 @@ p.educate {
         margin-bottom: 1em;
     }
     .view .mask, .view .content {
-        width: 270px;
-        height: 183px;
+        width: 100%;
+        height: 100%;
     }
     .view-first .mask {
-        left: 147px;
+        left: 0px;
     }
     i.m_home, i.m_home1 {
         bottom: 115px;
@@ -2645,13 +2645,13 @@ p.educate {
         margin: 0 auto;
     }
     .view-first .mask {
-        left: 210px;
+        left: 0px;
     }
     ul.mask_img {
         padding: 0 4em;
     }
     .inner_wrap1 {
-        width: 79.85%;
+        width: 100%;
     }
     i.home, i.home1, i.home2 {
         bottom: 100px;
@@ -2687,7 +2687,7 @@ p.educate {
         left: 0px;
     }
     .view-first .mask {
-        left: 147px;
+        left: 0px;
     }
     i.home, i.home1, i.home2 {
         right: 247px;
@@ -2889,7 +2889,7 @@ p.educate {
         /*width:60%;*/
     }
     .view-first .mask {
-        left: 53px;
+        left: 0px;
     }
     ul.icons li {
         width: 18%;
@@ -2985,7 +2985,7 @@ p.educate {
         width: 67.3%;
     }
     .view-first .mask {
-        left: 67px;
+        left: 0px;
     }
     i.home, i.home1, i.home2 {
         bottom: 100px;
@@ -3212,7 +3212,7 @@ p.educate {
     }
     .menu {
         width:31%;
-        text-align: center;
+        text-align: right;
         margin: 0px 0 0;
     }
     .logo {
