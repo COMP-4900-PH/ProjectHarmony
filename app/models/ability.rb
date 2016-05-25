@@ -37,6 +37,7 @@ class Ability
 
       # Detailed users can join events
       can :new, Event
+      can :host , Event
 
       # Detailed users can view the event page
       can :index, Event

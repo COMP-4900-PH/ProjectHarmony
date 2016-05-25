@@ -85,7 +85,11 @@
         <div class="col-md-4">
           <div class="form-group">
             <label for="sailing">Sailing</label><br>
-            <%= select_tag "event[sailing_id]", options_from_collection_for_select(@sailings, "id", "cruise_ship_name"),  {:include_blank => "select",:class => "form-control", :required => "true"}  %>
+            <% if @sail_flag %>
+                <%= select_tag "event[sailing_id]", options_from_collection_for_select(@sailings, "id", "cruise_ship_name", :selected => @sailings.first.id),  {:include_blank => "select",:class => "form-control", :required => "true"}  %>
+          <% else %>
+                <%= select_tag "event[sailing_id]", options_from_collection_for_select(@sailings, "id", "cruise_ship_name"),  {:include_blank => "select",:class => "form-control", :required => "true"}  %>
+          <% end %>
           </div>
         </div>
       </div>
