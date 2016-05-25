@@ -35,19 +35,10 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @sailings = Sailing.joins(:travelling_parties => {:party_registers => :user}).where("users.id" => current_user.id)
-    @sail_flag = false
     if(@sailings.blank?)
       flash[:alert] = "you have not joined a sailing"
       redirect_to :back
     end
-  end
-
-  # GET /events/host/1
-  def host
-    @event = Event.new
-    @sailings = Sailing.where("id" => params[:id])
-    @sail_flag = true
-    render :new
   end
 
   # GET /events/1/edit

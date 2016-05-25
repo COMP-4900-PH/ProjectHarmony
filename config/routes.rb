@@ -45,9 +45,6 @@ Rails.application.routes.draw do
   #EVENTS UPDATE
   put 'events/:id/edit' => 'events#update'
 
-  #EVENT HOST SAILING PAGE
-  get 'events/host/:id' => 'events#host'
-
   # Routes for events model
   resources :events
 
