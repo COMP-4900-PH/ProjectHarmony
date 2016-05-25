@@ -175,8 +175,7 @@
               <div class="tabbable">
                 <div class="button-div">
                   <% if !@has_joined.nil? %>
-                      <!--<button id="join-sailing-button" type="button" class="btn btn-success join-sailing-button disabled">You have joined this sailing</button><br/>-->
-                      <a class="btn btn-success" id="join-sailing-button" href="/events/host/<%= @sailing.id %>">Host An Event</a>
+                      <button id="join-sailing-button" type="button" class="btn btn-success join-sailing-button disabled">You have joined this sailing</button><br/>
                   <%else%>
                       <%= button_to 'Join This Sailing', "/travelling_party/create/#{@sailing.id}", :method=>:post, :id => "join-sailing-button", :class=>"btn btn-success"%><br/>
                   <%end%>
